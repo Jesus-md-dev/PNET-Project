@@ -3,14 +3,22 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
         <title>Principal</title>
         <style>
-            body{
+            body {
                 font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
                 background-color: #ececec;
                 font-weight: 600;
                 font-size: 1em;
+            }
+
+            .nbar {
+                background-color: #141d26;
+            }
+
+            .nbar a { 
+                text-decoration: none;
+                color: white;
             }
             
             footer {
@@ -18,53 +26,32 @@
                 color: white
             }
 
+            footer a {
+                color: white;
+            }
+
+            .footerContent {
+                margin: 2em;
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .dropdown-menu {
+               background-color: #1d2c3a;
+            }
+
             p span {
                 display: block;
                 margin: 1em;
             }
 
-            footer a{
-                color: white;
-            }
-
             .title2 {
-                font-size: 1.75em;
-                /* font-weight: bold; */
+                font-size: 1.5em;
             }
 
-            .nbar{
-                background-color: #141d26;
-                color: white
-            }
-
-            .nbar ul{
-                display: flex;
-                list-style: none;
-            }
-
-            .nbar a{
-                display: block;
-                padding-right: 1em;
-                padding-left: 1em;
-                text-decoration: none;
-                background-color: #141d26;
-                color: white;
-            }
-
+            
             .icon {
                 max-height: 40px;
-            }
-
-            .nbar a:hover{
-                background-color: #0b1014;
-            }
-
-            .nbar ul li ul {
-                display: none;
-            }
-
-            .nbar ul li a:hover + ul, .bar ul li ul:hover {
-                display: block;
             }
 
             .center{
@@ -73,7 +60,7 @@
                 justify-content: space-around;
             }
 
-            .description{
+            .description {
                 width: 70%;
                 height: 20em;
                 background-color: #E5E5E5;
@@ -81,36 +68,48 @@
                 border-radius: 5px;
             }
             
-            .notices{
+            .notices {
                 width: 20%;
                 background-color: #A4B5C8;
                 border: 0.01em solid;
                 border-radius: 5px;
             }
             
-            .footerContent{
-                margin: 2em;
-                display: flex;
-                justify-content: space-around;
+            .nbar-content {
+                overflow: hidden;
             }
+
+            .nbar-item {
+                float: initial;
+            }
+
         </style>
     </head>
     <body>
-        <nav class="bar nbar navbar navbar-expand-lg">
-            <a href="">Espacio Metronomo</a>
-            <ul>
-                <li><a href="">Principal</a></li>
-                <li><a href="">Salas</a>
-                    <ul>
-                        <li><a href="">Sala 1</a></li>
-                        <li><a href="">Sala 2</a></li>
-                        <li><a href="">Sala 3</a></li>
-                    </ul>
-                </li>
-                <li><a href="">Reserva</a></li>
-                <li><a href="">Localización</a></li>
-            </ul>
+        <nav class="bar nbar navbar navbar-expand">
+            <a href="" class="navbar-brand mr-auto">
+                <img src="img/logo.png" alt="" class="icon">
+                Espacio Metronomo
+            </a>
+            <div class="collapse navbar-collapse ml-auto">\
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="" class="nbar-item">Principal</a></li>
+                    <li class="nav-item"></li>>
+                        <div class="dropdown show nbar-item">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown">Salas <i class="fa fa-caret-down"></i></a>
+                            <div class="dropdown-menu">
+                                <a href="" class="dropdown-item">Sala 1</a>
+                                <a href="" class="dropdown-item">Sala 2</a>
+                                <a href="" class="dropdown-item">Sala 3</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"></li>><a href="" class="nbar-item">Reserva</a></li>
+                    <li class="nav-item"></li>><a href="" class="nbar-item">Localización</a></li>
+                </ul>
+            </div>
         </nav>
+        
         <div class="center">
             <div class="description d-inline-flex">
                 <div class="row justify-content-center align-items-center">
@@ -195,5 +194,14 @@
                 <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a>
             </div>
         </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
     </body>
 </html>
