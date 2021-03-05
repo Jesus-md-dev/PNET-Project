@@ -4,7 +4,7 @@
             integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-        <title>Inicio</title>
+        <title>Principal</title>
         <style>
             body{
                 font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -64,10 +64,10 @@
 
             .description{
                 width: 70%;
-                height: 20em;
                 background-color: #E5E5E5;
                 border: 0.01em solid;
                 border-radius: 5px;
+                padding: 15px;
             }
             
             .notices{
@@ -105,9 +105,9 @@
             </ul>
         </nav>
         <div class="center">
-            <div class="description d-inline-flex">
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-5 bg-primary">
+            <div class="description container">
+                <div class="row align-items-center">
+                    <div class="col">
                         <p> 
                             <span>
                                 En nuestro local contamos con diferentes salas totalmente insonorizadas y preparadas para que puedas ensayar sin molestar. 
@@ -117,7 +117,19 @@
                             </span>
                         </p>
                     </div>
-                    <div img src="img/sala1.jpeg" class="col-5 m-2 img-fluid"></div>
+                    <div class="col">
+                        <img src="img/sala1.jpeg" class="img-fluid rounded float-left">
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col">
+                        <img src="img/sala2.jpg" class="img-fluid rounded float-right">
+                    </div>
+                    <div class="col">
+                        <p>
+                            Si no tienes instrumentos en casa o te supone una carga llevarlos hasta la sala, no te preocupes, nuestro local dispone de diversos instrumentos, desde micrófonos hasta guitarras con amplificadores.
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="notices">Noticias</div>
