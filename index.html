@@ -1,117 +1,18 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
         <title>Principal</title>
-        <style>
-            body{
-                font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                background-color: #ececec;
-            }
-            
-            footer {
-                background-color: #141d26;
-                color: white
-            }
-
-            .nbar{
-                background-color: #141d26;
-                color: white
-            }
-
-            .nbar ul{
-                display: flex;
-                list-style: none;
-            }
-
-            .nbar a{
-                display: block;
-                padding-right: 1em;
-                padding-left: 1em;
-                text-decoration: none;
-                background-color: #141d26;
-                color: white;
-            }
-
-            .icon {
-                max-height: 32px;
-            }
-
-            .nbar a:hover{
-                background-color: #0b1014;
-            }
-
-            .nbar ul li ul {
-                display: none;
-            }
-
-            .nbar ul li a:hover + ul, .bar ul li ul:hover {
-                display: block;
-            }
-
-            p span {
-                display: block;
-                margin: 1em;
-            }
-
-            .center{
-                margin: 2em;
-                display: flex;
-                justify-content: space-around;
-            }
-
-            .description{
-                width: 70%;
-                background-color: #E5E5E5;
-                border: 0.01em solid;
-                border-radius: 5px;
-                padding: 15px;
-                color: black;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .container_information{
-                display: flex;
-                flex-wrap: wrap;
-            }
-
-            .information{
-                width: 50vh;
-                height: 50vh;
-            }
-            
-            .notices{
-                width: 20%;
-                background-color: #A4B5C8;
-                border: 0.01em solid;
-                border-radius: 5px;
-                text-align: center;
-                padding: 25px;
-                font-weight: bold;
-                font-size: large;
-                color: black;
-            }
-
-            a {
-                color: black;
-                font-size: medium;
-            }
-            
-            .footerContent{
-                margin: 2em;
-                display: flex;
-                justify-content: space-around;
-            }
-
-            footer a{
-                color: white;
-            }
-        </style>
     </head>
+
     <body>
         <nav class="bar nbar navbar navbar-expand-lg">
             <a href="">Espacio Metronomo</a>
@@ -131,7 +32,7 @@
         <div class="center">
             <div class="description container-fluid">
                 <div class="container_information">
-                    <div class="information">
+                    <div class="information align-items-center">
                         <p> 
                             <span>
                                 En nuestro local contamos con diferentes salas totalmente insonorizadas y preparadas para que puedas ensayar sin molestar. 
@@ -141,44 +42,34 @@
                             </span>
                         </p>
                     </div>
-                    <div class="information bg-primary">
+                    <div class="information">
                         <img src="img/sala1.jpeg" class="img-fluid rounded">
                     </div>
-                    <div class="information bg-primary">
+                    <div class="information">
                         <img src="img/sala2.jpg" class="img-fluid rounded">
                     </div>
-                    <div class="information">
+                    <div class="information align-items-center p-3">
                         <p>
                             Si no tienes instrumentos en casa o te supone una carga llevarlos hasta la sala, no te preocupes, nuestro local dispone de diversos instrumentos, desde micrófonos hasta guitarras con amplificadores.
                         </p>
                     </div>
                 </div>
             </div>
-            <aside class="notices container-fluid">Noticias
-                <div class="col mt-4">
+            <aside class="notices">Noticias
+                <div class="links">
                     <p><a href="https://guitarrasinlimites.com/psicologia-y-consejos/como-tocar-mejor-la-guitarra-10-consejos-utiles/">Cómo tocar mejor la guitarra: 10 consejos útiles</a></p>
                     <p><a href="https://www.lavozdigital.es/cadiz/lvdi-aplazado-2021-festival-no-sin-musica-202006231225_noticia.html">Aplazado a 2021 el festival No Sin Música de Cádiz</a></p>
-                    <p><a href="https://www.buscarinstrumentos.com/las-mejores-plataformas-aprender-piano-internet/">Aprender Piano Online- Guía con las mejores plataformas en Internet</a></p>
+                    <p><a href="https://www.buscarinstrumentos.com/las-mejores-plataformas-aprender-piano-internet/">Aprender Piano Online-Guía con las mejores plataformas en Internet</a></p>
                     <p><a href="https://www.monsterenergy.com/ar/es/products/monster-ultra/ultra-paradise">Ultra Paradise | Monster Energy Sin Azúcar (ahora en nuestras máquinas)</a></p>
                     <p><a href="https://www.salir.com/los-mejores-bares-con-musica-en-directo-en-cadiz-art-1187.html">Los mejores bares con música en directo en Cádiz</a></p>
                 </div>
             </aside>
         </div>
-        <div class="center"></div>
-            <div class="row">
-                <div class="col">
-                    <img src="img/sala1.jpeg" class="img-fluid rounded">
-                </div>
-                <div class="col">
-                    <img src="img/sala4.jpg" class="img-fluid rounded">
-                </div>
-                <div class="col">
-                    <img src="img/sala1.jpeg" class="img-fluid rounded">
-                </div>
-                <div class="col">
-                    <img src="img/sala6.jpg" class="img-fluid rounded">
-                </div>
-            </div>
+        <div class="images">
+            <img src="img/sala1.jpeg" class="img-fluid rounded">
+            <img src="img/sala4.jpg" class="img-fluid rounded">
+            <img src="img/sala1.jpeg" class="img-fluid rounded">
+            <img src="img/sala6.jpg" class="img-fluid rounded">
         </div>
         <footer class="bar text-lg-start">
             <div class="footerContent pt-2">
