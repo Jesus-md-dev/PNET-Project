@@ -68,6 +68,20 @@
                 border: 0.01em solid;
                 border-radius: 5px;
                 padding: 15px;
+                color: black;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .container_information{
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .information{
+                width: 50vh;
+                height: 50vh;
             }
             
             .notices{
@@ -75,6 +89,16 @@
                 background-color: #A4B5C8;
                 border: 0.01em solid;
                 border-radius: 5px;
+                text-align: center;
+                padding: 25px;
+                font-weight: bold;
+                font-size: large;
+                color: black;
+            }
+
+            a {
+                color: black;
+                font-size: medium;
             }
             
             .footerContent{
@@ -105,9 +129,9 @@
             </ul>
         </nav>
         <div class="center">
-            <div class="description container">
-                <div class="row align-items-center">
-                    <div class="col">
+            <div class="description container-fluid">
+                <div class="container_information">
+                    <div class="information">
                         <p> 
                             <span>
                                 En nuestro local contamos con diferentes salas totalmente insonorizadas y preparadas para que puedas ensayar sin molestar. 
@@ -117,22 +141,44 @@
                             </span>
                         </p>
                     </div>
-                    <div class="col">
-                        <img src="img/sala1.jpeg" class="img-fluid rounded float-left">
+                    <div class="information bg-primary">
+                        <img src="img/sala1.jpeg" class="img-fluid rounded">
                     </div>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col">
-                        <img src="img/sala2.jpg" class="img-fluid rounded float-right">
+                    <div class="information bg-primary">
+                        <img src="img/sala2.jpg" class="img-fluid rounded">
                     </div>
-                    <div class="col">
+                    <div class="information">
                         <p>
                             Si no tienes instrumentos en casa o te supone una carga llevarlos hasta la sala, no te preocupes, nuestro local dispone de diversos instrumentos, desde micrófonos hasta guitarras con amplificadores.
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="notices">Noticias</div>
+            <aside class="notices container-fluid">Noticias
+                <div class="col mt-4">
+                    <p><a href="https://guitarrasinlimites.com/psicologia-y-consejos/como-tocar-mejor-la-guitarra-10-consejos-utiles/">Cómo tocar mejor la guitarra: 10 consejos útiles</a></p>
+                    <p><a href="https://www.lavozdigital.es/cadiz/lvdi-aplazado-2021-festival-no-sin-musica-202006231225_noticia.html">Aplazado a 2021 el festival No Sin Música de Cádiz</a></p>
+                    <p><a href="https://www.buscarinstrumentos.com/las-mejores-plataformas-aprender-piano-internet/">Aprender Piano Online- Guía con las mejores plataformas en Internet</a></p>
+                    <p><a href="https://www.monsterenergy.com/ar/es/products/monster-ultra/ultra-paradise">Ultra Paradise | Monster Energy Sin Azúcar (ahora en nuestras máquinas)</a></p>
+                    <p><a href="https://www.salir.com/los-mejores-bares-con-musica-en-directo-en-cadiz-art-1187.html">Los mejores bares con música en directo en Cádiz</a></p>
+                </div>
+            </aside>
+        </div>
+        <div class="center"></div>
+            <div class="row">
+                <div class="col">
+                    <img src="img/sala1.jpeg" class="img-fluid rounded">
+                </div>
+                <div class="col">
+                    <img src="img/sala4.jpg" class="img-fluid rounded">
+                </div>
+                <div class="col">
+                    <img src="img/sala1.jpeg" class="img-fluid rounded">
+                </div>
+                <div class="col">
+                    <img src="img/sala6.jpg" class="img-fluid rounded">
+                </div>
+            </div>
         </div>
         <footer class="bar text-lg-start">
             <div class="footerContent pt-2">
