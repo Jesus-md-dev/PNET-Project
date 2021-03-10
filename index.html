@@ -1,216 +1,56 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
     <head>
-        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-        <title>Principal</title> -->
-        <style>
-            body {
-                font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-                 sans-serif;
-                background-color: #ececec;
-                font-weight: 600;
-                font-size: 1em;
-                margin: 0;
-            }
-
-            #navbar {
-                width: 100%;
-                background-color: #141d26;
-                list-style-type: none;
-                text-decoration: none;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-                top: 0;
-            }
-
-            #navbar a{
-                text-decoration: none;
-                color: white;
-                
-            }
-
-            #navbar ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-                
-            }
-
-            #navbar li {
-                float: left;
-            }
-
-            #navbar li a,
-            .dropbtn {
-                display: inline-block;
-                color: white;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
-
-            #navbar li a:hover,
-            .dropdown:hover .dropbtn {
-                background-color: #1f2b36;
-            }
-
-            #navbar li.dropdown {
-                display: inline-block;
-            }
-
-            #navbar .dropdown-content {
-                display: none;
-                position: absolute;
-                background-color: #324455;
-                
-                min-width: 160px;
-                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-                z-index: 1;
-            }
-
-            #navbar .dropdown-content a {
-                color: white;
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-                text-align: left;
-            }
-
-            #navbar .dropdown-content a:hover {
-                background-color: #f1f1f1;
-            }
-
-            #navbar .dropdown:hover .dropdown-content {
-                display: block;
-            }
-            
-            footer {
-                bottom: 0;
-                width: 100%;
-                background-color: #141d26;
-                color: white
-            }
-
-            footer a {
-                color: white;
-            }
-
-            .footerContent {
-                margin: 2em;
-                display: flex;
-                justify-content: space-around;
-            }
-
-            p span {
-                display: block;
-                margin: 1em;
-            }
-
-            .title2 {
-                font-size: 1.5em;
-            }
-
-            
-            .icon {
-                max-height: 40px;
-            }
-
-            .center{
-                margin: 2em;
-                display: flex;
-                justify-content: space-around;
-            }
-
-            .description {
-                width: 70%;
-                /* height: 20em; */
-                background-color: #E5E5E5;
-                border: 0.01em solid;
-                border-radius: 5px;
-                height: 2000px;
-            }
-
-            .active {
-                background-color: #28394b;
-            }
-            
-            .notices {
-                width: 20%;
-                background-color: #A4B5C8;
-                border: 0.01em solid;
-                border-radius: 5px;
-            }
-            
-            .nbar-content {
-                overflow: hidden;
-            }
-
-            .nbar-item {
-                float: initial;
-            }
-
-            .menu {
-                justify-content: space-around;
-            }
-
-            .logo {
-                max-height: 1px;
-                float: left;
-                /* padding-top: 2px; */
-                /* margin-left: 5px; */
-                /* margin-bottom: 1px; */
-            }
-
-            .logo-name {
-                text-align: center;
-                float: right;
-            }
-
-            .logo .icon {
-                vertical-align: middle;
-                padding-top: 2.5px;
-                padding-left: 10px; 
-                margin-right: -15px;   
-            }
-
-        </style>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+                    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+        <title>Principal</title>
     </head>
+
     <body>
-        <nav id="navbar">
-            <!--  -->
+        <nav id="nvbar">
             <div class="logo">
-                <img src="/img/logo.png" alt="" class="icon" style="float: left;">
                 <ul>
-                    <li><a href="" class="logo-name">Espacio Metronomo</a></li>
+                    <li><a href="" class="logo-name">
+                        <img src="/img/logo.png" alt="" class="icon">
+                        Espacio Metrónomo</a>
+                    </li>
                 </ul>
             </div>
-            <div class="" style="float: right;">
+            <div id="nvbar-menu">
                 <ul>
-                    <li><a href="" class="active">Principal</a></li>
-                    <li class="dropdown">
-                        <a href="" class="dropbtn">Salas</a>
-                        <div class="dropdown-content">
+                    <li><a href="index.html" class="active">Principal</a></li>
+                    <li class="drpdown">
+                        <a href="salas.html" class="drpbtn">
+                            Salas
+                            <i class="fas fa-caret-down"></i>
+                        </a>
+                        <div class="drpdown-content">
                             <a href="">Sala 1</a>
                             <a href="">Sala 2</a>
                             <a href="">Sala 3</a>
                         </div>
                     </li>
-                    <li><a href="" class="">Reserva</a></li>
-                    <li><a href="" class="">Localización</a></li>
+                    <li><a href="reserva.html">Reserva</a></li>
+                    <li><a href="localizacion.html">Localización</a></li>
                 </ul>
             </div>
         </nav>
 
         <header>
-
+            <h1>Espacio Metrónomo</h1>
+            <h3>Conocenos un poco más</h3>
         </header>
         
         <div class="center">
-            <div class="description">
-                <div class="">
-                    <div class="">
+            <div class="description container-fluid">
+                <div class="container_information">
+                    <div class="information align-items-center">
                         <p> 
                             <span>
                                 En nuestro local contamos con diferentes salas totalmente
@@ -222,28 +62,56 @@
                             </span>
                         </p>
                     </div>
-                    <div img src="img/sala1.jpeg" class="col-5 m-2 img-fluid"></div>
+                    <div class="information">
+                        <img src="img/sala1.jpeg" class="img-fluid rounded">
+                    </div>
+                    <div class="information">
+                        <img src="img/sala2.jpg" class="img-fluid rounded">
+                    </div>
+                    <div class="information align-items-center p-3">
+                        <p>
+                            Si no tienes instrumentos en casa o te supone una carga llevarlos hasta la sala, no te preocupes, nuestro local dispone de diversos instrumentos, desde micrófonos hasta guitarras con amplificadores.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="notices">Noticias</div>
+            <aside class="notices">Noticias
+                <div class="links">
+                    <p><a href="https://guitarrasinlimites.com/psicologia-y-consejos/como-tocar-mejor-la-guitarra-10-consejos-utiles/">Cómo tocar mejor la guitarra: 10 consejos útiles</a></p>
+                    <p><a href="https://www.lavozdigital.es/cadiz/lvdi-aplazado-2021-festival-no-sin-musica-202006231225_noticia.html">Aplazado a 2021 el festival No Sin Música de Cádiz</a></p>
+                    <p><a href="https://www.buscarinstrumentos.com/las-mejores-plataformas-aprender-piano-internet/">Aprender Piano Online-Guía con las mejores plataformas en Internet</a></p>
+                    <p><a href="https://www.monsterenergy.com/ar/es/products/monster-ultra/ultra-paradise">Ultra Paradise | Monster Energy Sin Azúcar (ahora en nuestras máquinas)</a></p>
+                    <p><a href="https://www.salir.com/los-mejores-bares-con-musica-en-directo-en-cadiz-art-1187.html">Los mejores bares con música en directo en Cádiz</a></p>
+                </div>
+            </aside>
         </div>
-        <footer class="bar text-lg-start">
-            <div class="footerContent pt-2">
-                <div> <span class="title2 text-center"> Nuestas Redes Sociales </span>
-                    <div class="d-flex justify-content-around">
+
+        <div class="images">
+            <img src="img/sala1.jpeg" class="img-fluid rounded">
+            <img src="img/sala4.jpg" class="img-fluid rounded">
+            <img src="img/sala1.jpeg" class="img-fluid rounded">
+            <img src="img/sala6.jpg" class="img-fluid rounded">
+        </div>
+
+        <footer class="bar ">
+            <div class="fterContent">
+                <div> 
+                    <span class="title2"> Nuestas Redes Sociales </span>
+                    <div class="logos">
                         <a href=""><img src="img/twitter.png" alt="" class="icon"></a>
                         <a href=""><img src="img/facebook.png" alt="" class="icon"></a>
                         <a href=""><img src="img/instagram.png" alt="" class="icon"></a>
                         <a href=""><img src="img/youtube.png" alt="" class="icon"></a>
                     </div>
                 </div>
-                <div class="text-center"> <span class="title2"> Información </span>
-                    <ul class="">
-                        <li>Condiciones del Servicio</li>
-                        <li>Como reservar una sala</li>
-                    </ul>
+                <div class=""> 
+                    <span class="title2"> Información </span>
+                    <div><a href="">Condiciones del Servicio</a></div>
+                    <div><a href="">Como reservar una sala</a></div>
                 </div>
-                <div> <span class="title2"> Contacto </span>
+                <div> 
+                    <span class="title2"> Contacto </span>
+
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" 
                         fill="currentColor" class="bi bi-signpost"
@@ -290,20 +158,11 @@
 
                 </div>
             </div>
-            <div class="">© Copyright - Espacio Metronomo - Iconos diseñados por 
+            <div>© Copyright - Espacio Metronomo - Iconos diseñados por 
                 <a href="https://www.freepik.com" title="Freepik">Freepik</a> 
                 de 
                 <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a>
             </div>
         </footer>
-        <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
-            integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
-            crossorigin="anonymous"></script> -->
     </body>
 </html>
