@@ -10,26 +10,24 @@
                 background-color: #ececec;
                 font-weight: 600;
                 font-size: 1em;
+                margin: 0;
             }
 
             #navbar {
                 width: 100%;
                 background-color: #141d26;
-                /* justify-content: space-between; */
-                /* overflow: hidden; */
                 list-style-type: none;
                 text-decoration: none;
                 margin: 0;
                 padding: 0;
                 overflow: hidden;
-                /* background-color: #333; */
                 top: 0;
-                margin: ;
             }
 
             #navbar a{
                 text-decoration: none;
                 color: white;
+                
             }
 
             #navbar ul {
@@ -37,6 +35,7 @@
                 margin: 0;
                 padding: 0;
                 overflow: hidden;
+                
             }
 
             #navbar li {
@@ -88,9 +87,8 @@
             }
             
             footer {
-                position: absolute;
                 bottom: 0;
-                width:max-content;
+                width: 100%;
                 background-color: #141d26;
                 color: white
             }
@@ -127,10 +125,15 @@
 
             .description {
                 width: 70%;
-                height: 20em;
+                /* height: 20em; */
                 background-color: #E5E5E5;
                 border: 0.01em solid;
                 border-radius: 5px;
+                height: 2000px;
+            }
+
+            .active {
+                background-color: #28394b;
             }
             
             .notices {
@@ -152,19 +155,40 @@
                 justify-content: space-around;
             }
 
+            .logo {
+                max-height: 1px;
+                float: left;
+                /* padding-top: 2px; */
+                /* margin-left: 5px; */
+                /* margin-bottom: 1px; */
+            }
+
+            .logo-name {
+                text-align: center;
+                float: right;
+            }
+
+            .logo .icon {
+                vertical-align: middle;
+                padding-top: 2.5px;
+                padding-left: 10px; 
+                margin-right: -15px;   
+            }
+
         </style>
     </head>
     <body>
         <nav id="navbar">
             <!--  -->
-            <div style="float: left;">
+            <div class="logo">
+                <img src="/img/logo.png" alt="" class="icon" style="float: left;">
                 <ul>
-                    <li><a href="" style="text-align: center;">Espacio Metronomo</a></li>
+                    <li><a href="" class="logo-name">Espacio Metronomo</a></li>
                 </ul>
             </div>
             <div class="" style="float: right;">
                 <ul>
-                    <li><a href="">Principal</a></li>
+                    <li><a href="" class="active">Principal</a></li>
                     <li class="dropdown">
                         <a href="" class="dropbtn">Salas</a>
                         <div class="dropdown-content">
