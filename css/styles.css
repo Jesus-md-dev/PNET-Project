@@ -41,9 +41,9 @@ footer a {
     color: white;
 }
 
-a {
+/* a {
     color: black;
-}
+} */
 
 p span {
     display: block;
@@ -53,15 +53,14 @@ p span {
 .fterContent {
     display: flex;
     justify-content: space-around;
+    margin-bottom: 10px;
 }
 
 .fterContent div{
-    /* display: flex; */
     justify-content: space-around;
 }
 
 .fterContent div ul{
-    /* display:; */
     list-style: none;
     text-align: center;
 }
@@ -160,7 +159,7 @@ p span {
     text-align: center;
     justify-content: center;
     width: 40%;
-
+    height: 40vh;
     margin: 5%;
     border-radius: 5px;
 }
