@@ -2,6 +2,176 @@ body{
     font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: #ececec;
     font-weight:800;
+    font-size: 1.3em;
+}
+
+header {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+header h1, header h3{
+    color: black;
+    font-weight: bold;
+    font-weight: 900;
+}
+
+header img{
+    width: 100%;
+    height: 200px;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #141d26;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+footer a {
+    color: white;
+}
+
+a {
+    color: black;
+}
+
+p span {
+    display: block;
+    margin: 1em;
+}
+
+.fterContent {
+    display: flex;
+    justify-content: space-around;
+}
+
+.fterContent div{
+    /* display: flex; */
+    justify-content: space-around;
+}
+
+.fterContent div ul{
+    /* display:; */
+    list-style: none;
+    text-align: center;
+}
+
+.fterContent .logos {
+    display: flex;
+    justify-content: space-around;
+}
+
+.icon {
+    max-height: 32px;
+}
+
+.title2 {
+    font-size: 1.5em;
+}
+
+.center{
+    margin: 2em;
+    display: flex;
+    justify-content: space-around;
+}
+
+.description{
+    width: 70%;
+    height: 100%;
+    background-color: #E5E5E5;
+    border: 0.01em;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.container_information{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.information{
+    width: 50%;
+    height: auto;
+    display: flex;
+}
+
+.notices{
+    width: 20%;
+    height: 100%;
+    background-color: #A4B5C8;
+    border: 0.01em solid;
+    border-radius: 5px;
+    text-align: center;
+    padding: 17px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.links{
+    padding: 15px 30px 0px 30px;
+}
+
+.images{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+
+.images img {
+    width: 25%;
+}
+
+.active {
+    background-color: #28394b;
+}
+
+.logo {
+    max-height: 1px;
+    float: left;
+}
+
+.logo-name {
+    margin-left: 10px;
+    margin-top: -3px;
+    text-align: center;
+    float: right;
+}
+
+.logo .icon {
+    max-height: 40px; 
+    margin-bottom: 5px;
+}
+
+.location-box {
+    text-align: center;
+    justify-content: center;
+    width: 40%;
+
+    margin: 5%;
+    border-radius: 5px;
+}
+
+.location-box img {
+    border-radius: 5px;
+    /* border: 1px solid black; */
+}
+
+.location-center {
+    display: flex;
 }
 
 #nvbar {
@@ -21,24 +191,7 @@ body{
     
 }
 
-header {
-    margin-top: 10px;
-    width: 100%;
-    text-align: center;
-    /* text-shadow: 5 5 10px black; */
-    color: white;
-    background-image: url("/img/header.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    padding-top: 40px;
-    padding-bottom: 30px;
-    
-}
-
-header h1, h3 {
-    
-    font-weight: bold;
-    font-weight: 900;
+#header-index h1, #header-index h3{
     color: white;
     text-shadow:
         -1px -1px 0 #000,  
@@ -47,9 +200,10 @@ header h1, h3 {
         1px 1px 0 #000;
 }
 
-header img{
-    width: 100%;
-    height: 200px;
+#header-index {
+    background-image: url("/img/header.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 #nvbar ul {
@@ -64,8 +218,7 @@ header img{
     float: left;
 }
 
-#nvbar li a,
-.drpbtn {
+#nvbar li a, .drpbtn {
     display: inline-block;
     color: white;
     text-align: center;
@@ -112,143 +265,10 @@ header img{
     float: right;
 }
 
-footer {
-    bottom: 0;
-    width: 100%;
-    background-color: #141d26;
-    color: white;
-    padding-top: 20px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-footer a {
-    color: white;
-}
-
-footer a{
-    color: white;
-}
-
-.fterContent {
-    
-    display: flex;
-    justify-content: space-around;
-}
-
-.fterContent div{
-    /* display: flex; */
-    justify-content: space-around;
-}
-
-.fterContent div ul{
-    /* display:; */
-    list-style: none;
-    text-align: center;
-}
-
-.fterContent .logos {
-    display: flex;
-    justify-content: space-around;
-}
-
-.icon {
-    max-height: 32px;
-}
-
-.title2 {
-    font-size: 1.5em;
-}
-
-p span {
-    display: block;
-    margin: 1em;
-}
-
-.center{
-    margin: 2em;
-    display: flex;
-    justify-content: space-around;
-}
-
-.description{
-    width: 70%;
-    height: 100%;
-    background-color: #E5E5E5;
-    border: 0.01em;
-    border-radius: 5px;
-    padding: 15px;
-}
-
-.container_information{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.information{
-    width: 50%;
-    height: auto;
-    display: flex;
-}
-
-.notices{
-    width: 20%;
-    height: 100%;
+#box-background {
     background-color: #A4B5C8;
-    border: 0.01em solid;
-    border-radius: 5px;
-    text-align: center;
-    padding: 17px;
-    font-weight: bold;
-    font-size: x-large;
-    color: black;
-    display: flex;
-    flex-direction: column;
-}
-
-.links{
-    padding: 15px 30px 0px 30px;
-    font-size: medium;
-}
-
-.images{
-    width: 25%;
-    display: flex;
-    flex-direction: row;
-    column-gap: 5px;
-    padding: 5px;
-}
-
-a {
-    color: black;
-    font-size: medium;
-}
-
-.active {
-    background-color: #28394b;
-}
-
-.logo {
-    max-height: 1px;
-    float: left;
-}
-
-.logo-name {
-    margin-left: 10px;
-    margin-top: -3px;
-    text-align: center;
-    float: right;
-}
-
-.logo .icon {
-    max-height: 30px; 
-    margin-bottom: 5px;
-    /* vertical-align: middle; */
-    /* padding-top: 2.5px; */
-    /* padding-left: 10px;  */
-    /* margin-right: -15px;    */
+    border-color: black;
+    border: 1px solid;
 }
             
 
@@ -265,8 +285,12 @@ a {
 
     .images{
         flex-direction: column;
-        row-gap: 5px;
-        width: 70%;
+        align-items: center;
+        row-gap: 10px;
+    }
+
+    .images img {
+        width: 50%;
     }
 
     .notices{
