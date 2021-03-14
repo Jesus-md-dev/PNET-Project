@@ -50,6 +50,29 @@ p span {
     margin: 1em;
 }
 
+table{
+    background-color: #E5E5E5;
+    width: 95%;
+}
+
+table, tr, td, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td, th {
+    text-align: center;
+}
+
+.col-container {
+  display: table;
+  /* width: 100%; */
+}
+.col {
+  display: table-cell;
+  /* padding: 16px; */
+}
+
 .fterContent {
     display: flex;
     justify-content: space-around;
@@ -173,6 +196,16 @@ p span {
     display: flex;
 }
 
+.left-box {
+    float: left;
+    width: 45%;
+}
+      
+.right-box {
+    float: right;
+    width: 45%;
+}
+
 #nvbar {
     width: 100%;
     background-color: #141d26;
@@ -269,7 +302,11 @@ p span {
     border-color: black;
     border: 1px solid;
 }
-            
+
+#table-title {
+    text-decoration: underline;
+    stroke: black;
+}
 
 @media screen and (max-width: 980px) {
     .container_information{
