@@ -50,22 +50,62 @@
 
     <div class="form_body">
         <form action="">
-            <div class="form">
-                <div class="grupo">
-                    <input type="text" name="" id="" required><span class="barra"></span>
-                    <label>Nombre</label>
+            <div class="agrupar_campos">
+                <div class="tipo_campo">
+                    <div class="grupo">
+                        <input type="text" name="" id="" required>
+                        <label>Nombre</label>
+                    </div>
+                    <div class="grupo">
+                        <input type="text" name="" id="" required>
+                        <label>Apellidos</label>
+                    </div>
+                    <div class="grupo">
+                        <input type="email" name="" id="" required>
+                        <label>Correo</label>
+                    </div>
+                    <div class="grupo">
+                        <input type="tel" name="" id="" required>
+                        <label>Teléfono</label>
+                    </div>
                 </div>
-                <div class="grupo">
-                    <input type="text" name="" id="" required><span class="barra"></span>
-                    <label>Apellidos</label>
+                <div class="tipo_campo">
+                    <div class="grupo">
+                        <select name="sala">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                        <label>Tipo de sala</label>
+                    </div>
+                    <div class="grupo">
+                        <input type="number" name="" id="" required>
+                        <label>Número de personas</label>
+                    </div>
                 </div>
-                <div class="grupo">
-                    <input type="email" name="" id="" required><span class="barra"></span>
-                    <label>Correo</label>
+            </div>
+            <div class="agrupar_campos">
+                <div class="tipo_campo">
+                    <div class="grupo">
+                        <input type="date" name="" id="" required>
+                        <label>Fecha</label>
+                    </div>
                 </div>
-                <div class="grupo">
-                    <input type="number" name="" id="" required><span class="barra"></span>
-                    <label>Teléfono</label>
+                <div class="tipo_campo">
+                    <div class="grupo">
+                        <input type="time" name="" id="" required>
+                        <label>Hora entrada</label>
+                    </div>
+                    <div class="grupo">
+                        <input type="time" name="" id="" required>
+                        <label>Hora salida</label>
+                    </div>
+                </div>
+                <div class="tipo_campo">
+                    <div class="grupo">
+                        <textarea name="" id="" rows="3"></textarea>
+                        <label>Solicitar material extra</label>
+                    </div>
                 </div>
                 <button type="submit">Enviar</button>
             </div>
