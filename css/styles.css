@@ -355,6 +355,9 @@ input:focus~label, input:valid~label{
 }
 
 @media screen and (max-width: 980px) {
+    .logo {
+        display: none;
+    }
     .fterContent {
         display: unset;
     }
