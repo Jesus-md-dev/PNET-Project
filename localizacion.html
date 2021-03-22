@@ -49,13 +49,13 @@
     </header>
 
     <div>
-        <div class="location-center">
+        <div class="box-container my-5">
             <!-- Paradas Mas Cercanas -->
-            <div id="box-background" class="location-box">
+            <div class="box box-height-set box-background">
                 <h2 class="font-weight-bold my-2"> Paradas mas cercanas </h2>
                 <div style="display: flex;">
                     <!-- Descripcion Bus -->
-                    <div style="width: 50%;">
+                    <div>
                         <h5 class="font-weight-bold">Bus: Av. Cayetano del Toro</h5>
                         <h5 class="font-weight-bold">1 Minuto</h5>
                         <div class="ml-2 mr-1">
@@ -74,13 +74,17 @@
                     </div>
                 </div>
             </div>
-            <img src="/img/edificio.png" class="location-box" alt="" style="object-fit: cover;">
+            <!-- Edificio -->
+            <img src="/img/edificio.png" class="box box-height-set" alt="" style="object-fit: cover;">
         </div>
-        <div style="display: flex;">
+
+        <div class="box-container my-5">
+            <!-- Mapa -->
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3206.954629449412!2d-6.279688784460681!3d36.506957291850455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dd24aff55f707%3A0xa710dbb664685377!2sAv.%20Cayetano%20del%20Toro%2C%2014%2C%2011010%20C%C3%A1diz!5e0!3m2!1ses!2ses!4v1615546909736!5m2!1ses!2ses"
-                class="location-box" title="" loading="lazy" style="object-fit: cove;"></iframe>
-            <div id="box-background" class="location-box">
+                class="box box-height-set" title="" loading="lazy" style="object-fit: cove;"></iframe>
+            <!-- Lugares Cercanos -->
+            <div class="box box-height-set box-background">
                 <img src="/img/playa.png" alt="" style="height: 50%; width: 100%; object-fit: cover;">
                 <div class="mt-4">
                     <div>
