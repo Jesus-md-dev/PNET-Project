@@ -24,6 +24,13 @@ header h1, header h3{
     font-weight: 900;
 }
 
+.subtitle {
+    font-size: 1.5em;
+    color: black;
+    font-weight: bold;
+    font-weight: 900;
+}
+
 header img{
     width: 100%;
     height: 200px;
@@ -41,8 +48,14 @@ footer {
     padding-right: 10px;
 }
 
+a {
+    color: black;
+    text-decoration: underline;
+}
+
 footer a {
     color: white;
+    text-decoration: none;
 }
 
 p span {
@@ -51,6 +64,7 @@ p span {
 }
 
 table{
+    table-layout:fixed;
     background-color: #E5E5E5;
     width: 95%;
 }
@@ -62,15 +76,6 @@ table, tr, td, th {
 
 td, th {
     text-align: center;
-}
-
-.col-container {
-  display: table;
-  /* width: 100%; */
-}
-.col {
-  display: table-cell;
-  /* padding: 16px; */
 }
 
 .fterContent {
@@ -102,7 +107,6 @@ td, th {
 }
 
 .center{
-    margin: 2em;
     display: flex;
     justify-content: space-around;
 }
@@ -289,32 +293,40 @@ button{
     margin: 10px auto;
 }
 
-.location-box {
+.form{
+    width: 100%;
+    margin: auto;
+}
+
+.box {
+    width: 45%;
+    height: min-content;
     text-align: center;
-    justify-content: center;
-    width: 40%;
+    border-radius: 5px;
+}
+
+.box-height-set {
     height: 40vh;
-    margin: 5%;
-    border-radius: 5px;
 }
 
-.location-box img {
-    border-radius: 5px;
-    /* border: 1px solid black; */
+.box-img {
+    object-fit: cover;
 }
 
-.location-center {
+.box-background {
+    background-color: #A4B5C8;
+    border-color: black;
+    border: 1px solid;
+}
+
+.box-container{
     display: flex;
+    justify-content: space-around;
 }
 
-.left-box {
-    float: left;
-    width: 45%;
-}
-      
-.right-box {
-    float: right;
-    width: 45%;
+.table-title {
+    text-decoration: underline;
+    stroke: black;
 }
 
 #nvbar {
@@ -332,21 +344,6 @@ button{
     text-decoration: none;
     color: white;
     
-}
-
-#header-index h1, #header-index h3{
-    color: white;
-    text-shadow:
-        -1px -1px 0 #000,  
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000;
-}
-
-#header-index {
-    background-image: url("/img/header.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
 }
 
 #nvbar ul {
@@ -408,18 +405,50 @@ button{
     float: right;
 }
 
-#box-background {
-    background-color: #A4B5C8;
-    border-color: black;
-    border: 1px solid;
+#header-index h1, #header-index h3{
+    color: white;
+    text-shadow:
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
-#table-title {
-    text-decoration: underline;
-    stroke: black;
+#header-index {
+    background-image: url("/img/header.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 
 @media screen and (max-width: 980px) {
+    .logo {
+        display: none;
+    }
+    .fterContent {
+        display: unset;
+    }
+
+    fterContent div{
+        justify-content: baseline;
+    }
+
+    .fterSection{
+        margin: 100px;
+    }
+
+    .box-container {
+        display: inline;
+    }
+
+    .box {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
     .container_information{
         flex-direction: column;
     }
