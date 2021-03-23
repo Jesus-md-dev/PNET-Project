@@ -329,6 +329,10 @@ button{
     stroke: black;
 }
 
+.logo-min {
+    display: none;
+}
+
 #nvbar {
     width: 100%;
     background-color: #141d26;
@@ -422,9 +426,6 @@ button{
 }
 
 @media screen and (max-width: 980px) {
-    .logo {
-        display: none;
-    }
     .fterContent {
         display: unset;
     }
@@ -480,6 +481,29 @@ button{
     form{
         flex-direction: column;
     }
-  }
+}
+
+@media screen and (max-width: 710px) {
+    .logo {
+        display: none;
+    }
+
+    .logo-min {
+        display: block;
+        max-height: 1px;
+        float: left;
+    }
+
+    .logo-min .icon {
+        max-height: 40px; 
+        margin-bottom: 5px;
+        margin-left: -12px;
+    }
+
+    .logo-name-min {
+        margin-top: -3px;
+        padding-right: 100px;
+    }
+}
 
   
