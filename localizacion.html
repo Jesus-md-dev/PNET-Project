@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
@@ -14,12 +13,23 @@
 </head>
 
 <body>
+    <!-- Barra de navegación -->
     <nav id="nvbar">
         <div class="logo">
             <ul>
-                <li><a href="" class="logo-name">
-                        <img src="/img/logo.png" alt="" class="icon">
-                        Espacio Metrónomo</a>
+                <li>
+                    <a href="index.html" class="logo-name">
+                        <img src="/img/logo.png" alt="Logo Espacio Metronomo" class="icon"> Espacio Metrónomo
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="logo-min">
+            <ul>
+                <li>
+                    <a href="index.html" class="logo-name-min ">
+                        <img src="/img/logo.png" alt="Logo Espacio Metronomo" class="icon">
+                    </a>
                 </li>
             </ul>
         </div>
@@ -32,9 +42,9 @@
                         <i class="fas fa-caret-down"></i>
                     </a>
                     <div class="drpdown-content">
-                        <a href="">Sala 1</a>
-                        <a href="">Sala 2</a>
-                        <a href="">Sala 3</a>
+                        <a href="salas.html#room1">Sala 1</a>
+                        <a href="salas.html#room2">Sala 2</a>
+                        <a href="salas.html#room3">Sala 3</a>
                     </div>
                 </li>
                 <li><a href="reserva.html">Reserva</a></li>
@@ -43,6 +53,7 @@
         </div>
     </nav>
 
+    <!-- Cabecera de la página -->
     <header>
         <h1>Cómo encontrarnos</h1>
         <h3>Te esperamos</h3>
@@ -53,39 +64,38 @@
             <!-- Paradas Mas Cercanas -->
             <div class="box box-height-set box-background">
                 <h2 class="font-weight-bold my-2"> Paradas mas cercanas </h2>
-                <div style="display: flex;">
+                <div class="d-flex">
                     <!-- Descripcion Bus -->
-                    <div>
+                    <div class="w-50">
                         <h5 class="font-weight-bold">Bus: Av. Cayetano del Toro</h5>
                         <h5 class="font-weight-bold">1 Minuto</h5>
                         <div class="ml-2 mr-1">
-                            <img src="/img/bus.png" alt="" style="width: 100%; height: 20vh; object-fit: cover;">
+                            <img src="/img/bus.png" alt="Parada de bus Avenida Cayetano del Toro" class="box-img w-100 vh-20 transport-img">
                         </div>
                         <a href="http://www.cmtbc.es/">Consorcio de Cádiz</a>
                     </div>
                     <!-- Descripcion Tren -->
-                    <div style="width: 50%;">
+                    <div class="w-50">
                         <h5 class="font-weight-bold">Tren: Estadio</h5>
                         <h5 class="font-weight-bold">7 Minutos</h5>
                         <div class="ml-1 mr-2">
-                            <img src="/img/tren.png" alt="" style="width: 100%; height: 20vh; object-fit: cover;">
+                            <img src="/img/tren.png" alt="Para de tren Estadio" class="box-img w-100 vh-20 transport-img">
                         </div>
                         <a href="https://www.renfe.com/es/es">Renfe</a>
                     </div>
                 </div>
             </div>
             <!-- Edificio -->
-            <img src="/img/edificio.png" class="box box-height-set" alt="" style="object-fit: cover;">
+            <img src="/img/edificio.png" class="box box-img box-height-set" alt="Local Espacio Metronomo">
         </div>
 
         <div class="box-container my-5">
             <!-- Mapa -->
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3206.954629449412!2d-6.279688784460681!3d36.506957291850455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dd24aff55f707%3A0xa710dbb664685377!2sAv.%20Cayetano%20del%20Toro%2C%2014%2C%2011010%20C%C3%A1diz!5e0!3m2!1ses!2ses!4v1615546909736!5m2!1ses!2ses"
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3206.954629449412!2d-6.279688784460681!3d36.506957291850455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dd24aff55f707%3A0xa710dbb664685377!2sAv.%20Cayetano%20del%20Toro%2C%2014%2C%2011010%20C%C3%A1diz!5e0!3m2!1ses!2ses!4v1615546909736!5m2!1ses!2ses"
                 class="box box-height-set" title="" loading="lazy"></iframe>
             <!-- Lugares Cercanos -->
             <div class="box box-height-set box-background">
-                <img src="/img/playa.png" alt="" style="height: 50%; width: 100%; object-fit: cover;">
+                <img src="/img/playa.png" alt="Chiringuito Beach Club Potito" class="box-img h-50 w-100">
                 <div class="mt-4">
                     <div>
                         Agradable lugar para degustar comida a pies de playa, solo a 300m de nuestro local
@@ -98,15 +108,16 @@
         </div>
     </div>
 
-    <footer class="bar">
+    <!-- Pie de página -->
+    <footer class="bar ">
         <div class="fterContent">
             <div>
                 <span class="title2"> Nuestas Redes Sociales </span>
                 <div class="logos">
-                    <a href=""><img src="img/twitter.png" alt="" class="icon"></a>
-                    <a href=""><img src="img/facebook.png" alt="" class="icon"></a>
-                    <a href=""><img src="img/instagram.png" alt="" class="icon"></a>
-                    <a href=""><img src="img/youtube.png" alt="" class="icon"></a>
+                    <a href=""><img src="img/twitter.png" alt="Icono Twitter" class="icon"></a>
+                    <a href=""><img src="img/facebook.png" alt="Icono Facebook" class="icon"></a>
+                    <a href=""><img src="img/instagram.png" alt="Icono Instagram" class="icon"></a>
+                    <a href=""><img src="img/youtube.png" alt="Icono YouTube" class="icon"></a>
                 </div>
             </div>
             <div class="">
@@ -118,53 +129,48 @@
                 <span class="title2"> Contacto </span>
 
                 <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-signpost" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-signpost" viewBox="0 0 16 16">
                         <path d="M7 1.414V4H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h5v6h2v-6h3.532a1 1 0 0 0 
-                                            .768-.36l1.933-2.32a.5.5 0 0 0 0-.64L13.3 4.36a1 1 0 0 0-.768-.36H9V1.414a1 
-                                            1 0 0 0-2 0zM12.532 5l1.666 2-1.666 2H2V5h10.532z" />
-                    </svg>
-                    Av. Cayetano del Toro, 14, Cádiz
+                                                    .768-.36l1.933-2.32a.5.5 0 0 0 0-.64L13.3 4.36a1 1 0 0 0-.768-.36H9V1.414a1 
+                                                    1 0 0 0-2 0zM12.532 5l1.666 2-1.666 2H2V5h10.532z" />
+                    </svg> Av. Cayetano del Toro, 14, Cádiz
                 </div>
 
                 <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-telephone" viewBox="0 0 16 16">
-                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661
-                                                1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608
-                                                4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 
-                                                0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 
-                                                1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 
-                                                1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 
-                                                1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 
-                                                2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 
-                                                .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 
-                                                1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 
-                                                1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 
-                                                18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
-                    </svg>
-                    +34 697 47 97 23
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                        <path
+                            d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661
+                                                     1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608
+                                                      4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 
+                                                      0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 
+                                                      1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 
+                                                      1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 
+                                                      1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 
+                                                      2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 
+                                                      .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 
+                                                      1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 
+                                                      1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 
+                                                      18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                    </svg> +34 697 47 97 23
                 </div>
 
                 <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-envelope" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
                         <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2
-                            2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13
-                            2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 
-                            8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 
-                            11.114l4.758-2.876L1 5.383v5.73z" />
-                    </svg>
-                    espacio.metronomo@gmail.com
+                                 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13
+                                 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 
+                                 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 
+                                 11.114l4.758-2.876L1 5.383v5.73z" />
+                    </svg> espacio.metronomo@gmail.com
                 </div>
 
             </div>
         </div>
         <div>© Copyright - Espacio Metronomo - Iconos diseñados por
-            <a href="https://www.freepik.com" title="Freepik">Freepik</a>
-            de
+            <a href="https://www.freepik.com" title="Freepik">Freepik</a> de
             <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a>
         </div>
     </footer>
 </body>
+
 </html>
