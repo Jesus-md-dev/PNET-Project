@@ -7,16 +7,25 @@ document.getElementById("numper").addEventListener('change', validarNumPersonas)
 document.getElementById("fecha").addEventListener('change', validarFecha);
 document.getElementById("horaent").addEventListener('change', validarHoras);
 document.getElementById("horasal").addEventListener('change', validarHoras);
+document.getElementById("sala").addEventListener('change', modificarNumPersonas);
+document.getElementById("btnSubmit").addEventListener('click', validar);
 
 //Comprobar campos para enviar
 function validar() {
+
     if (validarNombre() && validarApellidos() && validarCorreo() && validarTelefono() && validarNumPersonas() && validarFecha() && validarHoras()) {
         Swal.fire({
             icon: 'success',
             title: 'Reserva completada con éxito',
-            confirmButtonText: 'Aceptar',
-            confirmButtonColor: '#a4b5c8'
-        })
+            // confirmButtonText: 'Aceptar',
+            timerProgressBar: true,
+            showConfirmButton: false,
+            timer: 3000,
+            allowOutsideClick: false
+        });
+        setTimeout(() => {
+            document.getElementById("reservaForm").submit();
+        }, 3000);
     } else {
 
         Swal.fire({
@@ -133,17 +142,38 @@ function validarFecha() {
 //Validar horas
 function validarHoras() {
     let actual = new Date();
-    let hora_entrada = document.getElementById("horaent").value;
-    let hora_salida = document.getElementById("horasal").value;
     let sActual = actual.getFullYear() + "-" + (actual.getMonth() + 1) +
         "-" + actual.getDate()
+
+    let hora_entrada = document.getElementById("horaent").value;
+    let hora_salida = document.getElementById("horasal").value;
+
+    let apertura = new Date(sActual + " " + "08:00");
+    let cierre = new Date(sActual + " " + "22:00");
+
     let entrada = new Date(sActual + " " + hora_entrada);
     let salida = new Date(sActual + " " + hora_salida);
-    if (salida <= entrada || hora_entrada == "" || hora_salida == "") {
+
+    if (entrada < apertura || cierre < salida || salida <= entrada ||
+        hora_entrada == "" || hora_salida == "") {
         document.getElementById("error_horas").style.display = "block";
         return false;
     } else {
         document.getElementById("error_horas").style.display = "none";
         return true;
     }
+}
+
+function modificarNumPersonas() {
+    // let text = ;
+    let sala = document.getElementById("sala").value;
+    console.log(sala);
+    if (sala == 1)
+        document.getElementById("numperlabel").innerHTML = "N. de personas (4 max.)";
+    else if (sala == 2)
+        document.getElementById("numperlabel").innerHTML = "N. de personas (8 max.)";
+    else if (sala == 3)
+        document.getElementById("numperlabel").innerHTML = "N. de personas (5 max.)";
+    else
+        document.getElementById("numperlabel").innerHTML = "N. de personas (max.)";
 }

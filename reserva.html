@@ -61,7 +61,7 @@
 
     <div class="form_body">
         <!-- Formulario de reserva -->
-        <form action="/reserva.html" onsubmit="return validar()">
+        <form action="/reserva.html" id="reservaForm">
             <div class="agrupar_campos">
                 <div class="grupo">
                     <input type="text" id="nombre">
@@ -93,7 +93,7 @@
                 </div>
                 <div class="grupo">
                     <input type="number" id="numper">
-                    <label for="numper">Número de personas</label>
+                    <label for="numper" id="numperlabel">N. de personas (4 max.)</label>
                     <p id="error_personas" class="error">El número no es válido</p>
                 </div>
             </div>
@@ -103,6 +103,7 @@
                     <label for="fecha">Fecha</label>
                     <p id="error_fecha" class="error">La fecha no es válida</p>
                 </div>
+                <h4 class="font-weight-bold text-center"><u>Horario: (8:00 - 22:00)</u></h4>
                 <div class="grupo">
                     <input type="time" id="horaent">
                     <label for="horaent">Hora entrada</label>
@@ -116,7 +117,7 @@
                     <textarea id="material" rows="4"></textarea>
                     <label for="material">Solicitar material extra</label>
                 </div>
-                <button type="submit">Enviar</button>
+                <button type="button" id="btnSubmit">Enviar</button>
             </div>
         </form>
     </div>
