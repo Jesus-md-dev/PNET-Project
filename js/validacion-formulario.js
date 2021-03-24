@@ -1,3 +1,14 @@
+//Listeners
+document.getElementById("nombre").addEventListener('change', validarNombre);
+document.getElementById("apellidos").addEventListener('change', validarApellidos);
+document.getElementById("correo").addEventListener('change', validarCorreo);
+document.getElementById("telefono").addEventListener('change', validarTelefono);
+document.getElementById("numper").addEventListener('change', validarNumPersonas);
+document.getElementById("fecha").addEventListener('change', validarFecha);
+document.getElementById("horaent").addEventListener('change', validarHoras);
+document.getElementById("horasal").addEventListener('change', validarHoras);
+
+//Comprobar campos para enviar
 function validar() {
     if (validarNombre() && validarApellidos() && validarCorreo() && validarTelefono() && validarNumPersonas() && validarFecha() && validarHoras()) {
         Swal.fire({
@@ -45,19 +56,6 @@ function validarApellidos() {
     }
 }
 
-//Validar telefono
-function validarTelefono() {
-    let telefono = document.getElementById("telefono").value;
-    let telefonoER = /^\d{9}$/;
-    if (telefono == null || telefono.length == 0 || !telefonoER.test(telefono)) {
-        document.getElementById("error_telefono").style.display = "block";
-        return false;
-    } else {
-        document.getElementById("error_telefono").style.display = "none";
-        return true;
-    }
-}
-
 //Validar correo
 function validarCorreo() {
     let correo = document.getElementById("correo").value;
@@ -67,6 +65,19 @@ function validarCorreo() {
         return false;
     } else {
         document.getElementById("error_correo").style.display = "none";
+        return true;
+    }
+}
+
+//Validar telefono
+function validarTelefono() {
+    let telefono = document.getElementById("telefono").value;
+    let telefonoER = /^\d{9}$/;
+    if (telefono == null || telefono.length == 0 || !telefonoER.test(telefono)) {
+        document.getElementById("error_telefono").style.display = "block";
+        return false;
+    } else {
+        document.getElementById("error_telefono").style.display = "none";
         return true;
     }
 }
@@ -135,13 +146,4 @@ function validarHoras() {
         document.getElementById("error_horas").style.display = "none";
         return true;
     }
-}
-
-// Igualar Altura
-function equalHeight() {
-    document.getElementById("room1img").style.height = document.getElementById("room1").offsetHeight + "px";
-
-    document.getElementById("room2img").style.height = document.getElementById("room2").offsetHeight + "px";
-
-    document.getElementById("room3img").style.height = document.getElementById("room3").offsetHeight + "px";
 }
