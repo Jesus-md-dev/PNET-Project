@@ -267,17 +267,6 @@ button {
     border-radius: 5px;
 }
 
-.error {
-    color: red;
-    display: none;
-    font-size: 15px;
-}
-
-.location-box {
-    text-align: center;
-    border-radius: 5px;
-}
-
 .box-height-set {
     height: 40vh;
 }
@@ -287,11 +276,6 @@ button {
     border-radius: 5px;
 }
 
-.transport-img {
-    width: 100%;
-    height: 20vh
-}
-
 .box-background {
     background-color: #A4B5C8;
 }
@@ -299,6 +283,17 @@ button {
 .box-container {
     display: flex;
     justify-content: space-around;
+}
+
+.error {
+    color: red;
+    display: none;
+    font-size: 15px;
+}
+
+.transport-img {
+    width: 100%;
+    height: 20vh
 }
 
 .table-title {
@@ -414,14 +409,13 @@ button {
         margin: 100px;
     }
     .box-container {
-        display: inline;
+        flex-direction: column;
+        align-items: center;
     }
     .box {
-        width: 100%;
+        width: 90%;
         margin-top: 10px;
         margin-bottom: 10px;
-        margin-left: 5px;
-        margin-right: 5px;
     }
     .container_information {
         flex-direction: column;
