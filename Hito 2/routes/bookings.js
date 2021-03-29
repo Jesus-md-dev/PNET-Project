@@ -12,7 +12,7 @@ router.get('/', function (req, res) {
             });
         } else if (bookings === null) {
             res.status(500).send({
-                msg: "bookings null"
+                msg: "Bookings null"
             });
         } else {
             res.status(200).send(bookings);
@@ -62,7 +62,7 @@ router.get('/:_id', function (req, res) {
             });
         } else if (booking === null) {
             res.status(500).send({
-                msg: "bookings null"
+                msg: "Booking null"
             });
         } else {
             res.status(200).send(booking);
