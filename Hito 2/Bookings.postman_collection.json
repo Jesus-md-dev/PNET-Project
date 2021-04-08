@@ -1,68 +1,14 @@
 {
 	"info": {
-		"_postman_id": "e6e64331-2856-406a-bfba-ee0a3b049128",
+		"_postman_id": "23af03aa-f840-48de-b2da-aa13fbcc7683",
 		"name": "Bookings",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "GET Bookings",
+			"name": "Bookings",
 			"request": {
 				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/bookings",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"bookings"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "POST Bookings",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/bookings",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"bookings"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "PUT Bookings",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/bookings",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"bookings"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "DELETE Bookings",
-			"request": {
-				"method": "DELETE",
 				"header": [],
 				"url": {
 					"raw": "localhost:8080/bookings",
@@ -83,14 +29,14 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/bookings/6061f1c34bd7525a48b5f1a3",
+					"raw": "localhost:8080/bookings/6061f5364bd7525a48b5f1a4",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"bookings",
-						"6061f1c34bd7525a48b5f1a3"
+						"6061f5364bd7525a48b5f1a4"
 					]
 				}
 			},
@@ -102,27 +48,27 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/bookings/6061f1c24bd7525a48b5f1a1",
+					"raw": "localhost:8080/bookings/6061f5364bd7525a48b5f1a4",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"bookings",
-						"6061f1c24bd7525a48b5f1a1"
+						"6061f5364bd7525a48b5f1a4"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "PUT Booking",
+			"name": "POST Bookings",
 			"request": {
-				"method": "PUT",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"The Lion King\",\r\n    \"director\": [\r\n        \"Rob Minkoff\",\r\n        \"Roger Allers\"\r\n    ],\r\n    \"year\": 1992\r\n}",
+					"raw": "{\r\n    \"name\": \"Selestina\",\r\n    \"email\": \"sbraga0@simplemachines.org\",\r\n    \"room_type\": 3\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -130,14 +76,59 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/bookings/6061f1c24bd7525a48b5f1a1",
+					"raw": "localhost:8080/bookings",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Bookings",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Matelda\",\r\n    \"email\": \"mminghetti1@topsy.com\",\r\n    \"room_type\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/bookings/6061f5544bd7525a48b5f1a5",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"bookings",
-						"6061f1c24bd7525a48b5f1a1"
+						"6061f5544bd7525a48b5f1a5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Bookings",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/bookings",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookings"
 					]
 				}
 			},
