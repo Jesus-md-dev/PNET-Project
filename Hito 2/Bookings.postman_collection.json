@@ -6,6 +6,24 @@
 	},
 	"item": [
 		{
+			"name": "GET Bookings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/bookings",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "POST Bookings",
 			"request": {
 				"method": "POST",
@@ -123,5 +141,7 @@
 					]
 				}
 			},
+			"response": []
+		}
 	]
 }
