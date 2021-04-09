@@ -1,0 +1,1 @@
+- Este ejemplo de cliente va asociado al ejemplo de servidor de la primera sesión "Peliculas-BBDD".
