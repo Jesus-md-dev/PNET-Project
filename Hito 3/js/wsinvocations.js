@@ -1,24 +1,25 @@
-function jsonToHtml(movie) {
+function jsonToHtml(booking) {
     var keys = [];
-    string = "";
-    for(var k in movie) keys.push(k);
-    for(var i = 0; i < Object.keys(movie).length; ++i)
+    // string = "<div>";
+    for(var k in booking) keys.push(k);
+    for(var i = 0; i < Object.keys(booking).length; ++i)
     {
-        string += "<p>" + keys[i] + ": " + movie[keys[i]] + "</p>"
+        string += "<p>" + keys[i] + ": " + booking[keys[i]] + "</p>"
     }
+    // string += "</div>"
     return string;
 }
 
-function jsonsToHtml(movies) {
+function jsonsToHtml(bookings) {
     string = "";
-    for (var i = 0; i < Object.keys(movies).length; ++i) {
-        string += jsonToHtml(movies[i]);
+    for (var i = 0; i < Object.keys(bookings).length; ++i) {
+        string += jsonToHtml(bookings[i]);
     }
     return string;
 }
 
-function getMovie(movieId) {
-    var myUrl = "http://localhost:8080/movies/" + movieId;
+function getBooking(movieId) {
+    var myUrl = "http://localhost:8080/bookings/" + movieId;
     $.ajax({
         type: "GET",
         dataType: "json",
@@ -32,10 +33,10 @@ function getMovie(movieId) {
     });
 }
 
-function postMovie() {
+function postBooking() {
     $.ajax({
         type: "POST",
-        url: "http://localhost:8080/movies/",
+        url: "http://localhost:8080/bookings/",
         contentType: "application/json",
         dataType: "text",
         data: JSON.stringify({
@@ -52,8 +53,8 @@ function postMovie() {
     });
 }
 
-function getAllMovies() {
-    var myUrl = "http://localhost:8080/movies/";
+function getAllBookings() {
+    var myUrl = "http://localhost:8080/bookings/";
     $.ajax({
         type: "GET",
         dataType: "json",
@@ -67,8 +68,8 @@ function getAllMovies() {
     });
 }
 
-function deleteMovie(movieId) {
-    var myUrl = "http://localhost:8080/movies/" + movieId;
+function deleteBooking(movieId) {
+    var myUrl = "http://localhost:8080/bookings/" + movieId;
     $.ajax({
         type: "DELETE",
         dataType: "text",
@@ -82,8 +83,8 @@ function deleteMovie(movieId) {
     });
 }
 
-function putMovie(movieId) {
-    var myUrl = "http://localhost:8080/movies/" + movieId;
+function putBooking(movieId) {
+    var myUrl = "http://localhost:8080/bookings/" + movieId;
     $.ajax({
         type: "PUT",
         url: myUrl,
