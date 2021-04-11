@@ -8,15 +8,30 @@
 
 	<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
 	<script type="text/javascript" src="js/wsinvocations.js"></script>
+	<style>
+		div {
+			border: 1px solid black;
+			margin-top: 5px;
+			margin-bottom: 5px;
+			padding-left: 10px;
+		}
+		.keys{
+			font-weight: bold;
+		}
+	</style>
 </head>
 <body>
 	<h1>Bookings Client</h1>
+	
 	<input type="button" value="POST Booking" onclick="postBooking()" />
-	<input type="button" value="GET Booking" onclick="getBooking('6070280985e7464c406834e9')" />
 	<input type="button" value="GET Bookings" onclick="getAllBookings()" />
-	<input type="button" value="DELETE Booking" onclick="deleteBooking('60700ddeb6eed75d1cdf3375')" />
-	<input type="button" value="PUT Booking" onclick="putBooking('6070280985e7464c406834e9')" />
+	<input type="button" value="GET Booking" id="GetBookingButton"/>
+	<input type="text" name="_idIpt" id="_idInput">
+	
+	<span id="resPelicula"></span>
 
-	<div id="resPelicula"></div>
 </body>
+<script>
+	$("#GetBookingButton").click(function () { getBooking($("#_idInput").val()) });
+</script>
 </html>
