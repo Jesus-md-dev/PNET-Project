@@ -1,12 +1,13 @@
-// Recibe una reserva en forma de json y devuelve el html en forma de cadena equivalente junto con sus botones
+// Recibe una reserva en forma de json y devuelve el html 
+// en forma de cadena equivalente junto con sus botones
 function jsonToHtml(booking) {
     let string = "<div class='admin_div' >";
-    string += "<p>" + Object.keys(booking)[0] + ": "
+    string += "<p>" + Object.keys(booking)[0] + " "
      + booking[Object.keys(booking)[0]] + "</p>"
     for(var i = 1; i < Object.keys(booking).length; ++i)
     {
         string += "<p><label for='" + booking._id + Object.keys(booking)[i] + "'>" 
-            + Object.keys(booking)[i] + ": </label>" 
+            + Object.keys(booking)[i] + " </label>" 
             + "<input type='text' id='" + booking._id + Object.keys(booking)[i] + "' value='" 
             + booking[Object.keys(booking)[i]] + "'></p>";
     }
