@@ -1,182 +1,41 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <title>Principal</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+		integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="js/wsinvocations.js"></script>
+
+	<style>
+		.keys {
+			font-weight: bold;
+		}
+	</style>
+
+	<title>Admin</title>
 </head>
 
 <body>
-    <!-- Barra de navegación -->
-    <nav id="nvbar">
-        <div class="logo">
-            <ul>
-                <li>
-                    <a href="index.html" class="logo-name">
-                        <img src="/img/logo.png" alt="Logo Espacio Metronomo" class="icon"> Espacio Metrónomo
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="logo-min">
-            <ul>
-                <li>
-                    <a href="index.html" class="logo-name-min ">
-                        <img src="/img/logo.png" alt="Logo Espacio Metronomo" class="icon">
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div id="nvbar-menu">
-            <ul>
-                <li><a href="index.html" class="active">Principal</a></li>
-                <li class="drpdown">
-                    <a href="salas.html" class="drpbtn">
-                        Salas
-                        <i class="fas fa-caret-down"></i>
-                    </a>
-                    <div class="drpdown-content">
-                        <a href="salas.html#room1">Sala 1</a>
-                        <a href="salas.html#room2">Sala 2</a>
-                        <a href="salas.html#room3">Sala 3</a>
-                    </div>
-                </li>
-                <li><a href="reserva.html">Reserva</a></li>
-                <li><a href="localizacion.html">Localización</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <!-- Cabecera de la página -->
-    <header id="header-index">
-        <h1>Espacio Metrónomo</h1>
-        <h3>Conocenos un poco más</h3>
-    </header>
+	<h1>Bookings Client</h1>
+	
+	<input type="button" value="POST Booking" onclick="postBooking()" />
+	<input type="button" value="GET Bookings" onclick="getAllBookings()" />
+	<input type="button" value="GET Booking" id="GetBookingButton" />
+	<input type="text" name="_idIpt" id="_idInput">
+	
+	<span id="resPelicula"></span>
 
-    <div class="center m-5">
-        <!-- Descripción del local -->
-        <div class="description container-fluid">
-            <div class="container_information">
-                <div class="information align-items-center">
-                    <p>
-                        <span>
-                            En nuestro local contamos con diferentes salas totalmente
-                            insonorizadas y preparadas para que puedas ensayar sin molestar.
-                        </span>
-                        <span>
-                            Disponemos de red wifi, taquillas, máquinas expendedoras e
-                            incluso salas con sofás para los descansos.
-                        </span>
-                    </p>
-                </div>
-                <div class="information">
-                    <img src="img/sala1.jpeg" class="img-fluid rounded" alt="Sala con guitarras, batería, micrófono y amplificadores">
-                </div>
-                <div class="information">
-                    <img src="img/sala2.jpg" class="img-fluid rounded" alt="Sala con batería, amplificadores, micrófonos y un sofá">
-                </div>
-                <div class="information align-items-center p-3">
-                    <p>
-                        Si no tienes instrumentos en casa o te supone una carga llevarlos hasta la sala, no te preocupes, nuestro local dispone de diversos instrumentos, desde micrófonos hasta guitarras con amplificadores.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!-- Noticias -->
-        <aside class="notices">
-            <h3 class="font-weight-bold">Noticias</h3>
-            <div class="links">
-                <p><a href="https://guitarrasinlimites.com/psicologia-y-consejos/como-tocar-mejor-la-guitarra-10-consejos-utiles/">Cómo
-                        tocar mejor la guitarra: 10 consejos útiles</a></p>
-                <p><a href="https://www.lavozdigital.es/cadiz/lvdi-aplazado-2021-festival-no-sin-musica-202006231225_noticia.html">Aplazado
-                        a 2021 el festival No Sin Música de Cádiz</a></p>
-                <p><a href="https://www.buscarinstrumentos.com/las-mejores-plataformas-aprender-piano-internet/">Aprender
-                        Piano Online-Guía con las mejores plataformas en Internet</a></p>
-                <p><a href="https://www.monsterenergy.com/ar/es/products/monster-ultra/ultra-paradise">Ultra Paradise |
-                        Monster Energy Sin Azúcar (ahora en nuestras máquinas)</a></p>
-                <p><a href="https://www.salir.com/los-mejores-bares-con-musica-en-directo-en-cadiz-art-1187.html">Los
-                        mejores bares con música en directo en Cádiz</a></p>
-            </div>
-        </aside>
-    </div>
-
-    <!-- Imágenes -->
-    <div class="images">
-        <img src="img/sala3.jpg" class="rounded" alt="Sala con batería, aplificadores, altavoces, pies de micro y bancos">
-        <img src="img/sala4.jpg" class="rounded" alt="Sala con atriles, batería, altavoz, tambores y bancos">
-        <img src="img/sala5.jpg" class="rounded" alt="Sala con batería, amplificadores, altavoces y un sofá">
-        <img src="img/sala6.jpg" class="rounded" alt="Pasillo con las diferentes salas">
-    </div>
-
-    <!-- Pie de página -->
-    <footer class="bar ">
-        <div class="fterContent">
-            <div>
-                <span class="title2"> Nuestas Redes Sociales </span>
-                <div class="logos">
-                    <a href=""><img src="img/twitter.png" alt="Icono Twitter" class="icon"></a>
-                    <a href=""><img src="img/facebook.png" alt="Icono Facebook" class="icon"></a>
-                    <a href=""><img src="img/instagram.png" alt="Icono Instagram" class="icon"></a>
-                    <a href=""><img src="img/youtube.png" alt="Icono YouTube" class="icon"></a>
-                </div>
-            </div>
-            <div class="">
-                <span class="title2"> Información </span>
-                <div><a href="">Condiciones del Servicio</a></div>
-                <div><a href="">Como reservar una sala</a></div>
-            </div>
-            <div>
-                <span class="title2"> Contacto </span>
-
-                <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-signpost" viewBox="0 0 16 16">
-                        <path d="M7 1.414V4H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h5v6h2v-6h3.532a1 1 0 0 0 
-                                                .768-.36l1.933-2.32a.5.5 0 0 0 0-.64L13.3 4.36a1 1 0 0 0-.768-.36H9V1.414a1 
-                                                1 0 0 0-2 0zM12.532 5l1.666 2-1.666 2H2V5h10.532z" />
-                    </svg> Av. Cayetano del Toro, 14, Cádiz
-                </div>
-
-                <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
-                        <path
-                            d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661
-                                                 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608
-                                                  4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 
-                                                  0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 
-                                                  1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 
-                                                  1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 
-                                                  1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 
-                                                  2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 
-                                                  .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 
-                                                  1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 
-                                                  1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 
-                                                  18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
-                    </svg> +34 697 47 97 23
-                </div>
-
-                <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2
-                             2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13
-                             2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 
-                             8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 
-                             11.114l4.758-2.876L1 5.383v5.73z" />
-                    </svg> espacio.metronomo@gmail.com
-                </div>
-
-            </div>
-        </div>
-        <div>© Copyright - Espacio Metronomo - Iconos diseñados por
-            <a href="https://www.freepik.com" title="Freepik">Freepik</a> de
-            <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a>
-        </div>
-    </footer>
 </body>
-
+<script>
+	$("#GetBookingButton").click(function () { getBooking($("#_idInput").val()) });
+</script>
 </html>
