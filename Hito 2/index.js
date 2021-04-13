@@ -6,9 +6,9 @@ const path = require('path');
 const PORT = process.env.PORT || 8080;
 const bodyParser = require('body-parser');
 const baseAPI = '/api/v1';
+const cors = require('cors');
 const bookingsService = require('./routes/bookings-service');
 const bookings = require('./routes/bookings');
-const cors = require('cors');
 
 app.use(bodyParser.json());
 app.use(logger('dev'));
