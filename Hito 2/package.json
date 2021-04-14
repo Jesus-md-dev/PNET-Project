@@ -1,11 +1,12 @@
 {
-  "name": "servicios-rest",
+  "name": "hito2y3",
   "version": "1.0.0",
+  "description": "api reservas con mongodb",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Claudia Silvestre",
+  "author": "Claudia Silvestre y Jesus Marquez",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -13,7 +14,5 @@
     "express": "^4.17.1",
     "mongodb": "^3.6.6",
     "morgan": "^1.10.0"
-  },
-  "devDependencies": {},
-  "description": ""
+  }
 }

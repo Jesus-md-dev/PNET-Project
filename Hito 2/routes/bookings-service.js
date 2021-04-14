@@ -3,8 +3,7 @@
 const MongoClient = require('mongodb').MongoClient;
 let db;
 let ObjectId = require('mongodb').ObjectID;
-const Bookings = function () {
-};
+const Bookings = function () {};
 
 Bookings.prototype.connectDb = function (callback) {
     MongoClient.connect("mongodb+srv://testPNET:testPNET123@jmd-pnet-2020-2021.tejai.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
