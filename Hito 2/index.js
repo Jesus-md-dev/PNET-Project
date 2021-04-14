@@ -1,14 +1,14 @@
 const express = require('express');
-const app = express();
 const logger = require('morgan');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 const http = require('http');
 const path = require('path');
+const app = express();
 const PORT = process.env.PORT || 8080;
-const bodyParser = require('body-parser');
 const baseAPI = '/api/v1';
 const bookingsService = require('./routes/bookings-service');
 const bookings = require('./routes/bookings');
-const cors = require('cors');
 
 app.use(bodyParser.json());
 app.use(logger('dev'));
