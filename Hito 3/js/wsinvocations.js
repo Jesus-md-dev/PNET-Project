@@ -7,7 +7,7 @@ function jsonToHtml(booking) {
     for(var i = 1; i < Object.keys(booking).length; ++i)
     {
         string += "<p><label for='" + booking._id + Object.keys(booking)[i] + "'>" 
-            + Object.keys(booking)[i] + " </label>" 
+            + Object.keys(booking)[i] + ": " + " </label>" 
             + "<input type='text' id='" + booking._id + Object.keys(booking)[i] + "' value='" 
             + booking[Object.keys(booking)[i]] + "'></p>";
     }
@@ -42,6 +42,16 @@ function getBookingInputValues(booking){
     return data
 }  
 
+// Devuelve un json con los valores introducidos en los campos de la reserva a publicar
+function getPostBookingInputValues() {
+    let data = { 
+        "name": $("#name_post").val(),
+        "email": $("#email_post").val(),
+        "room_type": $("#room_type_post").val()
+    };
+    return data
+}
+
 //Recibe el ID de una reserva y la busca para mostrarla en pantalla
 function getBooking(bookingId) {
     var myUrl = "http://localhost:8080/bookings/" + bookingId;
@@ -59,17 +69,14 @@ function getBooking(bookingId) {
     });
 }
 
+//Publica una nueva reserva a partir de los datos introducidos en las entradas
 function postBooking() {
     $.ajax({
         type: "POST",
         url: "http://localhost:8080/bookings/",
         contentType: "application/json",
         dataType: "text",
-        data: JSON.stringify({
-            "title": "Dunkirk",
-            "director": "Christopher Nolan",
-            "year": 2017
-        }),
+        data: JSON.stringify(getPostBookingInputValues()),
         success: function(data) {
             $("#resBooking").html(data);
         },
