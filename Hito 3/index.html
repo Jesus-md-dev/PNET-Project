@@ -24,17 +24,38 @@
 </head>
 
 <body>
-
-	<h1>Bookings Client</h1>
-	
-	<input type="button" value="POST Booking" onclick="postBooking()" />
-	<input type="button" value="GET Bookings" onclick="getAllBookings()" />
-	<input type="button" value="GET Booking" id="GetBookingButton" />
-	<input type="button" value="DELETE Bookings" onclick="deleteBookings()" />
-	<input type="text" name="_idIpt" id="_idInput">
-	
-	<span id="resBooking"></span>
-
+	<div class="bookings_menu">
+		<h1>Bookings Client</h1>
+		
+		<div class="post">
+			<div>
+				<p>
+				<label for="name_post">name: </label>
+				<input type="text" id="name_post">
+				</p>
+				<p>
+					<label for="email_post">email: </label>
+					<input type="text" id="email_post">
+				</p>
+				<p>
+					<label for="room_type_post">room_type: </label>
+					<input type="text" id="room_type_post">
+				</p>
+			</div>
+			<div>
+				<input type="button" value="POST Booking" onclick="postBooking()" />
+			</div>
+		</div>
+		<div>
+			<input type="button" value="GET Bookings" onclick="getAllBookings()" />
+			<input type="button" value="DELETE Bookings" onclick="deleteBookings()" />
+			<input type="button" value="GET Booking" id="GetBookingButton" />
+			
+			<input type="text" name="_idIpt" id="_idInput">
+			
+			<span id="resBooking"></span>
+		</div>
+	</div>
 </body>
 <script>
 	$("#GetBookingButton").click(function () { getBooking($("#_idInput").val()) });
