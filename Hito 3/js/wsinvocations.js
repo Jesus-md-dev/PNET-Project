@@ -50,7 +50,7 @@ function getBooking(bookingId) {
         dataType: "json",
         url: myUrl,
         success: function(data) {
-            $("#resPelicula").html(jsonToHtml(data[0]));
+            $("#resBooking").html(jsonToHtml(data[0]));
             insertOnClick(data[0])
         },
         error: function(res) {
@@ -71,7 +71,7 @@ function postBooking() {
             "year": 2017
         }),
         success: function(data) {
-            $("#resPelicula").html(data);
+            $("#resBooking").html(data);
         },
         error: function(res) {
             alert("ERROR: " + res.statusText);
@@ -87,7 +87,7 @@ function getAllBookings() {
         dataType: "json",
         url: myUrl,
         success: function(data) {
-            $("#resPelicula").html(jsonsToHtml(data));
+            $("#resBooking").html(jsonsToHtml(data));
             insertAllOnClick(data);
         },
         error: function(res) {
@@ -104,9 +104,25 @@ function deleteBooking(bookingId) {
         dataType: "text",
         url: myUrl,
         success: function (data) {
-            $("#resPelicula").html(data);
+            $("#resBooking").html(data);
         },
         error: function (res) {
+            alert("ERROR " + res.statusText);
+        }
+    });
+}
+
+//Borra todas las reservas
+function deleteBookings() {
+    var myUrl = "http://localhost:8080/bookings/";
+    $.ajax({
+        type: "DELETE",
+        dataType: "text",
+        url: myUrl,
+        success: function(data) {
+            $("#resBooking").html(data);
+        },
+        error: function(res) {
             alert("ERROR " + res.statusText);
         }
     });
@@ -122,7 +138,7 @@ function putBooking(booking) {
         dataType: "text",
         data: JSON.stringify(getBookingInputValues(booking)),
         success: function (data) {
-            $("#resPelicula").html(data);
+            $("#resBooking").html(data);
         },
         error: function (res) {
             alert("ERROR: " + res.statusText);
