@@ -1,12 +1,12 @@
 {
-  "name": "hito2y3",
+  "name": "pnet",
   "version": "1.0.0",
-  "description": "api reservas con mongodb",
+  "description": "api con mongodb",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Claudia Silvestre y Jesus Marquez",
+  "author": "Claudia Silvestre Muñoz",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",

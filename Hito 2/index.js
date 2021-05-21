@@ -7,8 +7,8 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 8080;
 const baseAPI = '/api/v1';
-const bookingsService = require('./routes/bookings-service');
-const bookings = require('./routes/bookings');
+const smartphonesService = require('./routes/smartphones-service');
+const smartphones = require('./routes/smartphones');
 
 app.use(bodyParser.json());
 app.use(logger('dev'));
@@ -17,13 +17,13 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(cors());
-app.use('/bookings', bookings);
+app.use('/smartphones', smartphones);
 
 const server = http.createServer(app);
 
-bookingsService.connectDb(function (err) {
+smartphonesService.connectDb(function (err) {
     if (err) {
-        console.log('Could not connect with MongoDB – bookingsService');
+        console.log('Could not connect with MongoDB – smartphonesService');
         process.exit(1);
     }
 
