@@ -13,4 +13,6 @@
     <string name="action_programa">Programa</string>
     <string name="action_fechas">Fechas importantes</string>
     <string name="action_localizacion">Localización</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 </resources>

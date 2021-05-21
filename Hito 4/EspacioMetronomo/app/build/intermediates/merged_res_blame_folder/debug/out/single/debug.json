@@ -24,6 +24,14 @@
         "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi_example_appwidget_preview.png.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\drawable-nodpi\\example_appwidget_preview.png"
+    },
+    {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\xml_espacio_metronomo_widget_info.xml.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\xml\\espacio_metronomo_widget_info.xml"
+    },
+    {
         "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
@@ -40,12 +48,20 @@
         "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo.jpeg.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\drawable\\logo.jpeg"
+    },
+    {
         "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\layout_espacio_metronomo_widget.xml.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\layout\\espacio_metronomo_widget.xml"
     },
     {
         "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",

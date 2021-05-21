@@ -19,6 +19,16 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.EspacioMetronomo" >
+        <receiver android:name="es.uca.espaciometronomo.EspacioMetronomoWidget" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/espacio_metronomo_widget_info" />
+        </receiver>
+
         <activity
             android:name="es.uca.espaciometronomo.MainActivity"
             android:label="@string/app_name"

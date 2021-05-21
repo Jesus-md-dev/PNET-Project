@@ -1,3 +1,5 @@
+es/uca/espaciometronomo/EspacioMetronomoWidget.java
+ es.uca.espaciometronomo.EspacioMetronomoWidget
 es/uca/espaciometronomo/MainActivity.java
  es.uca.espaciometronomo.MainActivity
  es.uca.espaciometronomo.MainActivity$1
