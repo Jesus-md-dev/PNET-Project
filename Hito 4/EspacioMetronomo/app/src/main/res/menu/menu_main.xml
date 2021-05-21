@@ -3,8 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="es.uca.espaciometronomo.MainActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_reservas"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="@string/action_reservas"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_programa"
+        android:orderInCategory="100"
+        android:title="@string/action_programa"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_fechas"
+        android:orderInCategory="100"
+        android:title="@string/action_fechas"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_localizacion"
+        android:orderInCategory="100"
+        android:title="@string/action_localizacion"
         app:showAsAction="never" />
 </menu>

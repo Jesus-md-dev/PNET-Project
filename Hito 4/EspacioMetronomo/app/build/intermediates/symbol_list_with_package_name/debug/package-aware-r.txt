@@ -1727,7 +1727,6 @@ id BOTTOM_END
 id BOTTOM_START
 id CTRL
 id FUNCTION
-id FirstFragment
 id META
 id NO_DEBUG
 id SHIFT
@@ -1735,7 +1734,6 @@ id SHOW_ALL
 id SHOW_PATH
 id SHOW_PROGRESS
 id SYM
-id SecondFragment
 id TOP_END
 id TOP_START
 id accelerate
@@ -1772,8 +1770,6 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
-id action_FirstFragment_to_SecondFragment
-id action_SecondFragment_to_FirstFragment
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -1784,13 +1780,16 @@ id action_bar_title
 id action_container
 id action_context_bar
 id action_divider
+id action_fechas
 id action_image
+id action_localizacion
 id action_menu_divider
 id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
-id action_settings
+id action_programa
+id action_reservas
 id action_text
 id actions
 id activity_chooser_view_content
@@ -1815,8 +1814,6 @@ id blocking
 id bottom
 id bounce
 id buttonPanel
-id button_first
-id button_second
 id cache_measures
 id cancel_button
 id center
@@ -1992,8 +1989,6 @@ id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
 id nav_controller_view_tag
-id nav_graph
-id nav_host_fragment
 id nav_host_fragment_container
 id navigation_header_container
 id never
@@ -2117,8 +2112,6 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
-id textview_first
-id textview_second
 id time
 id title
 id titleDividerNoCustom
@@ -2228,8 +2221,6 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
-layout fragment_first
-layout fragment_second
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -2299,7 +2290,6 @@ layout text_view_without_line_height
 menu menu_main
 mipmap ic_launcher
 mipmap ic_launcher_round
-navigation nav_graph
 plurals mtrl_badge_content_description
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -2328,6 +2318,10 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string action_fechas
+string action_localizacion
+string action_programa
+string action_reservas
 string action_settings
 string app_name
 string appbar_scrolling_view_behavior
