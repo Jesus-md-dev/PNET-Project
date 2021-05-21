@@ -8,10 +8,6 @@
         "source": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\layout_content_main.xml.flat",
-        "source": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\layout\\content_main.xml"
-    },
-    {
         "merged": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
@@ -66,5 +62,9 @@
     {
         "merged": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\layout_reserva.xml.flat",
+        "source": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\layout\\reserva.xml"
     }
 ]

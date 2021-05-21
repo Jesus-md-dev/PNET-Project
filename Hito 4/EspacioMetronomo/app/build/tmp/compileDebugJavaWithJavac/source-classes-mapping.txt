@@ -1,5 +1,6 @@
+es/uca/espaciometronomo/Reserva.java
+ es.uca.espaciometronomo.Reserva
 es/uca/espaciometronomo/MainActivity.java
  es.uca.espaciometronomo.MainActivity
- es.uca.espaciometronomo.MainActivity$1
 es/uca/espaciometronomo/BuildConfig.java
  es.uca.espaciometronomo.BuildConfig
