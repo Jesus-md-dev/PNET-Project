@@ -1,13 +1,5 @@
 [
     {
-        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
-    },
-    {
         "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
@@ -16,8 +8,8 @@
         "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\layout_content_main.xml.flat",
-        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\layout\\content_main.xml"
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_calendar_button.png.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-xhdpi\\calendar_button.png"
     },
     {
         "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
@@ -28,36 +20,20 @@
         "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\drawable-nodpi\\example_appwidget_preview.png"
     },
     {
-        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\xml_espacio_metronomo_widget_info.xml.flat",
-        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\xml\\espacio_metronomo_widget_info.xml"
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_calendar.png.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-xxxhdpi\\calendar.png"
     },
     {
-        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
-    },
-    {
-        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
-    },
-    {
-        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
-    },
-    {
-        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo.jpeg.flat",
-        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\drawable\\logo.jpeg"
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_calendar.png.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-mdpi\\calendar.png"
     },
     {
         "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo.jpeg.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\drawable\\logo.jpeg"
     },
     {
         "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\layout_espacio_metronomo_widget.xml.flat",
@@ -76,8 +52,92 @@
         "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_calendar_button.xml.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-anydpi-v26\\calendar_button.xml"
+    },
+    {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_calendar_button_foreground.xml.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\drawable\\calendar_button_foreground.xml"
+    },
+    {
         "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_calendar_button.png.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-xxhdpi\\calendar_button.png"
+    },
+    {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_calendar.png.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-xxhdpi\\calendar.png"
+    },
+    {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_calendar_button.png.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-hdpi\\calendar_button.png"
+    },
+    {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_calendar.png.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-hdpi\\calendar.png"
+    },
+    {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_calendar_button.png.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-mdpi\\calendar_button.png"
+    },
+    {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\layout_content_fechas_importantes.xml.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\layout\\content_fechas_importantes.xml"
+    },
+    {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_fechas_importantes.xml.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\layout\\activity_fechas_importantes.xml"
+    },
+    {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\layout_content_main.xml.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\layout\\content_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\xml_espacio_metronomo_widget_info.xml.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\xml\\espacio_metronomo_widget_info.xml"
+    },
+    {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_calendar.png.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-xhdpi\\calendar.png"
+    },
+    {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\layout_item.xml.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\layout\\item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_calendar_button.png.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-xxxhdpi\\calendar_button.png"
+    },
+    {
+        "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\Claudia\\Documents\\PNET\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",

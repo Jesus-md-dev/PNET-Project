@@ -11,11 +11,11 @@
 9-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:5:5-32:19
+11-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:5:5-37:19
 12        android:allowBackup="true"
 12-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.3.1] C:\Users\Claudia\.gradle\caches\transforms-2\files-2.1\b234a824af7fd98a5c54fc0522824a91\core-1.3.1\AndroidManifest.xml:24:18-86
+13-->[androidx.core:core:1.3.2] C:\Users\Claudia\.gradle\caches\transforms-2\files-2.1\870f77caa98361babb7de475f36bb8a2\core-1.3.2\AndroidManifest.xml:24:18-86
 14        android:debuggable="true"
 15        android:extractNativeLibs="false"
 16        android:icon="@mipmap/ic_launcher"
@@ -29,43 +29,52 @@
 20        android:testOnly="true"
 21        android:theme="@style/Theme.EspacioMetronomo" >
 21-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:11:9-54
-22        <receiver android:name="es.uca.espaciometronomo.EspacioMetronomoWidget" >
-22-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:12:9-20:20
-22-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:12:19-57
-23            <intent-filter>
-23-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:13:13-15:29
-24                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-24-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:14:17-84
-24-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:14:25-81
-25            </intent-filter>
+22        <activity
+22-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:12:9-15:82
+23            android:name="es.uca.espaciometronomo.FechasImportantes"
+23-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:13:13-46
+24            android:label="@string/title_activity_fechas_importantes"
+24-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:14:13-70
+25            android:theme="@style/Theme.EspacioMetronomo.NoActionBar" />
+25-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:15:13-70
 26
-27            <meta-data
-27-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:17:13-19:73
-28                android:name="android.appwidget.provider"
-28-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:18:17-58
-29                android:resource="@xml/espacio_metronomo_widget_info" />
-29-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:19:17-70
-30        </receiver>
+27        <receiver android:name="es.uca.espaciometronomo.EspacioMetronomoWidget" >
+27-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:17:9-25:20
+27-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:17:19-57
+28            <intent-filter>
+28-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:18:13-20:29
+29                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+29-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:19:17-84
+29-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:19:25-81
+30            </intent-filter>
 31
-32        <activity
-32-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:22:9-31:20
-33            android:name="es.uca.espaciometronomo.MainActivity"
-33-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:23:13-41
-34            android:label="@string/app_name"
-34-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:24:13-45
-35            android:theme="@style/Theme.EspacioMetronomo.NoActionBar" >
-35-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:25:13-70
-36            <intent-filter>
-36-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:26:13-30:29
-37                <action android:name="android.intent.action.MAIN" />
-37-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:27:17-69
-37-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:27:25-66
-38
-39                <category android:name="android.intent.category.LAUNCHER" />
-39-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:29:17-77
-39-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:29:27-74
-40            </intent-filter>
-41        </activity>
-42    </application>
+32            <meta-data
+32-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:22:13-24:73
+33                android:name="android.appwidget.provider"
+33-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:23:17-58
+34                android:resource="@xml/espacio_metronomo_widget_info" />
+34-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:24:17-70
+35        </receiver>
+36
+37        <activity
+37-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:27:9-36:20
+38            android:name="es.uca.espaciometronomo.MainActivity"
+38-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:28:13-41
+39            android:label="@string/app_name"
+39-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:29:13-45
+40            android:theme="@style/Theme.EspacioMetronomo.NoActionBar" >
+40-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:30:13-70
+41            <intent-filter>
+41-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:31:13-35:29
+42                <action android:name="android.intent.action.MAIN" />
+42-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:32:17-69
+42-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:32:25-66
 43
-44</manifest>
+44                <category android:name="android.intent.category.LAUNCHER" />
+44-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:34:17-77
+44-->C:\Users\Claudia\Documents\PNET\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:34:27-74
+45            </intent-filter>
+46        </activity>
+47    </application>
+48
+49</manifest>

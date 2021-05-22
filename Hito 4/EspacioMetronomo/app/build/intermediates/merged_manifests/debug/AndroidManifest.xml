@@ -19,6 +19,11 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.EspacioMetronomo" >
+        <activity
+            android:name="es.uca.espaciometronomo.FechasImportantes"
+            android:label="@string/title_activity_fechas_importantes"
+            android:theme="@style/Theme.EspacioMetronomo.NoActionBar" />
+
         <receiver android:name="es.uca.espaciometronomo.EspacioMetronomoWidget" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
