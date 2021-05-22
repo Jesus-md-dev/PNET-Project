@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EspacioMetronomo">
+        <activity
+            android:name=".FechasImportantes"
+            android:label="@string/title_activity_fechas_importantes"
+            android:theme="@style/Theme.EspacioMetronomo.NoActionBar"></activity>
+
         <receiver android:name=".EspacioMetronomoWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
