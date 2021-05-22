@@ -1,47 +1,72 @@
 package es.uca.espaciometronomo;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.View;
-
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
-public class MainActivity extends AppCompatActivity {
+public class ReservaMainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.reserva_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // Referenciamos al RecyclerView
+        Button formButton = findViewById(R.id.reservaFormButton);
+        formButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                System.out.println("Button Clicked");
+
+                Intent reservaFormActivity = new Intent(getApplicationContext(),
+                        ReservaFormActivity.class);
+                startActivity(reservaFormActivity);
+            }
+        });
+
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
-        // Mejoramos rendimiento con esta configuración
+
         mRecyclerView.setHasFixedSize(true);
-        // Creamos un LinearLayoutManager para gestionar el item.xml creado antes
+
         mLayoutManager = new LinearLayoutManager(this);
-        // Lo asociamos al RecyclerView
+
         mRecyclerView.setLayoutManager(mLayoutManager);
-        // Creamos un ArrayList de Pokemons
+
          ArrayList<Reserva> reservas = new ArrayList<Reserva>();
-        // Creamos un PokemonAdapter pasándole todos nuestro Pokemons
+
+        reservas.add(new Reserva(1, "Paco", "42477551G", "586283087",
+                "pakito@gmail.com", new Calendar.Builder().setDate(2021, 7,
+                14).build(), "me gusta"));
+        reservas.add(new Reserva(2, "Manolo", "42477551G", "586283087",
+                "pakito@gmail.com", new Calendar.Builder().setDate(2021, 7,
+                14).build(), "me gusta"));
+        reservas.add(new Reserva(3, "Antonia", "42477551G", "586283087",
+                "pakito@gmail.com", new Calendar.Builder().setDate(2021, 7,
+                14).build(), "me gusta"));
+        reservas.add(new Reserva(4, "Gertrudis", "42477551G", "586283087",
+                "pakito@gmail.com", new Calendar.Builder().setDate(2021, 7,
+                14).build(), "me gusta"));
+        reservas.add(new Reserva(5, "Jose Antonio", "42477551G", "586283087",
+                "pakito@gmail.com",new Calendar.Builder().setDate(2021, 7,
+                14).build(), "me gusta"));
+
         mAdapter = new ReservaAdapter(reservas);
-        // Asociamos el adaptador al RecyclerView
         mRecyclerView.setAdapter(mAdapter);
     }
 
@@ -61,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_reservas) {
-            return true;
+            startActivity(new Intent(getApplicationContext(), ReservaMainActivity.class));
         }
 
         if (id == R.id.action_programa) {

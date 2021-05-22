@@ -6,66 +6,68 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Calendar;
 
-public class ReservaAdapter {
+public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.MyViewHolder> {
     private ArrayList<Reserva> reservas;
     private Context context;
+
     public static class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView nombre;
-        TextView dni;
-        TextView telefono;
-        TextView email;
-        Date fecha;
-        TextView motivo;
+        TextView sala;
+        TextView fecha;
+        Button show;
+
         public MyViewHolder(View v) {
             super(v);
-            nombre = (TextView) v.findViewById(R.id.nombre);
-            dni = (TextView) v.findViewById(R.id.dni);
-            telefono = (TextView) v.findViewById(R.id.telefono);
-            email = (TextView) v.findViewById(R.id.email);
-            fecha = (Date) v.findViewById(R.id.fecha);
-            motivo = (TextView) v.findViewById(R.id.motivo);
+            sala = (TextView) v.findViewById(R.id.sala);
+            fecha = (TextView) v.findViewById(R.id.fecha);
+            show = (Button) v.findViewById(R.id.show);
         }
+    }
 
-        public ReservaAdapter(ArrayList<Reserva> myDataset) {
-            reservas = myDataset;
-        }
+    public ReservaAdapter(ArrayList<Reserva> myDataset) {
+        reservas = myDataset;
+    }
 
-        @Override
-        public ReservaAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int
-                viewType) {
-            View v =
-                    LayoutInflater.from(parent.getContext()).inflate(R.layout.item,
-                            parent, false);
-            MyViewHolder vh = new MyViewHolder(v);
-            context = parent.getContext();
-            return vh;
-        }
+    @Override
+    public ReservaAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int
+            viewType) {
+        View v =
+                LayoutInflater.from(parent.getContext()).inflate(R.layout.reserva_item,
+                        parent, false);
+        MyViewHolder vh = new MyViewHolder(v);
+        context = parent.getContext();
+        return vh;
+    }
 
-        @Override
-        public void onBindViewHolder(MyViewHolder holder, final int position) {
-            holder.number.setText(String.valueOf(reservas.get(position).getNumber()));
-            holder.name.setText(reservas.get(position).getName());
-            holder.show.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    CharSequence text = "You've clicked on " +
-                            pokemons.get(position).getName();
-                    int duration = Toast.LENGTH_LONG;
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
-                }
-            });
-        }
+    @Override
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
+        holder.sala.setText(String.valueOf(reservas.get(position).getNombre()));
+        holder.fecha.setText(calendarToString(reservas.get(position).getFecha()));
+        holder.show.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CharSequence text = "You've clicked on " +
+                        reservas.get(position).getNombre();
+                int duration = Toast.LENGTH_LONG;
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+            }
+        });
+    }
 
-        @Override
-        public int getItemCount() {
-            return pokemons.size();
-        }
+    @Override
+    public int getItemCount() {
+        return reservas.size();
+    }
+
+    public static String calendarToString (Calendar calendar) {
+        return calendar.get(Calendar.DAY_OF_MONTH) + "/" + calendar.get(Calendar.MONTH) + "/" +
+                calendar.get(Calendar.YEAR);
     }
 }
