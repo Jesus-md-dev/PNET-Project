@@ -85,18 +85,18 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\bl
 		ADDED from D:\Pacticas\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
 		ADDED from D:\Pacticas\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:11:9-54
-activity#es.uca.espaciometronomo.ReservaFormActivity
-ADDED from D:\Pacticas\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:12:9-66
+activity#es.uca.espaciometronomo.BookFormActivity
+ADDED from D:\Pacticas\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:12:9-54
 	android:name
-		ADDED from D:\Pacticas\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:12:19-54
-activity#es.uca.espaciometronomo.ReservaMainActivity
+		ADDED from D:\Pacticas\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:12:19-51
+activity#es.uca.espaciometronomo.BookMainActivity
 ADDED from D:\Pacticas\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:13:9-22:20
 	android:label
 		ADDED from D:\Pacticas\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:15:13-45
 	android:theme
 		ADDED from D:\Pacticas\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:16:13-70
 	android:name
-		ADDED from D:\Pacticas\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:14:13-48
+		ADDED from D:\Pacticas\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:14:13-45
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from D:\Pacticas\PNET-Project\Hito 4\EspacioMetronomo\app\src\main\AndroidManifest.xml:17:13-21:29
 action#android.intent.action.MAIN
