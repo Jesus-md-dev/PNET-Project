@@ -15,9 +15,8 @@ import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 
-public class ReservaMainActivity extends AppCompatActivity {
+public class BookMainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -25,18 +24,17 @@ public class ReservaMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.reserva_main);
+        setContentView(R.layout.book_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        Button formButton = findViewById(R.id.reservaFormButton);
+        Button formButton = findViewById(R.id.bookFormButton);
         formButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked");
 
-                Intent reservaFormActivity = new Intent(getApplicationContext(),
-                        ReservaFormActivity.class);
-                startActivity(reservaFormActivity);
+                Intent bookFormActivity = new Intent(getApplicationContext(),
+                        BookFormActivity.class);
+                startActivity(bookFormActivity);
             }
         });
 
@@ -48,25 +46,46 @@ public class ReservaMainActivity extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-         ArrayList<Reserva> reservas = new ArrayList<Reserva>();
+         ArrayList<Book> books = new ArrayList<Book>();
 
-        reservas.add(new Reserva(1, "Paco", "42477551G", "586283087",
+        Intent intent = getIntent();
+        Book book = (Book) intent.getSerializableExtra("book");
+
+        if (book != null)
+            books.add(book);
+
+        books.add(new Book("Paco", "42477551G", "586283087",
                 "pakito@gmail.com", new Calendar.Builder().setDate(2021, 7,
-                14).build(), "me gusta"));
-        reservas.add(new Reserva(2, "Manolo", "42477551G", "586283087",
+                14).build(),
+                new Calendar.Builder().setTimeOfDay(12, 30, 0).build(),
+                new Calendar.Builder().setTimeOfDay(12, 30, 0).build() ,
+                "me gusta",1));
+        books.add(new Book( "Manolo", "42477551G", "586283087",
                 "pakito@gmail.com", new Calendar.Builder().setDate(2021, 7,
-                14).build(), "me gusta"));
-        reservas.add(new Reserva(3, "Antonia", "42477551G", "586283087",
+                14).build(),
+                new Calendar.Builder().setTimeOfDay(12, 30, 0).build(),
+                new Calendar.Builder().setTimeOfDay(12, 30, 0).build() ,
+                "me gusta",2));
+        books.add(new Book( "Antonia", "42477551G", "586283087",
                 "pakito@gmail.com", new Calendar.Builder().setDate(2021, 7,
-                14).build(), "me gusta"));
-        reservas.add(new Reserva(4, "Gertrudis", "42477551G", "586283087",
-                "pakito@gmail.com", new Calendar.Builder().setDate(2021, 7,
-                14).build(), "me gusta"));
-        reservas.add(new Reserva(5, "Jose Antonio", "42477551G", "586283087",
+                14).build(),
+                new Calendar.Builder().setTimeOfDay(12, 30, 0).build(),
+                new Calendar.Builder().setTimeOfDay(12, 30, 0).build() ,
+                "me gusta",3));
+        books.add(new Book( "Gertrudis", "42477551G", "586283087",
+                "pakito@gmail.com",
+                new Calendar.Builder().setDate(2021, 7, 14).build(),
+                new Calendar.Builder().setTimeOfDay(12, 30, 0).build(),
+                new Calendar.Builder().setTimeOfDay(12, 30, 0).build() ,
+                "me gusta",2));
+        books.add(new Book( "Jose Antonio", "42477551G", "586283087",
                 "pakito@gmail.com",new Calendar.Builder().setDate(2021, 7,
-                14).build(), "me gusta"));
+                14).build(),
+                new Calendar.Builder().setTimeOfDay(12, 30, 0).build(),
+                new Calendar.Builder().setTimeOfDay(12, 30, 0).build() ,
+                "me gusta",3));
 
-        mAdapter = new ReservaAdapter(reservas);
+        mAdapter = new BookAdapter(books);
         mRecyclerView.setAdapter(mAdapter);
     }
 
@@ -85,19 +104,19 @@ public class ReservaMainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_reservas) {
-            startActivity(new Intent(getApplicationContext(), ReservaMainActivity.class));
+        if (id == R.id.action_books) {
+            startActivity(new Intent(getApplicationContext(), BookMainActivity.class));
         }
 
-        if (id == R.id.action_programa) {
+        if (id == R.id.action_program) {
             return true;
         }
 
-        if (id == R.id.action_fechas) {
+        if (id == R.id.action_dates) {
             return true;
         }
 
-        if (id == R.id.action_localizacion) {
+        if (id == R.id.action_location) {
             return true;
         }
 

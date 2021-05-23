@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ReservaMainActivity">
+    tools:context=".BookMainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -26,11 +26,11 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/tittleReservas"
+            android:id="@+id/tittleBooks"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
-            android:text="@string/action_reservas"
+            android:text="@string/action_books"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold|italic"
@@ -41,16 +41,16 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <Button
-            android:id="@+id/reservaFormButton"
+            android:id="@+id/bookFormButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/reserva_btn"
+            android:layout_marginBottom="16dp"
+            android:text="@string/book_btn"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tittleReservas"
-            app:layout_constraintVertical_bias="0.925" />
+            app:layout_constraintTop_toBottomOf="@+id/tittleBooks"
+            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
