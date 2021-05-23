@@ -47,9 +47,9 @@ public class FechasImportantes extends AppCompatActivity {
         ArrayList<Reserva> reservas = new ArrayList<Reserva>();
 
         reservas.add(new Reserva(1, "Reserva 1", new Calendar.Builder().setDate(2021, 05, 22).build()));
-        reservas.add(new Reserva(2, "Reserva 2", new Calendar.Builder().setDate(2021, 05, 22).build()));
-        reservas.add(new Reserva(3, "Reserva 3", new Calendar.Builder().setDate(2021, 05, 22).build()));
-        reservas.add(new Reserva(4, "Reserva 4", new Calendar.Builder().setDate(2021, 05, 22).build()));
+        reservas.add(new Reserva(2, "Reserva 2", new Calendar.Builder().setDate(2021, 05, 23).build()));
+        reservas.add(new Reserva(3, "Reserva 3", new Calendar.Builder().setDate(2021, 05, 24).build()));
+        reservas.add(new Reserva(4, "Reserva 4", new Calendar.Builder().setDate(2021, 07, 24).build()));
         // reservas.add(new Reserva(5, "Reserva 5", Calendar.set(2021, 07, 21)));
 
         // Creamos un ReservaAdapter pasándole todos nuestras reservas
