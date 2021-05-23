@@ -72,15 +72,14 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.MyViewHo
 
                 // SnackBar para fechas que no han pasado
                 if (fecha.compareTo(actual) >= 0) {
-                    Calendar c = Calendar.getInstance();
-                    c.setTimeInMillis(fecha.getTime().getTime() - actual.getTime().getTime());
+                    int dias = (int) ((fecha.getTime().getTime() - actual.getTime().getTime())/86400000);
 
-                    if ((c.get(Calendar.DAY_OF_YEAR)-1) == 0)
+                    if (dias == 0)
                         Snackbar.make(v, "Hoy es el día de la reserva", Snackbar.LENGTH_LONG).show();
-                    else if ((c.get(Calendar.DAY_OF_YEAR)-1) == 1)
+                    else if (dias == 1)
                         Snackbar.make(v, "Falta 1 día para el día de la reserva", Snackbar.LENGTH_LONG).show();
                     else
-                        Snackbar.make(v, "Faltan " + (c.get(Calendar.DAY_OF_YEAR)-1) + " días para el día de la reserva", Snackbar.LENGTH_LONG).show();
+                        Snackbar.make(v, "Faltan " + dias + " días para el día de la reserva", Snackbar.LENGTH_LONG).show();
                 }
 
                 // Notificación en la barra de estado

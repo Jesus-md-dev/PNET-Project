@@ -4,11 +4,11 @@ es/uca/espaciometronomo/Reserva.java
  es.uca.espaciometronomo.Reserva
 es/uca/espaciometronomo/BuildConfig.java
  es.uca.espaciometronomo.BuildConfig
+es/uca/espaciometronomo/MainActivity.java
+ es.uca.espaciometronomo.MainActivity
 es/uca/espaciometronomo/ReservaAdapter.java
  es.uca.espaciometronomo.ReservaAdapter
  es.uca.espaciometronomo.ReservaAdapter$1
  es.uca.espaciometronomo.ReservaAdapter$MyViewHolder
 es/uca/espaciometronomo/FechasImportantes.java
  es.uca.espaciometronomo.FechasImportantes
-es/uca/espaciometronomo/MainActivity.java
- es.uca.espaciometronomo.MainActivity
