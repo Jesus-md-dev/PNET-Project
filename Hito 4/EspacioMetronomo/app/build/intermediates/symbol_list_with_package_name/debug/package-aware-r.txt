@@ -1860,6 +1860,7 @@ id counterclockwise
 id custom
 id customPanel
 id cut
+id cv
 id date
 id date_picker_actions
 id decelerate
