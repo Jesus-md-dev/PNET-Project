@@ -16,6 +16,10 @@
         "source": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_booking_form.xml.flat",
+        "source": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\layout\\activity_booking_form.xml"
+    },
+    {
         "merged": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
@@ -26,6 +30,10 @@
     {
         "merged": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_booking_main.xml.flat",
+        "source": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\layout\\activity_booking_main.xml"
     },
     {
         "merged": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
@@ -44,6 +52,10 @@
         "source": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
+        "merged": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\layout_booking_item.xml.flat",
+        "source": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\layout\\booking_item.xml"
+    },
+    {
         "merged": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_main.xml.flat",
         "source": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\menu\\menu_main.xml"
     },
@@ -52,20 +64,16 @@
         "source": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main2.xml.flat",
+        "source": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\layout\\activity_main2.xml"
+    },
+    {
         "merged": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
         "source": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\layout_book_item.xml.flat",
-        "source": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\layout\\book_item.xml"
-    },
-    {
         "merged": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_form.xml.flat",
         "source": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\menu\\menu_form.xml"
-    },
-    {
-        "merged": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\layout_book_view.xml.flat",
-        "source": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\layout\\book_view.xml"
     },
     {
         "merged": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
@@ -80,11 +88,7 @@
         "source": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\layout_book_form.xml.flat",
-        "source": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\layout\\book_form.xml"
-    },
-    {
-        "merged": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\layout_book_main.xml.flat",
-        "source": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\layout\\book_main.xml"
+        "merged": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_booking_view.xml.flat",
+        "source": "D:\\Pacticas\\PNET-Project\\Hito 4\\EspacioMetronomo\\app\\src\\main\\res\\layout\\activity_booking_view.xml"
     }
 ]

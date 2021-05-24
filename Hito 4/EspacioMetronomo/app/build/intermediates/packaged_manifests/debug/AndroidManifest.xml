@@ -8,6 +8,8 @@
         android:minSdkVersion="29"
         android:targetSdkVersion="30" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -18,10 +20,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/Theme.EspacioMetronomo" >
-        <activity android:name="es.uca.espaciometronomo.BookFormActivity" />
+        android:theme="@style/Theme.EspacioMetronomo"
+        android:usesCleartextTraffic="true" >
+        <activity android:name="es.uca.espaciometronomo.MainActivity" />
+        <activity android:name="es.uca.espaciometronomo.BookingEditActivity" />
+        <activity android:name="es.uca.espaciometronomo.BookingViewActivity" />
+        <activity android:name="es.uca.espaciometronomo.BookingFormActivity" />
         <activity
-            android:name="es.uca.espaciometronomo.BookMainActivity"
+            android:name="es.uca.espaciometronomo.BookingMainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.EspacioMetronomo.NoActionBar" >
             <intent-filter>
