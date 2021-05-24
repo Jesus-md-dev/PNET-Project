@@ -8,4 +8,11 @@
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
     <string name="title_activity_fechas_importantes">Fechas importantes</string>
+    <string name="title_activity_localizacion">Localización</string>
+    <string name="titulo_item_localizacion">Contacto</string>
+    <string name="telefono_item_localizacion">697479723</string>
+    <string name="direccion_item_localizacion">Av. Cayetano del Toro, 14, Cádiz</string>
+    <string name="correo_item_localizacion">espacio.metronomo@gmail.com</string>
+    <string name="titulo1_item_localizacion">Salas para reservar</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
