@@ -1,11 +1,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="es.uca.espaciometronomo.BookMainActivity">
+    tools:context="es.uca.espaciometronomo.BookingMainActivity">
     <item
         android:id="@+id/action_books"
         android:orderInCategory="100"
-        android:title="@string/action_books"
+        android:title="@string/action_bookings"
         app:showAsAction="never" />
 
     <item
@@ -24,5 +24,11 @@
         android:id="@+id/action_location"
         android:orderInCategory="100"
         android:title="@string/action_location"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_test"
+        android:orderInCategory="100"
+        android:title="@string/action_test"
         app:showAsAction="never" />
 </menu>

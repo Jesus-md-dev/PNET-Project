@@ -2,13 +2,13 @@
     <string name="app_name">Espácio Metrónomo</string>
 
     <!-- Strings used for fragments for navigation -->
-    <string name="action_books">Reservas</string>
+    <string name="action_bookings">Reservas</string>
     <string name="action_program">Programa</string>
     <string name="action_date">Fechas importantes</string>
     <string name="action_location">Localización</string>
-    <string name="book_btn">Hacer Reserva</string>
-    <string name="book_show_btn">Ver</string>
-    <string name="book_form_title">Haga su reserva aquí</string>
+    <string name="booking_btn">Hacer Reserva</string>
+    <string name="booking_show_btn">Ver</string>
+    <string name="booking_form_title">Haga su reserva aquí</string>
     <string name="nameInput">Nombre</string>
     <string name="nameHint">Nombre</string>
     <string name="dniHint">DNI</string>
@@ -17,8 +17,22 @@
     <string name="emailEditText">Email</string>
     <string name="dateFormat">dd/mm/yyyy</string>
     <string name="hourFormat">hh:mm</string>
-    <string name="sendFormBook">Enviar Reserva</string>
+    <string name="sendFormBooking">Enviar Reserva</string>
     <string name="type1">Básica</string>
     <string name="type2">Grande</string>
     <string name="type3">Vip</string>
+    <string name="booking_view_title">Desripción de la Reserva</string>
+    <string name="booking_room_title">Sala</string>
+    <string name="booking_name_label">Nombre:</string>
+    <string name="booking_dni_label">DNI:</string>
+    <string name="booking_phone_label">Teléfono</string>
+    <string name="booking_email_label">Email:</string>
+    <string name="booking_date_label">Fecha:</string>
+    <string name="booking_start_hour_label">Hora de Entrada:</string>
+    <string name="booking_end_hour_label">Hora de Salida:</string>
+    <string name="booking_reason_label">Motivo:</string>
+    <string name="edit_booking_button">Editar reserva</string>
+    <string name="delete_booking_button">Eliminar</string>
+    <string name="reasonLabel">Razón de la reserva:</string>
+    <string name="action_test">Test</string>
 </resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="reasons_array">
+        <item>@string/reason1</item>
+        <item>@string/reason2</item>
+        <item>@string/reason3</item>
+    </string-array>
+    <string name="reason1">Ensayo</string>
+    <string name="reason2">Clase</string>
+    <string name="reason3">Concierto</string>
+</resources>

@@ -2,16 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="es.uca.espaciometronomo">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EspacioMetronomo">
-        <activity android:name=".BookFormActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".BookingEditActivity" />
+        <activity android:name=".BookingViewActivity" />
+        <activity android:name=".BookingFormActivity" />
         <activity
-            android:name=".BookMainActivity"
+            android:name=".BookingMainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.EspacioMetronomo.NoActionBar">
             <intent-filter>
