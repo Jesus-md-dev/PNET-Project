@@ -46,7 +46,7 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.MyViewHo
     }
     @Override
     public ReservaAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_fechas, parent, false);
         MyViewHolder vh = new MyViewHolder(v);
         context = parent.getContext();
         return vh;

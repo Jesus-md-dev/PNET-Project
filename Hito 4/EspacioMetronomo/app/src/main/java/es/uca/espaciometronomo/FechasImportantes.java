@@ -38,7 +38,7 @@ public class FechasImportantes extends AppCompatActivity {
         // Mejoramos rendimiento con esta configuración
         mRecyclerView.setHasFixedSize(true);
 
-        // Creamos un LinearLayoutManager para gestionar el item.xml creado antes
+        // Creamos un LinearLayoutManager para gestionar el item_fechas.xml creado antes
         mLayoutManager = new LinearLayoutManager(this);
         // Lo asociamos al RecyclerView
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -50,9 +50,8 @@ public class FechasImportantes extends AppCompatActivity {
         reservas.add(new Reserva(2, "Reserva 2", new Calendar.Builder().setDate(2021, 05, 23).build()));
         reservas.add(new Reserva(3, "Reserva 3", new Calendar.Builder().setDate(2021, 05, 24).build()));
         reservas.add(new Reserva(4, "Reserva 4", new Calendar.Builder().setDate(2021, 07, 24).build()));
-        // reservas.add(new Reserva(5, "Reserva 5", Calendar.set(2021, 07, 21)));
 
-        // Creamos un ReservaAdapter pasándole todos nuestras reservas
+        // Creamos un ReservaAdapter pasándole todas nuestras reservas
         mAdapter = new ReservaAdapter(reservas);
         // Asociamos el adaptador al RecyclerView
         mRecyclerView.setAdapter(mAdapter);
@@ -67,19 +66,17 @@ public class FechasImportantes extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+        // Handle action bar item clicks here.
 
         switch (item.getItemId()){
             case R.id.action_fechas:
-                Intent intentUndo = new Intent(FechasImportantes.this, FechasImportantes.class);
-                startActivity(intentUndo);
+                Intent intentFechas = new Intent(FechasImportantes.this, FechasImportantes.class);
+                startActivity(intentFechas);
                 return true;
-            /*case R.id.redo:
-                Intent intentUndo = new Intent(MainActivity.this, UndoActivity.class);
-                startActivity(intentUndo);
-                return true;*/
+            case R.id.action_localizacion:
+                Intent intentLocalizacion = new Intent(FechasImportantes.this, Localizacion.class);
+                startActivity(intentLocalizacion);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

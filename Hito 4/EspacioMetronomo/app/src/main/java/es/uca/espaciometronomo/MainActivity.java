@@ -46,10 +46,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent intentUndo = new Intent(MainActivity.this, FechasImportantes.class);
                 startActivity(intentUndo);
                 return true;
-            /*case R.id.redo:
-                Intent intentUndo = new Intent(MainActivity.this, UndoActivity.class);
-                startActivity(intentUndo);
-                return true;*/
+            case R.id.action_localizacion:
+                Intent intentLocalizacion = new Intent(MainActivity.this, Localizacion.class);
+                startActivity(intentLocalizacion);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
