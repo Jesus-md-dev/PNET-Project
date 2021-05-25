@@ -160,7 +160,7 @@ public class BookingViewActivity extends AppCompatActivity {
         }
 
         if (id == R.id.action_program) {
-            return true;
+            startActivity(new Intent(getApplicationContext(), ImportantBookingsActivity.class));
         }
 
         if (id == R.id.action_dates) {
