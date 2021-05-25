@@ -23,12 +23,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class ImportantBookingsActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList<Booking> bookings = new ArrayList<Booking>();
+    private ArrayList<Booking> importantBookings = new ArrayList<Booking>();
 
 
     private class LongRunningGetIO extends AsyncTask<Void, Void, String>
@@ -90,16 +92,17 @@ public class ImportantBookingsActivity extends AppCompatActivity {
                 Comparator<Booking> compareByDate = (Booking b1, Booking b2)
                         -> b1.getDate().compareTo(b2.getDate());
 
-                Collections.sort(bookings, compareByDate);
+                importantBookings = (ArrayList<Booking>) bookings.stream()
+                        .filter(b -> b.getReason() != 1).collect(Collectors.toList());
 
-                mAdapter = new BookingAdapter(bookings);
+                Collections.sort(importantBookings, compareByDate);
+                mAdapter = new ImportantBookingAdapter(importantBookings);
 
                 mRecyclerView.setAdapter(mAdapter);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
-
     }
 
     @Override
