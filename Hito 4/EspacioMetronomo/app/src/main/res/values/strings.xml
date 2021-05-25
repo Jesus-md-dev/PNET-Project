@@ -35,4 +35,6 @@
     <string name="delete_booking_button">Eliminar</string>
     <string name="reasonLabel">Razón de la reserva:</string>
     <string name="action_test">Test</string>
+    <string name="important_bookings_title">Reservas destacables</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

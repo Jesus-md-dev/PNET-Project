@@ -168,7 +168,7 @@ public class BookingMainActivity extends AppCompatActivity {
         }
 
         if (id == R.id.action_program) {
-            return true;
+            startActivity(new Intent(getApplicationContext(), ImportantBookingsActivity.class));
         }
 
         if (id == R.id.action_dates) {
@@ -176,7 +176,7 @@ public class BookingMainActivity extends AppCompatActivity {
         }
 
         if (id == R.id.action_location) {
-            return true;
+            startActivity(new Intent(getApplicationContext(), MapsActivity.class));
         }
 
         return super.onOptionsItemSelected(item);
