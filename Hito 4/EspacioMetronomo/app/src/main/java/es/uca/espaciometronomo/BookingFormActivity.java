@@ -194,7 +194,6 @@ public class BookingFormActivity extends AppCompatActivity {
         sendForm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 EditText[] editTexts = {nameText, dniText, phoneText, emailText, dateText,
                         startHourText, endHourText};
                 boolean completed = true;
@@ -222,7 +221,6 @@ public class BookingFormActivity extends AppCompatActivity {
                     LongRunningGetIO myInvokeTask = new LongRunningGetIO();
                     myInvokeTask.execute();
                     Intent intent = new Intent(getApplicationContext(), BookingMainActivity.class);
-//                    intent.putExtra("new_book", booking);
                     startActivity(intent);
                 }
                 else if(!selectedRadButton.isChecked())
