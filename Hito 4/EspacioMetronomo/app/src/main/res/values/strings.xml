@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Espacio Metronomo</string>
 
-    <string name="action_reservas">Reservas</string>
-    <string name="action_programa">Programa</string>
-    <string name="action_fechas">Fechas importantes</string>
-    <string name="action_localizacion">Localización</string>
+    <string name="action_bookings">Reservas</string>
+    <string name="action_program">Programa</string>
+    <string name="action_dates">Fechas importantes</string>
+    <string name="action_location">Localización</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
     <string name="title_activity_fechas_importantes">Fechas importantes</string>

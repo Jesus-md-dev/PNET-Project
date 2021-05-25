@@ -12,8 +12,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
-public class Localizacion extends AppCompatActivity {
+public class ImportantDates extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -22,30 +23,31 @@ public class Localizacion extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_localizacion);
+        setContentView(R.layout.activity_dates);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         // Referenciamos al RecyclerView
-        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view_localizacion);
+        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 
         // Mejoramos rendimiento con esta configuración
         mRecyclerView.setHasFixedSize(true);
 
-        // Creamos un LinearLayoutManager para gestionar el item_localizacion.xml creado antes
+        // Creamos un LinearLayoutManager para gestionar el item_fechas.xml creado antes
         mLayoutManager = new LinearLayoutManager(this);
         // Lo asociamos al RecyclerView
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        // Creamos un ArrayList de Salas
-        ArrayList<Room> salas = new ArrayList<Room>();
+        // Creamos un ArrayList de Resevas
+        ArrayList<Booking> bookings = new ArrayList<Booking>();
 
-        salas.add(new Room("Tipo 1", "Las salas de tipo 1 tienen un tamaño de 25 metros cuadrados. Cuentan con un piano acústico, teclado eléctrico, un micrófono vocal y un atril."));
-        salas.add(new Room("Tipo 2", "Las salas de tipo 2 tienen un tamaño de 25 metros cuadrados. Cuentan con un piano acústico, teclado eléctrico, un micrófono vocal y un atril."));
-        salas.add(new Room("Tipo 3", "Las salas de tipo 3 tienen un tamaño de 30 metros cuadrados. Cuentan con un piano acústico, teclado eléctrico, un micrófono vocal y un atril."));
+        bookings.add(new Booking(1, "Booking 1", new Calendar.Builder().setDate(2021, 05, 22).build()));
+        bookings.add(new Booking(2, "Booking 2", new Calendar.Builder().setDate(2021, 05, 23).build()));
+        bookings.add(new Booking(3, "Booking 3", new Calendar.Builder().setDate(2021, 05, 24).build()));
+        bookings.add(new Booking(4, "Booking 4", new Calendar.Builder().setDate(2021, 07, 24).build()));
 
-        // Creamos un SalaAdapter pasándole todas nuestras salas
-        mAdapter = new SalaAdapter(salas);
+        // Creamos un BookingAdapter pasándole todas nuestras bookings
+        mAdapter = new BookingAdapter(bookings);
         // Asociamos el adaptador al RecyclerView
         mRecyclerView.setAdapter(mAdapter);
     }
@@ -62,13 +64,13 @@ public class Localizacion extends AppCompatActivity {
         // Handle action bar item clicks here.
 
         switch (item.getItemId()){
-            case R.id.action_fechas:
-                Intent intentFechas = new Intent(Localizacion.this, FechasImportantes.class);
-                startActivity(intentFechas);
+            case R.id.action_dates:
+                Intent intentDates = new Intent(ImportantDates.this, ImportantDates.class);
+                startActivity(intentDates);
                 return true;
-            case R.id.action_localizacion:
-                Intent intentLocalizacion = new Intent(Localizacion.this, Localizacion.class);
-                startActivity(intentLocalizacion);
+            case R.id.action_location:
+                Intent intentLocation = new Intent(ImportantDates.this, Location.class);
+                startActivity(intentLocation);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

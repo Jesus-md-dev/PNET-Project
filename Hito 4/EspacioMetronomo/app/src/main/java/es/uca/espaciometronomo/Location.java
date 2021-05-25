@@ -3,9 +3,6 @@ package es.uca.espaciometronomo;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -13,13 +10,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 
-public class FechasImportantes extends AppCompatActivity {
+public class Location extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -28,31 +22,30 @@ public class FechasImportantes extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fechas_importantes);
+        setContentView(R.layout.activity_location);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         // Referenciamos al RecyclerView
-        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view_localizacion);
 
         // Mejoramos rendimiento con esta configuración
         mRecyclerView.setHasFixedSize(true);
 
-        // Creamos un LinearLayoutManager para gestionar el item_fechas.xml creado antes
+        // Creamos un LinearLayoutManager para gestionar el item_localizacion.xml creado antes
         mLayoutManager = new LinearLayoutManager(this);
         // Lo asociamos al RecyclerView
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        // Creamos un ArrayList de Resevas
-        ArrayList<Reserva> reservas = new ArrayList<Reserva>();
+        // Creamos un ArrayList de Salas
+        ArrayList<Room> rooms = new ArrayList<Room>();
 
-        reservas.add(new Reserva(1, "Reserva 1", new Calendar.Builder().setDate(2021, 05, 22).build()));
-        reservas.add(new Reserva(2, "Reserva 2", new Calendar.Builder().setDate(2021, 05, 23).build()));
-        reservas.add(new Reserva(3, "Reserva 3", new Calendar.Builder().setDate(2021, 05, 24).build()));
-        reservas.add(new Reserva(4, "Reserva 4", new Calendar.Builder().setDate(2021, 07, 24).build()));
+        rooms.add(new Room("Tipo 1", "Las salas de tipo 1 tienen un tamaño de 25 metros cuadrados. Cuentan con un piano acústico, teclado eléctrico, un micrófono vocal y un atril."));
+        rooms.add(new Room("Tipo 2", "Las salas de tipo 2 tienen un tamaño de 25 metros cuadrados. Cuentan con un piano acústico, teclado eléctrico, un micrófono vocal y un atril."));
+        rooms.add(new Room("Tipo 3", "Las salas de tipo 3 tienen un tamaño de 30 metros cuadrados. Cuentan con un piano acústico, teclado eléctrico, un micrófono vocal y un atril."));
 
-        // Creamos un ReservaAdapter pasándole todas nuestras reservas
-        mAdapter = new ReservaAdapter(reservas);
+        // Creamos un RoomAdapter pasándole todas nuestras salas
+        mAdapter = new RoomAdapter(rooms);
         // Asociamos el adaptador al RecyclerView
         mRecyclerView.setAdapter(mAdapter);
     }
@@ -69,13 +62,13 @@ public class FechasImportantes extends AppCompatActivity {
         // Handle action bar item clicks here.
 
         switch (item.getItemId()){
-            case R.id.action_fechas:
-                Intent intentFechas = new Intent(FechasImportantes.this, FechasImportantes.class);
-                startActivity(intentFechas);
+            case R.id.action_dates:
+                Intent intentDates = new Intent(Location.this, ImportantDates.class);
+                startActivity(intentDates);
                 return true;
-            case R.id.action_localizacion:
-                Intent intentLocalizacion = new Intent(FechasImportantes.this, Localizacion.class);
-                startActivity(intentLocalizacion);
+            case R.id.action_location:
+                Intent intentLocation = new Intent(Location.this, Location.class);
+                startActivity(intentLocation);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

@@ -1,23 +1,23 @@
-es/uca/espaciometronomo/SalaAdapter.java
- es.uca.espaciometronomo.SalaAdapter
- es.uca.espaciometronomo.SalaAdapter$MyViewHolder
-es/uca/espaciometronomo/Localizacion.java
- es.uca.espaciometronomo.Localizacion
+es/uca/espaciometronomo/BookingAdapter.java
+ es.uca.espaciometronomo.BookingAdapter
+ es.uca.espaciometronomo.BookingAdapter$1
+ es.uca.espaciometronomo.BookingAdapter$MyViewHolder
+es/uca/espaciometronomo/ImportantDates.java
+ es.uca.espaciometronomo.ImportantDates
 es/uca/espaciometronomo/Room.java
  es.uca.espaciometronomo.Room
-es/uca/espaciometronomo/MapsActivity.java
- es.uca.espaciometronomo.MapsActivity
-es/uca/espaciometronomo/ReservaAdapter.java
- es.uca.espaciometronomo.ReservaAdapter
- es.uca.espaciometronomo.ReservaAdapter$1
- es.uca.espaciometronomo.ReservaAdapter$MyViewHolder
-es/uca/espaciometronomo/Reserva.java
- es.uca.espaciometronomo.Reserva
-es/uca/espaciometronomo/FechasImportantes.java
- es.uca.espaciometronomo.FechasImportantes
-es/uca/espaciometronomo/EspacioMetronomoWidget.java
- es.uca.espaciometronomo.EspacioMetronomoWidget
-es/uca/espaciometronomo/MainActivity.java
- es.uca.espaciometronomo.MainActivity
 es/uca/espaciometronomo/BuildConfig.java
  es.uca.espaciometronomo.BuildConfig
+es/uca/espaciometronomo/Booking.java
+ es.uca.espaciometronomo.Booking
+es/uca/espaciometronomo/RoomAdapter.java
+ es.uca.espaciometronomo.RoomAdapter
+ es.uca.espaciometronomo.RoomAdapter$MyViewHolder
+es/uca/espaciometronomo/EspacioMetronomoWidget.java
+ es.uca.espaciometronomo.EspacioMetronomoWidget
+es/uca/espaciometronomo/Location.java
+ es.uca.espaciometronomo.Location
+es/uca/espaciometronomo/MainActivity.java
+ es.uca.espaciometronomo.MainActivity
+es/uca/espaciometronomo/MapsActivity.java
+ es.uca.espaciometronomo.MapsActivity
