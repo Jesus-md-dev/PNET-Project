@@ -2,7 +2,6 @@ package es.uca.espaciometronomo;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,12 +21,14 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView room;
         TextView date;
+        TextView name;
         Button show;
 
         public MyViewHolder(View v) {
             super(v);
             room = v.findViewById(R.id.room);
-            date = v.findViewById(R.id.date);
+            date = v.findViewById(R.id.name);
+            name = v.findViewById(R.id.date);
             show = v.findViewById(R.id.show);
         }
     }
@@ -50,13 +51,15 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
-        holder.room.setText(roomTypeIntToString(bookings.get(position).getRoomType()));
+        String room = "Sala " + roomTypeIntToString(bookings.get(position).getRoomType());
+        holder.room.setText(room);
         holder.date.setText(bookings.get(position).getDateString());
+        holder.name.setText(bookings.get(position).getName());
         holder.show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context.getApplicationContext(), BookingViewActivity.class);
-                intent.putExtra("view_book", (Booking) bookings.get(position));
+                intent.putExtra("view_booking", bookings.get(position));
                 context.startActivity(intent);
             }
         });

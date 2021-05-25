@@ -65,6 +65,7 @@ public class BookingMainActivity extends AppCompatActivity {
         protected void onPostExecute(String results) {
             super .onPostExecute(results);
             try {
+                bookings.clear();
                 JSONArray array = new JSONArray(results);
 
                 for (int i = 0; i < array.length(); i++) {
@@ -102,11 +103,10 @@ public class BookingMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking_main);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Button formButton = findViewById(R.id.bookingFormButton);
-        BookingMainActivity.LongRunningGetIO myInvokeTask = new BookingMainActivity.LongRunningGetIO();
-        myInvokeTask.execute();
 
         formButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -131,8 +131,13 @@ public class BookingMainActivity extends AppCompatActivity {
 
         if (booking != null)
             bookings.add(booking);
+    }
 
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LongRunningGetIO myInvokeTask = new LongRunningGetIO();
+        myInvokeTask.execute();
     }
 
     @Override
@@ -167,7 +172,7 @@ public class BookingMainActivity extends AppCompatActivity {
         }
 
         if (id == R.id.action_test) {
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            return true;
         }
 
         return super.onOptionsItemSelected(item);

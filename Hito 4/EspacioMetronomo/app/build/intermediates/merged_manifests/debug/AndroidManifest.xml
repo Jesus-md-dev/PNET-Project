@@ -22,7 +22,6 @@
         android:testOnly="true"
         android:theme="@style/Theme.EspacioMetronomo"
         android:usesCleartextTraffic="true" >
-        <activity android:name="es.uca.espaciometronomo.MainActivity" />
         <activity android:name="es.uca.espaciometronomo.BookingEditActivity" />
         <activity android:name="es.uca.espaciometronomo.BookingViewActivity" />
         <activity android:name="es.uca.espaciometronomo.BookingFormActivity" />

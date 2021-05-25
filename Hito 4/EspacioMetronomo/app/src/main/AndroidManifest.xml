@@ -12,7 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EspacioMetronomo">
-        <activity android:name=".MainActivity" />
         <activity android:name=".BookingEditActivity" />
         <activity android:name=".BookingViewActivity" />
         <activity android:name=".BookingFormActivity" />

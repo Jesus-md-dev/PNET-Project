@@ -3,7 +3,9 @@ package es.uca.espaciometronomo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,12 +13,81 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
+
 public class BookingViewActivity extends AppCompatActivity {
+    private Booking booking;
+
+    private class LongRunningGetIO extends AsyncTask<Void, Void, String>
+    {
+        @Override
+        protected String doInBackground(Void... params){
+            String text = null;
+            HttpURLConnection urlConnection = null;
+            try {
+                URL urlToRequest = new URL("http://10.0.2.2:3000/bookings/" + booking.getId());
+                urlConnection = (HttpURLConnection) urlToRequest.openConnection();
+                urlConnection.setRequestMethod("DELETE");
+                urlConnection.setRequestProperty("Content-Type", "application/json");
+                urlConnection.setRequestProperty("Accept", "application/json");
+                urlConnection.setDoOutput(true);
+
+                try(BufferedReader br = new BufferedReader(
+                        new InputStreamReader(urlConnection.getInputStream(),
+                                StandardCharsets.UTF_8))) {
+                    StringBuilder response = new StringBuilder();
+                    String responseLine;
+                    while ((responseLine = br.readLine()) != null) {
+                        response.append(responseLine.trim());
+                    }
+                    System.out.println(response.toString());
+                    text = response.toString();
+                }
+            } catch (Exception e) {
+                return e.toString();
+            } finally {
+                if (urlConnection != null)
+                    urlConnection.disconnect();
+            }
+            return text;
+        }
+
+        @Override
+        protected void onPostExecute(String results) {
+            if (results != null) {
+                JSONObject respJSON = null;
+                try {
+                    respJSON = new JSONObject(results);
+                    Toast.makeText(BookingViewActivity.this,
+                            "Reserva eliminada", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(), BookingMainActivity.class);
+                    startActivity(intent);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(BookingViewActivity.this, "Error al eliminar",
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking_view);
+
         String roomTitle;
         TextView roomText = findViewById(R.id.roomTypeTitle);
         TextView nameText = findViewById(R.id.nameText);
@@ -31,7 +102,7 @@ public class BookingViewActivity extends AppCompatActivity {
         Button deleteButton = findViewById(R.id.deleteButton);
 
         Intent intent = getIntent();
-        Booking booking = (Booking) intent.getSerializableExtra("view_book");
+        booking = (Booking) intent.getSerializableExtra("view_booking");
 
         if (booking != null)
         {
@@ -51,8 +122,16 @@ public class BookingViewActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(getApplicationContext(), BookingEditActivity.class);
-                    intent.putExtra("edit_book", booking);
+                    intent.putExtra("edit_booking", booking);
                     startActivity(intent);
+                }
+            });
+
+            deleteButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    LongRunningGetIO myInvokeTask = new LongRunningGetIO();
+                    myInvokeTask.execute();
                 }
             });
         }
@@ -93,7 +172,7 @@ public class BookingViewActivity extends AppCompatActivity {
         }
 
         if (id == R.id.action_test) {
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            return true;
         }
 
         return super.onOptionsItemSelected(item);

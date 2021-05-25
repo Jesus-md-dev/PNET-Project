@@ -1968,6 +1968,7 @@ id line1
 id line3
 id linear
 id linearLayout
+id linearLayout2
 id listMode
 id list_item
 id masked
@@ -2024,9 +2025,8 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
-id myInvokeButton
-id myInvokeText
 id my_recycler_view
+id name
 id nameLabel
 id nameText
 id nav_controller_view_tag
@@ -2274,7 +2274,6 @@ layout abc_tooltip
 layout activity_booking_form
 layout activity_booking_main
 layout activity_booking_view
-layout activity_main2
 layout booking_item
 layout custom_dialog
 layout design_bottom_navigation_item

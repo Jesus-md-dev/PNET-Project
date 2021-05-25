@@ -1,15 +1,8 @@
 package es.uca.espaciometronomo;
 
-import android.content.Context;
-import android.content.res.Resources;
-import android.util.Log;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.Serializable;
 import java.util.Calendar;
-
-import static android.content.res.Resources.*;
 
 public class Booking implements Serializable {
     private String id, name, dni, phone, email;
@@ -124,39 +117,23 @@ public class Booking implements Serializable {
         return reason;
     }
 
+    public String getRoomTypeString() { return BookingAdapter.roomTypeIntToString(roomType); }
+
     public void setReason(int reason) {
         this.reason = reason;
     }
+
+    public void setReason(String reason) {
+        this.reason = BookingAdapter.reasonStringToInt(reason);
+    }
+
+    public String getReasonString() { return BookingAdapter.reasonIntToString(reason); }
 
     public int getRoomType() { return roomType; }
 
     public void setRoomType(int roomType) { this.roomType = roomType; }
 
-    public String getReasonString() { return BookingAdapter.reasonIntToString(reason); }
-
-    public void setReasonString(String reason) {
-        this.reason = BookingAdapter.reasonStringToInt(reason);
-    }
-
-    public String getRoomTypeString() { return BookingAdapter.roomTypeIntToString(roomType); }
-
-    public void setRoomTypeString(String roomType) {
+    public void setRoomType(String roomType) {
         this.roomType = BookingAdapter.roomTypeStringToInt(roomType);
-    }
-
-    @Override
-    public String toString() {
-        return "Booking{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", dni='" + dni + '\'' +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                ", date=" + date +
-                ", startHour=" + startHour +
-                ", endHour=" + endHour +
-                ", roomType=" + getRoomTypeString() +
-                ", reason=" + getReasonString() +
-                '}';
     }
 }

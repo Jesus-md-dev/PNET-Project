@@ -21,7 +21,7 @@
     <string name="type1">Básica</string>
     <string name="type2">Grande</string>
     <string name="type3">Vip</string>
-    <string name="booking_view_title">Desripción de la Reserva</string>
+    <string name="booking_view_title">Descripción de la Reserva</string>
     <string name="booking_room_title">Sala</string>
     <string name="booking_name_label">Nombre:</string>
     <string name="booking_dni_label">DNI:</string>
