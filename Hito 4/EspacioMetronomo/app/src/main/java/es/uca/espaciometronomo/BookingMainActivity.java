@@ -25,6 +25,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class BookingMainActivity extends AppCompatActivity {
@@ -88,6 +91,11 @@ public class BookingMainActivity extends AppCompatActivity {
 
                     bookings.add(booking);
                 }
+
+                Comparator<Booking> compareByDate = (Booking b1, Booking b2)
+                        -> b1.getDate().compareTo(b2.getDate());
+
+                Collections.sort(bookings, compareByDate);
 
                 mAdapter = new BookingAdapter(bookings);
 
@@ -168,10 +176,6 @@ public class BookingMainActivity extends AppCompatActivity {
         }
 
         if (id == R.id.action_location) {
-            return true;
-        }
-
-        if (id == R.id.action_test) {
             return true;
         }
 

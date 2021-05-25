@@ -71,8 +71,14 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
     }
 
     public static String dateCalendarToString(Calendar calendar) {
-        return calendar.get(Calendar.DAY_OF_MONTH) + "/" + calendar.get(Calendar.MONTH) + "/" +
-                calendar.get(Calendar.YEAR);
+        return calendar.get(Calendar.DAY_OF_MONTH) + "/" + (calendar.get(Calendar.MONTH) + 1) +
+                "/" + calendar.get(Calendar.YEAR);
+    }
+
+    public static Calendar dateStringToCalendar(String date) {
+        String[] parts = date.split("/");
+        return new Calendar.Builder().setDate(Integer.parseInt(parts[2]),
+                Integer.parseInt(parts[1]) - 1, Integer.parseInt(parts[0])).build();
     }
 
     public static String hourCalendarToString(Calendar calendar) {
@@ -82,12 +88,6 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
         if(min < 10) hora += "0" + min;
         else hora += min;
         return hora;
-    }
-
-    public static Calendar dateStringToCalendar(String date) {
-        String[] parts = date.split("/");
-        return new Calendar.Builder().setDate(Integer.parseInt(parts[2]),
-                Integer.parseInt(parts[1]), Integer.parseInt(parts[0])).build();
     }
 
     public static Calendar hourStringToCalendar(String hour) {

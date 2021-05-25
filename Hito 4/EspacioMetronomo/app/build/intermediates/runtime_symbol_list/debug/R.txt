@@ -1795,7 +1795,6 @@ int id action_mode_bar 0x7f090040
 int id action_mode_bar_stub 0x7f090041
 int id action_mode_close_button 0x7f090042
 int id action_program 0x7f090043
-int id action_test 0x7f090044
 int id action_text 0x7f090045
 int id actions 0x7f090046
 int id activity_chooser_view_content 0x7f090047
@@ -2356,7 +2355,6 @@ int layout text_view_with_line_height_from_layout 0x7f0c006f
 int layout text_view_with_line_height_from_style 0x7f0c0070
 int layout text_view_with_theme_line_height 0x7f0c0071
 int layout text_view_without_line_height 0x7f0c0072
-int menu menu_form 0x7f0d0000
 int menu menu_main 0x7f0d0001
 int mipmap ic_launcher 0x7f0e0000
 int mipmap ic_launcher_round 0x7f0e0001
