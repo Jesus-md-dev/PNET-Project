@@ -1,26 +1,26 @@
 package es.uca.espaciometronomo;
 
 public class Room {
-    private String nombre, descripcion;
+    private String name, description;
 
-    public Room(String nombre, String descripcion){
-        this.nombre = nombre;
-        this.descripcion = descripcion;
+    public Room(String name, String description){
+        this.name = name;
+        this.description = description;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

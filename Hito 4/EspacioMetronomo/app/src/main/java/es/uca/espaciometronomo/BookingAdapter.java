@@ -24,13 +24,13 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.MyViewHolder>{
-    private ArrayList<Reserva> reservas;
+public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHolder>{
+    private ArrayList<Booking> bookings;
     private Context context;
     private static final int NOTIF_ALERTA_ID = 1;
 
-    public ReservaAdapter(ArrayList<Reserva> myDataset) {
-        reservas = myDataset;
+    public BookingAdapter(ArrayList<Booking> myDataset) {
+        bookings = myDataset;
     }
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView name;
@@ -45,20 +45,20 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.MyViewHo
         }
     }
     @Override
-    public ReservaAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_fechas, parent, false);
+    public BookingAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.importantdates_item, parent, false);
         MyViewHolder vh = new MyViewHolder(v);
         context = parent.getContext();
         return vh;
     }
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
-        holder.name.setText(reservas.get(position).getNombre());
-        holder.date.setText(calendarToString(reservas.get(position).getFecha()));
+        holder.name.setText(bookings.get(position).getName());
+        holder.date.setText(calendarToString(bookings.get(position).getDate()));
         holder.show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Calendar fecha = reservas.get(position).getFecha();
+                Calendar fecha = bookings.get(position).getDate();
                 Calendar actual = calendarToCalendar(Calendar.getInstance());
 
                 // Toast para las fechas que ya han pasado
@@ -87,7 +87,7 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.MyViewHo
                         .setSmallIcon(R.drawable.ic_launcher_background)
                         .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_launcher_background))
                         .setContentTitle("Localización")
-                        .setContentText("Descubre donde se realizarán las reservas")
+                        .setContentText("Descubre donde se realizarán las bookings")
                         .setTicker("Alerta!");
 
                 notification.setVibrate(new long[]{1000, 1000, 1000, 1000, 1000});
@@ -130,7 +130,7 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.MyViewHo
 
     @Override
     public int getItemCount() {
-        return reservas.size();
+        return bookings.size();
     }
 
     public static String calendarToString (Calendar calendar) {

@@ -10,11 +10,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class SalaAdapter extends RecyclerView.Adapter<SalaAdapter.MyViewHolder>{
+public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.MyViewHolder>{
     private ArrayList<Room> salas;
     private Context context;
 
-    public SalaAdapter(ArrayList<Room> myDataset) {
+    public RoomAdapter(ArrayList<Room> myDataset) {
         salas = myDataset;
     }
     public static class MyViewHolder extends RecyclerView.ViewHolder {
@@ -28,16 +28,16 @@ public class SalaAdapter extends RecyclerView.Adapter<SalaAdapter.MyViewHolder>{
         }
     }
     @Override
-    public SalaAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_localizacion, parent, false);
+    public RoomAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.location_item, parent, false);
         MyViewHolder vh = new MyViewHolder(v);
         context = parent.getContext();
         return vh;
     }
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
-        holder.name.setText(salas.get(position).getNombre());
-        holder.description.setText(salas.get(position).getDescripcion());
+        holder.name.setText(salas.get(position).getName());
+        holder.description.setText(salas.get(position).getDescription());
     }
 
     @Override

@@ -3,20 +3,11 @@ package es.uca.espaciometronomo;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,13 +33,13 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
 
         switch (item.getItemId()){
-            case R.id.action_fechas:
-                Intent intentUndo = new Intent(MainActivity.this, FechasImportantes.class);
-                startActivity(intentUndo);
+            case R.id.action_dates:
+                Intent intentDates = new Intent(MainActivity.this, ImportantDates.class);
+                startActivity(intentDates);
                 return true;
-            case R.id.action_localizacion:
-                Intent intentLocalizacion = new Intent(MainActivity.this, Localizacion.class);
-                startActivity(intentLocalizacion);
+            case R.id.action_location:
+                Intent intentLocation = new Intent(MainActivity.this, Location.class);
+                startActivity(intentLocation);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
