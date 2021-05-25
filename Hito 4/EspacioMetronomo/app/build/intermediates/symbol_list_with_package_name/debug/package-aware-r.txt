@@ -2313,7 +2313,6 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_dates
-layout activity_location
 layout activity_main
 layout activity_maps
 layout custom_dialog
