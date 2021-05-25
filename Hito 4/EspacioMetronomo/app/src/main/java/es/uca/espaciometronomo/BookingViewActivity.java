@@ -171,10 +171,6 @@ public class BookingViewActivity extends AppCompatActivity {
             return true;
         }
 
-        if (id == R.id.action_test) {
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
 }
