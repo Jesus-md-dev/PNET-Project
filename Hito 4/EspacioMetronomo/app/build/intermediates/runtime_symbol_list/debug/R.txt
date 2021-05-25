@@ -1745,6 +1745,7 @@ int drawable design_password_eye 0x7f080066
 int drawable design_snackbar_background 0x7f080067
 int drawable googleg_disabled_color_18 0x7f0800a7
 int drawable googleg_standard_color_18 0x7f0800a8
+int drawable header 0x7f0800a9
 int drawable ic_clock_black_24dp 0x7f080068
 int drawable ic_keyboard_black_24dp 0x7f080069
 int drawable ic_launcher_background 0x7f08006a
@@ -1949,6 +1950,7 @@ int id disableScroll 0x7f09009a
 int id disjoint 0x7f09009b
 int id dniLabel 0x7f09009c
 int id dniText 0x7f09009d
+int id dowloadButton 0x7f0901f1
 int id dragDown 0x7f09009e
 int id dragEnd 0x7f09009f
 int id dragLeft 0x7f0900a0
@@ -2094,7 +2096,6 @@ int id mtrl_picker_title_text 0x7f090125
 int id mtrl_view_tag_bottom_padding 0x7f090126
 int id multiply 0x7f090127
 int id my_recycler_view 0x7f09012a
-int id name 0x7f0901e2
 int id nameLabel 0x7f09012b
 int id nameText 0x7f09012c
 int id nav_controller_view_tag 0x7f09012d
@@ -2134,6 +2135,7 @@ int id radioButtonType1 0x7f09014e
 int id radioButtonType2 0x7f09014f
 int id radioButtonType3 0x7f090150
 int id ratio 0x7f090151
+int id reason 0x7f0901f0
 int id reasonLabel 0x7f090152
 int id reasonText 0x7f090153
 int id reasonsSpinner 0x7f090154
@@ -2157,6 +2159,7 @@ int id scroll 0x7f090164
 int id scrollIndicatorDown 0x7f090165
 int id scrollIndicatorUp 0x7f090166
 int id scrollView 0x7f090167
+int id scrollView2 0x7f0901f2
 int id scrollable 0x7f090168
 int id search_badge 0x7f090169
 int id search_bar 0x7f09016a
@@ -2347,6 +2350,7 @@ int layout abc_tooltip 0x7f0c001b
 int layout activity_booking_form 0x7f0c001c
 int layout activity_booking_main 0x7f0c001d
 int layout activity_booking_view 0x7f0c001e
+int layout activity_important_booking_view 0x7f0c0075
 int layout activity_important_bookings 0x7f0c0073
 int layout activity_maps 0x7f0c0074
 int layout booking_item 0x7f0c0020
@@ -2511,6 +2515,7 @@ int string common_signin_button_text_long 0x7f10009c
 int string dateFormat 0x7f100036
 int string delete_booking_button 0x7f100037
 int string dniHint 0x7f100038
+int string dowload_button 0x7f10009f
 int string edit_booking_button 0x7f100039
 int string emailEditText 0x7f10003a
 int string error_icon_content_description 0x7f10003b

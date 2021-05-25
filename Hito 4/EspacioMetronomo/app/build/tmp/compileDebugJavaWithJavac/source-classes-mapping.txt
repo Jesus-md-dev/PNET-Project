@@ -3,6 +3,10 @@ es/uca/espaciometronomo/BookingViewActivity.java
  es.uca.espaciometronomo.BookingViewActivity$1
  es.uca.espaciometronomo.BookingViewActivity$2
  es.uca.espaciometronomo.BookingViewActivity$LongRunningGetIO
+es/uca/espaciometronomo/BuildConfig.java
+ es.uca.espaciometronomo.BuildConfig
+es/uca/espaciometronomo/databinding/ActivityImportantBookingViewBinding.java
+ es.uca.espaciometronomo.databinding.ActivityImportantBookingViewBinding
 es/uca/espaciometronomo/BookingEditActivity.java
  es.uca.espaciometronomo.BookingEditActivity
  es.uca.espaciometronomo.BookingEditActivity$1
@@ -33,12 +37,16 @@ es/uca/espaciometronomo/ImportantBookingsActivity.java
  es.uca.espaciometronomo.ImportantBookingsActivity
  es.uca.espaciometronomo.ImportantBookingsActivity$1
  es.uca.espaciometronomo.ImportantBookingsActivity$LongRunningGetIO
-es/uca/espaciometronomo/BuildConfig.java
- es.uca.espaciometronomo.BuildConfig
-es/uca/espaciometronomo/databinding/ActivityMapsBinding.java
- es.uca.espaciometronomo.databinding.ActivityMapsBinding
+es/uca/espaciometronomo/BookingMainActivity.java
+ es.uca.espaciometronomo.BookingMainActivity
+ es.uca.espaciometronomo.BookingMainActivity$1
+ es.uca.espaciometronomo.BookingMainActivity$LongRunningGetIO
+es/uca/espaciometronomo/MapsActivity.java
+ es.uca.espaciometronomo.MapsActivity
 es/uca/espaciometronomo/databinding/ActivityBookingMainBinding.java
  es.uca.espaciometronomo.databinding.ActivityBookingMainBinding
+es/uca/espaciometronomo/databinding/ActivityMapsBinding.java
+ es.uca.espaciometronomo.databinding.ActivityMapsBinding
 es/uca/espaciometronomo/databinding/ActivityBookingFormBinding.java
  es.uca.espaciometronomo.databinding.ActivityBookingFormBinding
 es/uca/espaciometronomo/databinding/BookingItemBinding.java
@@ -47,9 +55,11 @@ es/uca/espaciometronomo/Booking.java
  es.uca.espaciometronomo.Booking
 es/uca/espaciometronomo/databinding/ActivityImportantBookingsBinding.java
  es.uca.espaciometronomo.databinding.ActivityImportantBookingsBinding
-es/uca/espaciometronomo/BookingMainActivity.java
- es.uca.espaciometronomo.BookingMainActivity
- es.uca.espaciometronomo.BookingMainActivity$1
- es.uca.espaciometronomo.BookingMainActivity$LongRunningGetIO
-es/uca/espaciometronomo/MapsActivity.java
- es.uca.espaciometronomo.MapsActivity
+es/uca/espaciometronomo/ImportantBookingAdapter.java
+ es.uca.espaciometronomo.ImportantBookingAdapter
+ es.uca.espaciometronomo.ImportantBookingAdapter$1
+ es.uca.espaciometronomo.ImportantBookingAdapter$MyViewHolder
+es/uca/espaciometronomo/ImportantBookingViewActivity.java
+ es.uca.espaciometronomo.ImportantBookingViewActivity
+ es.uca.espaciometronomo.ImportantBookingViewActivity$1
+ es.uca.espaciometronomo.ImportantBookingViewActivity$LongRunningGetIO
