@@ -147,7 +147,7 @@ public class ImportantBookingsActivity extends AppCompatActivity {
         }
 
         if (id == R.id.action_location) {
-            startActivity(new Intent(getApplicationContext(), MapsActivity.class));
+            startActivity(new Intent(getApplicationContext(), Location.class));
         }
 
         return super.onOptionsItemSelected(item);
