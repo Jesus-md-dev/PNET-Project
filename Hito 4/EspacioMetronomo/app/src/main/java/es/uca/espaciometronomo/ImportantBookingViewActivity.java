@@ -1,11 +1,22 @@
 package es.uca.espaciometronomo;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Typeface;
+import android.graphics.pdf.PdfDocument;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,21 +24,24 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.InputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.util.Scanner;
 
-public class BookingViewActivity extends AppCompatActivity {
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+
+public class ImportantBookingViewActivity extends AppCompatActivity {
+
     private Booking booking;
 
     private class LongRunningGetIO extends AsyncTask<Void, Void, String>
@@ -70,14 +84,14 @@ public class BookingViewActivity extends AppCompatActivity {
                 JSONObject respJSON = null;
                 try {
                     respJSON = new JSONObject(results);
-                    Toast.makeText(BookingViewActivity.this,
+                    Toast.makeText(ImportantBookingViewActivity.this,
                             "Reserva eliminada", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), BookingMainActivity.class);
                     startActivity(intent);
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Toast.makeText(BookingViewActivity.this, "Error al eliminar",
-                            Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ImportantBookingViewActivity.this,
+                            "Error al eliminar", Toast.LENGTH_SHORT).show();
                 }
             }
         }
@@ -86,7 +100,7 @@ public class BookingViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_booking_view);
+        setContentView(R.layout.activity_important_booking_view);
 
         String roomTitle;
         TextView roomText = findViewById(R.id.roomTypeTitle);
@@ -98,8 +112,11 @@ public class BookingViewActivity extends AppCompatActivity {
         TextView startHourText = findViewById(R.id.editTextStartHour);
         TextView endHourText = findViewById(R.id.editTextEndHour);
         TextView reasonText = findViewById(R.id.reasonText);
-        Button editButton = findViewById(R.id.editButton);
-        Button deleteButton = findViewById(R.id.deleteButton);
+        Button downloadButton = findViewById(R.id.dowloadButton);
+
+        ActivityCompat.requestPermissions(this, new String[] {
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+        }, PackageManager.PERMISSION_GRANTED);
 
         Intent intent = getIntent();
         booking = (Booking) intent.getSerializableExtra("view_booking");
@@ -118,26 +135,80 @@ public class BookingViewActivity extends AppCompatActivity {
             endHourText.setText(BookingAdapter.hourCalendarToString(booking.getEndHour()));
             reasonText.setText(booking.getReasonString());
 
-            editButton.setOnClickListener(new View.OnClickListener() {
+            downloadButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getApplicationContext(), BookingEditActivity.class);
-                    intent.putExtra("edit_booking", booking);
-                    startActivity(intent);
-                }
-            });
-
-            deleteButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    LongRunningGetIO myInvokeTask = new LongRunningGetIO();
-                    myInvokeTask.execute();
+                    generatePDF();
+                    Toast.makeText(ImportantBookingViewActivity.this,
+                            "PDF descargado", Toast.LENGTH_SHORT).show();
                 }
             });
         }
         else
-            Toast.makeText(BookingViewActivity.this,"Error al cargar la reserva",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(ImportantBookingViewActivity.this,
+                    "Error al cargar la reserva", Toast.LENGTH_SHORT).show();
+    }
+
+    private void generatePDF() {
+        int ySpace = 20;
+        int yPosition = ySpace;
+        int xPosition = 10;
+        String[] bookingData = {"Nombre: " + booking.getName(), "DNI: " + booking.getDni(),
+                "Teléfono: " + booking.getPhone(), "Email: " + booking.getEmail(),
+                "Fecha: " + booking.getDateString(),
+                "Hora de entrada: " + booking.getStartHourString(),
+                "Hora de salida: " + booking.getEndHourString(),
+                "Motivo: " + booking.getReasonString()};
+        PdfDocument pdfDocument = new PdfDocument();
+        Paint paint = new Paint();
+        Bitmap bitmap;
+
+        PdfDocument.PageInfo pageInfo = new PdfDocument.PageInfo
+                .Builder(250, 400, 1).create();
+        PdfDocument.Page page = pdfDocument.startPage(pageInfo);
+
+        Canvas canvas = page.getCanvas();
+
+        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.header);
+        bitmap = Bitmap.createScaledBitmap(bitmap, pageInfo.getPageWidth(),
+                Math.round(pageInfo.getPageWidth() / 4.6f), false);
+        canvas.drawBitmap(bitmap, 0, 0 , paint);
+
+        yPosition = (int) ((pageInfo.getPageWidth() / 4.6f) + (ySpace * 1.5));
+
+        int endXPosition = pageInfo.getPageWidth() - 10;
+
+        paint.setTextAlign(Paint.Align.CENTER);
+        paint.setTextSize(14.0f);
+        canvas.drawText("Sala " + booking.getRoomTypeString(), pageInfo.getPageWidth()/2,
+                yPosition, paint);
+        yPosition += ySpace * 1.5;
+
+        paint.setTextAlign(Paint.Align.LEFT);
+        paint.setTextSize(12.0f);
+        for(int i = 0; i < bookingData.length; ++i)
+        {
+            canvas.drawText(bookingData[i], xPosition, yPosition, paint);
+            canvas.drawLine(xPosition, yPosition + 3, endXPosition ,
+                    yPosition + 3, paint);
+            yPosition += ySpace;
+        }
+
+        pdfDocument.finishPage(page);
+
+        File file =new File(
+                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
+                "/" + booking.getName() + booking.getReasonString() + ".pdf");
+
+        try {
+            pdfDocument.writeTo(new FileOutputStream(file));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        pdfDocument.close();
     }
 
     @Override
@@ -164,11 +235,11 @@ public class BookingViewActivity extends AppCompatActivity {
         }
 
         if (id == R.id.action_dates) {
-            startActivity(new Intent(getApplicationContext(), ImportantDates.class));
+            return true;
         }
 
         if (id == R.id.action_location) {
-            startActivity(new Intent(getApplicationContext(), Location.class));
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
