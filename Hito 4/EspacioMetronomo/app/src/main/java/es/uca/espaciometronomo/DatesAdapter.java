@@ -99,7 +99,7 @@ public class DatesAdapter extends RecyclerView.Adapter<DatesAdapter.MyViewHolder
                 //Para que la notificación desaparezca
                 notification.setAutoCancel(true);
 
-                Intent noIntent = new Intent(context, MapsActivity.class);
+                Intent noIntent = new Intent(context, Location.class);
                 PendingIntent contIntent = PendingIntent.getActivity(context, 0, noIntent, 0);
 
                 notification.setContentIntent(contIntent);
