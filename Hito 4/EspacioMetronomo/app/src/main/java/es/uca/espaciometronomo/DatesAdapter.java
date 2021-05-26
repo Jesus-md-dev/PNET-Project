@@ -33,13 +33,13 @@ public class DatesAdapter extends RecyclerView.Adapter<DatesAdapter.MyViewHolder
         bookings = myDataset;
     }
     public static class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView name;
+        TextView reason;
         TextView date;
         ImageButton show;
 
         public MyViewHolder(View v) {
             super(v);
-            name = (TextView) v.findViewById(R.id.name);
+            reason = (TextView) v.findViewById(R.id.reason);
             date = (TextView) v.findViewById(R.id.date);
             show = (ImageButton) v.findViewById(R.id.show);
         }
@@ -53,12 +53,12 @@ public class DatesAdapter extends RecyclerView.Adapter<DatesAdapter.MyViewHolder
     }
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
-        holder.name.setText(bookings.get(position).getName());
-        holder.date.setText(calendarToString(bookings.get(position).getDate()));
+        holder.reason.setText(bookings.get(position).getReasonString());
+        holder.date.setText(bookings.get(position).getDateString());
         holder.show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Calendar fecha = bookings.get(position).getDate();
+                Calendar fecha = calendarToCalendar(bookings.get(position).getDate());
                 Calendar actual = calendarToCalendar(Calendar.getInstance());
 
                 // Toast para las fechas que ya han pasado
@@ -87,8 +87,7 @@ public class DatesAdapter extends RecyclerView.Adapter<DatesAdapter.MyViewHolder
                         .setSmallIcon(R.drawable.ic_launcher_background)
                         .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_launcher_background))
                         .setContentTitle("Localización")
-                        .setContentText("Descubre donde se realizarán las bookings")
-                        .setTicker("Alerta!");
+                        .setContentText("Descubre donde se realizará esta actividad");
 
                 notification.setVibrate(new long[]{1000, 1000, 1000, 1000, 1000});
 
@@ -131,11 +130,6 @@ public class DatesAdapter extends RecyclerView.Adapter<DatesAdapter.MyViewHolder
     @Override
     public int getItemCount() {
         return bookings.size();
-    }
-
-    public static String calendarToString (Calendar calendar) {
-        return calendar.get(Calendar.DAY_OF_MONTH) + "/" + calendar.get(Calendar.MONTH) + "/" +
-                calendar.get(Calendar.YEAR);
     }
 
     public static Calendar calendarToCalendar (Calendar calendar) {

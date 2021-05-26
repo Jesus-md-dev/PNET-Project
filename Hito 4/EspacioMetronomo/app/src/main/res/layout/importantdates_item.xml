@@ -16,7 +16,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/name"
+                android:id="@+id/reason"
                 android:layout_width="326dp"
                 android:layout_height="40dp"
                 android:padding="5dp"
@@ -37,7 +37,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/name"
+                app:layout_constraintTop_toBottomOf="@+id/reason"
                 app:layout_constraintVertical_bias="0.0" />
 
             <ImageButton
