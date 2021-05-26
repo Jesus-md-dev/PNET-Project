@@ -96,6 +96,7 @@ public class BookingMainActivity extends AppCompatActivity {
                         -> b1.getDate().compareTo(b2.getDate());
 
                 Collections.sort(bookings, compareByDate);
+                Collections.reverse(bookings);
 
                 mAdapter = new BookingAdapter(bookings);
 
@@ -176,7 +177,7 @@ public class BookingMainActivity extends AppCompatActivity {
         }
 
         if (id == R.id.action_location) {
-            startActivity(new Intent(getApplicationContext(), MapsActivity.class));
+            return true;
         }
 
         return super.onOptionsItemSelected(item);

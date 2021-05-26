@@ -2041,7 +2041,6 @@ id linearLayout
 id linearLayout2
 id listMode
 id list_item
-id map
 id masked
 id material_clock_display
 id material_clock_face
@@ -2353,7 +2352,6 @@ layout activity_booking_main
 layout activity_booking_view
 layout activity_important_booking_view
 layout activity_important_bookings
-layout activity_maps
 layout booking_item
 layout custom_dialog
 layout design_bottom_navigation_item
