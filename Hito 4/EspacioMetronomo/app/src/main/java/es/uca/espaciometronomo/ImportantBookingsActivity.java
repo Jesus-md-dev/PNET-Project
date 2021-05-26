@@ -96,6 +96,8 @@ public class ImportantBookingsActivity extends AppCompatActivity {
                         .filter(b -> b.getReason() != 1).collect(Collectors.toList());
 
                 Collections.sort(importantBookings, compareByDate);
+                Collections.reverse(importantBookings);
+
                 mAdapter = new ImportantBookingAdapter(importantBookings);
 
                 mRecyclerView.setAdapter(mAdapter);
