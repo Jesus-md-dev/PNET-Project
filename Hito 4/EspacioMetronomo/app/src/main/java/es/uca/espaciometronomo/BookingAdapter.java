@@ -21,14 +21,14 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView room;
         TextView date;
-        TextView name;
+        TextView reason;
         Button show;
 
         public MyViewHolder(View v) {
             super(v);
             room = v.findViewById(R.id.room);
-            date = v.findViewById(R.id.name);
-            name = v.findViewById(R.id.date);
+            date = v.findViewById(R.id.date);
+            reason = v.findViewById(R.id.reason);
             show = v.findViewById(R.id.show);
         }
     }
@@ -54,7 +54,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
         String room = "Sala " + roomTypeIntToString(bookings.get(position).getRoomType());
         holder.room.setText(room);
         holder.date.setText(bookings.get(position).getDateString());
-        holder.name.setText(bookings.get(position).getName());
+        holder.reason.setText(bookings.get(position).getReasonString());
         holder.show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
