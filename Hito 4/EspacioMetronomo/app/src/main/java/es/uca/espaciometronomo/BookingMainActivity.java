@@ -96,6 +96,7 @@ public class BookingMainActivity extends AppCompatActivity {
                         -> b1.getDate().compareTo(b2.getDate());
 
                 Collections.sort(bookings, compareByDate);
+                Collections.reverse(bookings);
 
                 mAdapter = new BookingAdapter(bookings);
 

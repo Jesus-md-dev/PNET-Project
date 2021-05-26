@@ -235,11 +235,11 @@ public class ImportantBookingViewActivity extends AppCompatActivity {
         }
 
         if (id == R.id.action_dates) {
-            return true;
+            startActivity(new Intent(getApplicationContext(), ImportantDates.class));
         }
 
         if (id == R.id.action_location) {
-            return true;
+            startActivity(new Intent(getApplicationContext(), Location.class));
         }
 
         return super.onOptionsItemSelected(item);

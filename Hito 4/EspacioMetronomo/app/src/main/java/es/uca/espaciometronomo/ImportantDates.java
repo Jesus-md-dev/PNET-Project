@@ -97,6 +97,7 @@ public class ImportantDates extends AppCompatActivity {
                         -> b1.getDate().compareTo(b2.getDate());
 
                 Collections.sort(bookings, compareByDate);
+                Collections.reverse(bookings);
 
                 ArrayList<Booking> importantBookings = (ArrayList<Booking>) bookings.stream()
                         .filter(b -> b.getReason() != 1).collect(Collectors.toList());
