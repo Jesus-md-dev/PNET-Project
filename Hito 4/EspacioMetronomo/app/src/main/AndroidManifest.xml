@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="es.uca.espaciometronomo">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the "MyLocation" functionality.
     -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -19,8 +17,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.EspacioMetronomo">
-
+        android:theme="@style/Theme.EspacioMetronomo"
+        android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true">
+        <activity
+            android:name=".Location"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.EspacioMetronomo.NoActionBar"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -33,16 +36,24 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
+        <activity android:name=".ImportantBookingsActivity" />
+        <activity android:name=".BookingEditActivity" />
+        <activity android:name=".BookingViewActivity" />
+        <activity android:name=".BookingFormActivity" />
+        <activity android:name=".ImportantBookingViewActivity" />
         <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
-        <activity
-            android:name=".Location"
-            android:label="@string/title_activity_localizacion"
-            android:theme="@style/Theme.EspacioMetronomo.NoActionBar" />
+            android:name=".BookingMainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.EspacioMetronomo.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ImportantDates"
-            android:label="@string/title_activity_fechas_importantes"
+            android:label="@string/app_name"
             android:theme="@style/Theme.EspacioMetronomo.NoActionBar" />
 
         <receiver android:name=".EspacioMetronomoWidget">
@@ -54,17 +65,6 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/espacio_metronomo_widget_info" />
         </receiver>
-
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.EspacioMetronomo.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

@@ -2,52 +2,60 @@ package es.uca.espaciometronomo;
 
 import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
 import android.view.MenuItem;
 
-import java.util.ArrayList;
+import androidx.appcompat.widget.Toolbar;
 
-public class Location extends AppCompatActivity {
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
+import es.uca.espaciometronomo.databinding.ActivityMapsBinding;
+
+
+public class Location extends AppCompatActivity implements OnMapReadyCallback {
+
+    private GoogleMap mMap;
+    private ActivityMapsBinding binding;
+
+    /**
+     * Manipulates the map once available.
+     * This callback is triggered when the map is ready to be used.
+     * This is where we can add markers or lines, add listeners or move the camera. In this case,
+     * we just add a marker near Sydney, Australia.
+     * If Google Play services is not installed on the device, the user will be prompted to install
+     * it inside the SupportMapFragment. This method will only be triggered once the user has
+     * installed Google Play services and returned to the app.
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // Referenciamos al RecyclerView
-        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view_localizacion);
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+    }
 
-        // Mejoramos rendimiento con esta configuración
-        mRecyclerView.setHasFixedSize(true);
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
 
-        // Creamos un LinearLayoutManager para gestionar el item_localizacion.xml creado antes
-        mLayoutManager = new LinearLayoutManager(this);
-        // Lo asociamos al RecyclerView
-        mRecyclerView.setLayoutManager(mLayoutManager);
-
-        // Creamos un ArrayList de Salas
-        ArrayList<Room> rooms = new ArrayList<Room>();
-
-        rooms.add(new Room("Tipo 1", "Las salas de tipo 1 tienen un tamaño de 25 metros cuadrados. Cuentan con un piano acústico, teclado eléctrico, un micrófono vocal y un atril."));
-        rooms.add(new Room("Tipo 2", "Las salas de tipo 2 tienen un tamaño de 25 metros cuadrados. Cuentan con un piano acústico, teclado eléctrico, un micrófono vocal y un atril."));
-        rooms.add(new Room("Tipo 3", "Las salas de tipo 3 tienen un tamaño de 30 metros cuadrados. Cuentan con un piano acústico, teclado eléctrico, un micrófono vocal y un atril."));
-
-        // Creamos un RoomAdapter pasándole todas nuestras salas
-        mAdapter = new RoomAdapter(rooms);
-        // Asociamos el adaptador al RecyclerView
-        mRecyclerView.setAdapter(mAdapter);
+        // Add a marker in Sydney and move the camera
+        LatLng coordenadas = new LatLng(36.506991786532474, -6.2774893734393205);
+        mMap.addMarker(new MarkerOptions().position(coordenadas).title("Espacio Metrónomo"));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(coordenadas, 18f), 2000, null);
     }
 
     @Override
@@ -59,19 +67,28 @@ public class Location extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here.
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
 
-        switch (item.getItemId()){
-            case R.id.action_dates:
-                Intent intentDates = new Intent(Location.this, ImportantDates.class);
-                startActivity(intentDates);
-                return true;
-            case R.id.action_location:
-                Intent intentLocation = new Intent(Location.this, Location.class);
-                startActivity(intentLocation);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_books) {
+            startActivity(new Intent(getApplicationContext(), BookingMainActivity.class));
         }
+
+        if (id == R.id.action_program) {
+            startActivity(new Intent(getApplicationContext(), ImportantBookingsActivity.class));
+        }
+
+        if (id == R.id.action_dates) {
+            startActivity(new Intent(getApplicationContext(), ImportantDates.class));
+        }
+
+        if (id == R.id.action_location) {
+            startActivity(new Intent(getApplicationContext(), Location.class));
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -1,129 +1,66 @@
 package es.uca.espaciometronomo;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.media.RingtoneManager;
-import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.core.app.NotificationCompat;
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHolder>{
-    private ArrayList<Booking> bookings;
+public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHolder> {
+    private final ArrayList<Booking> bookings;
     private Context context;
-    private static final int NOTIF_ALERTA_ID = 1;
+
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
+        TextView room;
+        TextView date;
+        TextView reason;
+        Button show;
+
+        public MyViewHolder(View v) {
+            super(v);
+            room = v.findViewById(R.id.room);
+            date = v.findViewById(R.id.date);
+            reason = v.findViewById(R.id.reason);
+            show = v.findViewById(R.id.show);
+        }
+    }
 
     public BookingAdapter(ArrayList<Booking> myDataset) {
         bookings = myDataset;
     }
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView name;
-        TextView date;
-        ImageButton show;
 
-        public MyViewHolder(View v) {
-            super(v);
-            name = (TextView) v.findViewById(R.id.name);
-            date = (TextView) v.findViewById(R.id.date);
-            show = (ImageButton) v.findViewById(R.id.show);
-        }
-    }
+    @NonNull
     @Override
-    public BookingAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.importantdates_item, parent, false);
+    public BookingAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int
+            viewType) {
+        View v =
+                LayoutInflater.from(parent.getContext()).inflate(R.layout.booking_item,
+                        parent, false);
         MyViewHolder vh = new MyViewHolder(v);
         context = parent.getContext();
         return vh;
     }
+
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
-        holder.name.setText(bookings.get(position).getName());
-        holder.date.setText(calendarToString(bookings.get(position).getDate()));
+        String room = "Sala " + roomTypeIntToString(bookings.get(position).getRoomType());
+        holder.room.setText(room);
+        holder.date.setText(bookings.get(position).getDateString());
+        holder.reason.setText(bookings.get(position).getReasonString());
         holder.show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Calendar fecha = bookings.get(position).getDate();
-                Calendar actual = calendarToCalendar(Calendar.getInstance());
-
-                // Toast para las fechas que ya han pasado
-                if (fecha.compareTo(actual) < 0) {
-                    CharSequence text = "El plazo de la reserva ha pasado";
-                    int duration = Toast.LENGTH_LONG;
-
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
-                }
-
-                // SnackBar para fechas que no han pasado
-                if (fecha.compareTo(actual) >= 0) {
-                    int dias = (int) ((fecha.getTime().getTime() - actual.getTime().getTime())/86400000);
-
-                    if (dias == 0)
-                        Snackbar.make(v, "Hoy es el día de la reserva", Snackbar.LENGTH_LONG).show();
-                    else if (dias == 1)
-                        Snackbar.make(v, "Falta 1 día para el día de la reserva", Snackbar.LENGTH_LONG).show();
-                    else
-                        Snackbar.make(v, "Faltan " + dias + " días para el día de la reserva", Snackbar.LENGTH_LONG).show();
-                }
-
-                // Notificación en la barra de estado
-                NotificationCompat.Builder notification = new NotificationCompat.Builder(context, "default")
-                        .setSmallIcon(R.drawable.ic_launcher_background)
-                        .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_launcher_background))
-                        .setContentTitle("Localización")
-                        .setContentText("Descubre donde se realizarán las bookings")
-                        .setTicker("Alerta!");
-
-                notification.setVibrate(new long[]{1000, 1000, 1000, 1000, 1000});
-
-                // Tono
-                notification.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
-
-                notification.setLights(Color.WHITE, 3000, 3000);
-
-                //Para que la notificación desaparezca
-                notification.setAutoCancel(true);
-
-                Intent noIntent = new Intent(context, MainActivity.class);
-                PendingIntent contIntent = PendingIntent.getActivity(context, 0, noIntent, 0);
-
-                notification.setContentIntent(contIntent);
-
-                NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-                    NotificationChannel channel = new NotificationChannel("default", "Default Channel",
-                            NotificationManager.IMPORTANCE_DEFAULT);
-
-                    channel.enableVibration(true);
-                    channel.setVibrationPattern(new long[]{1000, 500, 1000});
-
-                    channel.enableLights(true);
-                    channel.setLightColor(Color.WHITE);
-
-                    // Icono
-                    channel.setShowBadge(true);
-                    mNotificationManager.createNotificationChannel(channel);
-                }
-
-                // Para que la notificación se lance
-                mNotificationManager.notify(NOTIF_ALERTA_ID, notification.build());
+                Intent intent = new Intent(context.getApplicationContext(), BookingViewActivity.class);
+                intent.putExtra("view_booking", bookings.get(position));
+                context.startActivity(intent);
             }
         });
     }
@@ -133,13 +70,89 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
         return bookings.size();
     }
 
-    public static String calendarToString (Calendar calendar) {
-        return calendar.get(Calendar.DAY_OF_MONTH) + "/" + calendar.get(Calendar.MONTH) + "/" +
-                calendar.get(Calendar.YEAR);
+    public static String dateCalendarToString(Calendar calendar) {
+        return calendar.get(Calendar.DAY_OF_MONTH) + "/" + (calendar.get(Calendar.MONTH) + 1) +
+                "/" + calendar.get(Calendar.YEAR);
     }
 
-    public static Calendar calendarToCalendar (Calendar calendar) {
-        return new Calendar.Builder().setDate(calendar.get(Calendar.YEAR),
-                calendar.get(Calendar.MONTH)+1, calendar.get(Calendar.DAY_OF_MONTH)).build();
+    public static Calendar dateStringToCalendar(String date) {
+        String[] parts = date.split("/");
+        return new Calendar.Builder().setDate(Integer.parseInt(parts[2]),
+                Integer.parseInt(parts[1]) - 1, Integer.parseInt(parts[0])).build();
+    }
+
+    public static String hourCalendarToString(Calendar calendar) {
+        String hora;
+        int horas = calendar.get(Calendar.HOUR_OF_DAY), min = calendar.get(Calendar.MINUTE);
+        hora = horas + ":";
+        if(min < 10) hora += "0" + min;
+        else hora += min;
+        return hora;
+    }
+
+    public static Calendar hourStringToCalendar(String hour) {
+        String[] parts = hour.split(":");
+        return new Calendar.Builder().setTimeOfDay(Integer.parseInt(parts[0]),
+                Integer.parseInt(parts[1]), 0).build();
+    }
+
+    public static String roomTypeIntToString(int roomType)
+    {
+        switch (roomType)
+        {
+            case 1:
+                return "Básica";
+            case 2:
+                return "Grande";
+            case 3:
+                return "Vip";
+            default:
+                return "";
+        }
+    }
+
+    public static int roomTypeStringToInt(String roomType)
+    {
+        switch (roomType)
+        {
+            case "Básica":
+                return 1;
+            case "Grande":
+                return 2;
+            case "Vip":
+                return 3;
+            default:
+                return -1;
+        }
+    }
+
+    public static String reasonIntToString(int roomType)
+    {
+        switch (roomType)
+        {
+            case 1:
+                return "Ensayo";
+            case 2:
+                return "Clase";
+            case 3:
+                return "Concierto";
+            default:
+                return "";
+        }
+    }
+
+    public static int reasonStringToInt(String roomType)
+    {
+        switch (roomType)
+        {
+            case "Ensayo":
+                return 1;
+            case "Clase":
+                return 2;
+            case "Concierto":
+                return 3;
+            default:
+                return -1;
+        }
     }
 }
