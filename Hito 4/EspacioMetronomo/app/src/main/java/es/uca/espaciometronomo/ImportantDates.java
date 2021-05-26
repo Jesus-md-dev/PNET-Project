@@ -21,8 +21,6 @@ import java.util.Collections;
 import java.util.Comparator;
 
 import android.os.AsyncTask;
-import android.view.View;
-import android.widget.Button;
 
 import java.io.BufferedInputStream;
 import java.io.InputStream;
@@ -37,14 +35,14 @@ public class ImportantDates extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList<Booking> bookings = new ArrayList<Booking>();
 
-    private class LongRunningGetIO extends AsyncTask<Void, Void, String>
+    private class GetAllAsyncTask extends AsyncTask<Void, Void, String>
     {
         @Override
         protected String doInBackground(Void... params){
             String text = null;
             HttpURLConnection urlConnection = null;
             try {
-                URL urlToRequest = new URL("http://10.0.2.2:3000/bookings");
+                URL urlToRequest = new URL(Endpoint.getBooking());
                 urlConnection = (HttpURLConnection) urlToRequest.openConnection();
                 urlConnection.connect();
                 if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK)
@@ -87,8 +85,6 @@ public class ImportantDates extends AppCompatActivity {
                     booking.setEndHour((String) jsonObject.get("endHour"));
                     booking.setReason((int) jsonObject.get("reason"));
                     booking.setRoomType((int) jsonObject.get("roomType"));
-
-                    Log.d("date", "onPostExecute: "+ booking.getDate());
 
                     bookings.add(booking);
                 }
@@ -138,7 +134,7 @@ public class ImportantDates extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        LongRunningGetIO myInvokeTask = new LongRunningGetIO();
+        GetAllAsyncTask myInvokeTask = new GetAllAsyncTask();
         myInvokeTask.execute();
     }
 

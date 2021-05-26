@@ -17,6 +17,7 @@ import android.graphics.pdf.PdfDocument;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,18 +25,22 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
 
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
@@ -44,30 +49,25 @@ public class ImportantBookingViewActivity extends AppCompatActivity {
 
     private Booking booking;
 
-    private class LongRunningGetIO extends AsyncTask<Void, Void, String>
+    private class GetAsyncTask extends AsyncTask<Void, Void, String>
     {
         @Override
         protected String doInBackground(Void... params){
             String text = null;
             HttpURLConnection urlConnection = null;
             try {
-                URL urlToRequest = new URL("http://10.0.2.2:3000/bookings/" + booking.getId());
+                URL urlToRequest = new URL(Endpoint.getBooking() + booking.getId());
                 urlConnection = (HttpURLConnection) urlToRequest.openConnection();
-                urlConnection.setRequestMethod("DELETE");
-                urlConnection.setRequestProperty("Content-Type", "application/json");
-                urlConnection.setRequestProperty("Accept", "application/json");
-                urlConnection.setDoOutput(true);
-
-                try(BufferedReader br = new BufferedReader(
-                        new InputStreamReader(urlConnection.getInputStream(),
-                                StandardCharsets.UTF_8))) {
-                    StringBuilder response = new StringBuilder();
-                    String responseLine;
-                    while ((responseLine = br.readLine()) != null) {
-                        response.append(responseLine.trim());
-                    }
-                    System.out.println(response.toString());
-                    text = response.toString();
+                urlConnection.setRequestMethod("GET");
+                urlConnection.connect();
+                if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK)
+                {
+                    InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                    text = new Scanner(in).useDelimiter("\\A").next();
+                }
+                else
+                {
+                    text = "error";
                 }
             } catch (Exception e) {
                 return e.toString();
@@ -80,28 +80,32 @@ public class ImportantBookingViewActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String results) {
-            if (results != null) {
-                JSONObject respJSON = null;
-                try {
-                    respJSON = new JSONObject(results);
-                    Toast.makeText(ImportantBookingViewActivity.this,
-                            "Reserva eliminada", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), BookingMainActivity.class);
-                    startActivity(intent);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(ImportantBookingViewActivity.this,
-                            "Error al eliminar", Toast.LENGTH_SHORT).show();
-                }
+            super .onPostExecute(results);
+            try {
+                JSONArray array = new JSONArray(results);
+
+                JSONObject jsonObject = array.getJSONObject(0);
+
+                booking.setId((String) jsonObject.get("_id"));
+                booking.setName((String) jsonObject.get("name"));
+                booking.setDni((String) jsonObject.get("dni"));
+                booking.setPhone((String) jsonObject.get("phone"));
+                booking.setEmail((String) jsonObject.get("email"));
+                booking.setDate((String) jsonObject.get("date"));
+                booking.setStartHour((String) jsonObject.get("startHour"));
+                booking.setEndHour((String) jsonObject.get("endHour"));
+                booking.setReason((int) jsonObject.get("reason"));
+                booking.setRoomType((int) jsonObject.get("roomType"));
+
+                setConfig();
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
         }
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_important_booking_view);
-
+    private void setConfig()
+    {
         String roomTitle;
         TextView roomText = findViewById(R.id.roomTypeTitle);
         TextView nameText = findViewById(R.id.nameText);
@@ -117,9 +121,6 @@ public class ImportantBookingViewActivity extends AppCompatActivity {
         ActivityCompat.requestPermissions(this, new String[] {
                 Manifest.permission.WRITE_EXTERNAL_STORAGE
         }, PackageManager.PERMISSION_GRANTED);
-
-        Intent intent = getIntent();
-        booking = (Booking) intent.getSerializableExtra("view_booking");
 
         if (booking != null)
         {
@@ -147,6 +148,21 @@ public class ImportantBookingViewActivity extends AppCompatActivity {
         else
             Toast.makeText(ImportantBookingViewActivity.this,
                     "Error al cargar la reserva", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_important_booking_view);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Intent intent = getIntent();
+        booking = (Booking) intent.getSerializableExtra("view_booking");
+        GetAsyncTask getAsyncTask = new GetAsyncTask();
+        getAsyncTask.execute();
     }
 
     private void generatePDF() {

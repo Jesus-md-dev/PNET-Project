@@ -19,25 +19,26 @@ import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
-import java.io.DataOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class BookingViewActivity extends AppCompatActivity {
     private Booking booking;
 
-    private class LongRunningGetIO extends AsyncTask<Void, Void, String>
+    private class DeleteAsyncTask extends AsyncTask<Void, Void, String>
     {
         @Override
         protected String doInBackground(Void... params){
             String text = null;
             HttpURLConnection urlConnection = null;
             try {
-                URL urlToRequest = new URL("http://10.0.2.2:3000/bookings/" + booking.getId());
+                URL urlToRequest = new URL(Endpoint.getBooking() + booking.getId());
                 urlConnection = (HttpURLConnection) urlToRequest.openConnection();
                 urlConnection.setRequestMethod("DELETE");
                 urlConnection.setRequestProperty("Content-Type", "application/json");
@@ -83,12 +84,64 @@ public class BookingViewActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_booking_view);
+    private class GetAsyncTask extends AsyncTask<Void, Void, String>
+    {
+        @Override
+        protected String doInBackground(Void... params){
+            String text = null;
+            HttpURLConnection urlConnection = null;
+            try {
+                URL urlToRequest = new URL(Endpoint.getBooking() + booking.getId());
+                urlConnection = (HttpURLConnection) urlToRequest.openConnection();
+                urlConnection.setRequestMethod("GET");
+                urlConnection.connect();
+                if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK)
+                {
+                    InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                    text = new Scanner(in).useDelimiter("\\A").next();
+                }
+                else
+                {
+                    text = "error";
+                }
+            } catch (Exception e) {
+                return e.toString();
+            } finally {
+                if (urlConnection != null)
+                    urlConnection.disconnect();
+            }
+            return text;
+        }
 
-        String roomTitle;
+        @Override
+        protected void onPostExecute(String results) {
+            super .onPostExecute(results);
+            try {
+                JSONArray array = new JSONArray(results);
+
+                JSONObject jsonObject = array.getJSONObject(0);
+
+                booking.setId((String) jsonObject.get("_id"));
+                booking.setName((String) jsonObject.get("name"));
+                booking.setDni((String) jsonObject.get("dni"));
+                booking.setPhone((String) jsonObject.get("phone"));
+                booking.setEmail((String) jsonObject.get("email"));
+                booking.setDate((String) jsonObject.get("date"));
+                booking.setStartHour((String) jsonObject.get("startHour"));
+                booking.setEndHour((String) jsonObject.get("endHour"));
+                booking.setReason((int) jsonObject.get("reason"));
+                booking.setRoomType((int) jsonObject.get("roomType"));
+
+                setConfig();
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void setConfig()
+    {
         TextView roomText = findViewById(R.id.roomTypeTitle);
         TextView nameText = findViewById(R.id.nameText);
         TextView dniText = findViewById(R.id.dniText);
@@ -101,14 +154,11 @@ public class BookingViewActivity extends AppCompatActivity {
         Button editButton = findViewById(R.id.editButton);
         Button deleteButton = findViewById(R.id.deleteButton);
 
-        Intent intent = getIntent();
-        booking = (Booking) intent.getSerializableExtra("view_booking");
+
 
         if (booking != null)
         {
-            roomTitle = getString(R.string.booking_room_title) + " " +
-                    BookingAdapter.roomTypeIntToString(booking.getRoomType());
-            roomText.setText(roomTitle);
+            roomText.setText(booking.getRoomTypeString());
             nameText.setText(booking.getName());
             dniText.setText(booking.getDni());
             phoneText.setText(booking.getPhone());
@@ -130,14 +180,29 @@ public class BookingViewActivity extends AppCompatActivity {
             deleteButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    LongRunningGetIO myInvokeTask = new LongRunningGetIO();
-                    myInvokeTask.execute();
+                    DeleteAsyncTask deleteAsyncTask = new DeleteAsyncTask();
+                    deleteAsyncTask.execute();
                 }
             });
         }
         else
             Toast.makeText(BookingViewActivity.this,"Error al cargar la reserva",
                     Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_booking_view);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Intent intent = getIntent();
+        booking = (Booking) intent.getSerializableExtra("view_booking");
+        GetAsyncTask getAsyncTask = new GetAsyncTask();
+        getAsyncTask.execute();
     }
 
     @Override

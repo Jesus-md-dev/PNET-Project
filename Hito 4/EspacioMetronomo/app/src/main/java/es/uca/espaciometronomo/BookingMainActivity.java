@@ -24,8 +24,6 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
@@ -36,14 +34,14 @@ public class BookingMainActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList<Booking> bookings = new ArrayList<Booking>();
 
-    private class LongRunningGetIO extends AsyncTask<Void, Void, String>
+    private class GetAllAsyncTask extends AsyncTask<Void, Void, String>
     {
         @Override
         protected String doInBackground(Void... params){
             String text = null;
             HttpURLConnection urlConnection = null;
             try {
-                URL urlToRequest = new URL("http://10.0.2.2:3000/bookings");
+                URL urlToRequest = new URL(Endpoint.getBooking());
                 urlConnection = (HttpURLConnection) urlToRequest.openConnection();
                 urlConnection.connect();
                 if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK)
@@ -87,8 +85,6 @@ public class BookingMainActivity extends AppCompatActivity {
                     booking.setReason((int) jsonObject.get("reason"));
                     booking.setRoomType((int) jsonObject.get("roomType"));
 
-                    Log.d("date", "onPostExecute: "+ booking.getDate());
-
                     bookings.add(booking);
                 }
 
@@ -105,7 +101,6 @@ public class BookingMainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-
     }
     
     @Override
@@ -119,8 +114,6 @@ public class BookingMainActivity extends AppCompatActivity {
 
         formButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                System.out.println("Button Clicked");
-
                 Intent bookFormActivity = new Intent(getApplicationContext(),
                         BookingFormActivity.class);
                 startActivity(bookFormActivity);
@@ -134,18 +127,12 @@ public class BookingMainActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
 
         mRecyclerView.setLayoutManager(mLayoutManager);
-
-        Intent intent = getIntent();
-        Booking booking = (Booking) intent.getSerializableExtra("new_book");
-
-        if (booking != null)
-            bookings.add(booking);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        LongRunningGetIO myInvokeTask = new LongRunningGetIO();
+        GetAllAsyncTask myInvokeTask = new GetAllAsyncTask();
         myInvokeTask.execute();
     }
 

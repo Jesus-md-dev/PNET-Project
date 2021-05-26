@@ -24,29 +24,34 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Calendar;
+import java.util.Scanner;
 
 public class BookingEditActivity extends AppCompatActivity {
     DatePickerDialog pickerDialog;
     TimePickerDialog timePickerDialog;
     Booking booking;
 
-    private class LongRunningGetIO extends AsyncTask<Void, Void, String>
+    private class PutAsyncTask extends AsyncTask<Void, Void, String>
     {
         @Override
         protected String doInBackground(Void... params){
             String text;
             HttpURLConnection urlConnection = null;
             try {
-                URL urlToRequest = new URL("http://10.0.2.2:3000/bookings/" + booking.getId());
+                URL urlToRequest = new URL(Endpoint.getBooking() + booking.getId());
                 urlConnection = (HttpURLConnection) urlToRequest.openConnection();
                 urlConnection.setRequestMethod("PUT");
                 urlConnection.setRequestProperty("Content-Type", "application/json");
@@ -96,7 +101,6 @@ public class BookingEditActivity extends AppCompatActivity {
         protected void onPostExecute(String results) {
             super.onPostExecute(results);
             try {
-                Log.d("TAG", "onPostExecute: " + results);
                 Toast.makeText(BookingEditActivity.this,"Reserva modificada con exito",
                         Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), BookingViewActivity.class);
@@ -111,11 +115,79 @@ public class BookingEditActivity extends AppCompatActivity {
 
     }
 
+    private class GetAsyncTask extends AsyncTask<Void, Void, String>
+    {
+        @Override
+        protected String doInBackground(Void... params){
+            String text = null;
+            HttpURLConnection urlConnection = null;
+            try {
+                URL urlToRequest = new URL(Endpoint.getBooking() + booking.getId());
+                urlConnection = (HttpURLConnection) urlToRequest.openConnection();
+                urlConnection.setRequestMethod("GET");
+                urlConnection.connect();
+                if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK)
+                {
+                    InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                    text = new Scanner(in).useDelimiter("\\A").next();
+                }
+                else
+                {
+                    text = "error";
+                }
+            } catch (Exception e) {
+                return e.toString();
+            } finally {
+                if (urlConnection != null)
+                    urlConnection.disconnect();
+            }
+            return text;
+        }
+
+        @Override
+        protected void onPostExecute(String results) {
+            super .onPostExecute(results);
+            try {
+                JSONArray array = new JSONArray(results);
+
+                JSONObject jsonObject = array.getJSONObject(0);
+
+                booking.setId((String) jsonObject.get("_id"));
+                booking.setName((String) jsonObject.get("name"));
+                booking.setDni((String) jsonObject.get("dni"));
+                booking.setPhone((String) jsonObject.get("phone"));
+                booking.setEmail((String) jsonObject.get("email"));
+                booking.setDate((String) jsonObject.get("date"));
+                booking.setStartHour((String) jsonObject.get("startHour"));
+                booking.setEndHour((String) jsonObject.get("endHour"));
+                booking.setReason((int) jsonObject.get("reason"));
+                booking.setRoomType((int) jsonObject.get("roomType"));
+
+                setConfig();
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking_form);
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Intent intent = getIntent();
+        booking = (Booking) intent.getSerializableExtra("edit_booking");
+        GetAsyncTask getAsyncTask = new GetAsyncTask();
+        getAsyncTask.execute();
+    }
+
+    private void setConfig()
+    {
         ImageButton dateBtn = findViewById(R.id.dateButton);
         ImageButton startHourBtn = findViewById(R.id.startHourButton);
         ImageButton endHourBtn = findViewById(R.id.endHourButton);
@@ -136,10 +208,6 @@ public class BookingEditActivity extends AppCompatActivity {
 
         titleTextView.setText("Modifique su Reserva");
         editButton.setText("Confirmar cambios");
-
-        Intent intent = getIntent();
-        booking = (Booking) intent.getSerializableExtra("edit_booking");
-
         if (booking != null)
         {
             nameEditText.setText(booking.getName());
@@ -243,7 +311,7 @@ public class BookingEditActivity extends AppCompatActivity {
                         booking.setReason(reasonSpinner.getSelectedItem().toString());
                         booking.setRoomType(selectedRadButton.getText().toString());
 
-                        LongRunningGetIO myInvokeTask = new LongRunningGetIO();
+                        PutAsyncTask myInvokeTask = new PutAsyncTask();
                         myInvokeTask.execute();
                     }
                     else if(!selectedRadButton.isChecked())
@@ -251,7 +319,7 @@ public class BookingEditActivity extends AppCompatActivity {
                         Toast.makeText(BookingEditActivity.this,"Sala sin elegir",
                                 Toast.LENGTH_SHORT).show();
                     }
-                    LongRunningGetIO myInvokeTask = new LongRunningGetIO();
+                    PutAsyncTask myInvokeTask = new PutAsyncTask();
                     myInvokeTask.execute();
                 }
             });

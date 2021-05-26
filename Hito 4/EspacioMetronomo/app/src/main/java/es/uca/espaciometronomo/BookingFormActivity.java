@@ -23,21 +23,15 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Calendar;
-import java.util.Scanner;
 
 public class BookingFormActivity extends AppCompatActivity {
     DatePickerDialog pickerDialog;
@@ -46,14 +40,14 @@ public class BookingFormActivity extends AppCompatActivity {
     String name, dni, phone, email, reason, roomType;
     Booking booking;
 
-    private class LongRunningGetIO extends AsyncTask<Void, Void, String>
+    private class PostAsyncTask extends AsyncTask<Void, Void, String>
     {
         @Override
         protected String doInBackground(Void... params){
             String text = null;
             HttpURLConnection urlConnection = null;
             try {
-                URL urlToRequest = new URL("http://10.0.2.2:3000/bookings");
+                URL urlToRequest = new URL(Endpoint.getBooking());
                 urlConnection = (HttpURLConnection) urlToRequest.openConnection();
                 urlConnection.setRequestMethod("POST");
                 urlConnection.setRequestProperty("Content-Type", "application/json");
@@ -103,9 +97,12 @@ public class BookingFormActivity extends AppCompatActivity {
         protected void onPostExecute(String results) {
             super.onPostExecute(results);
             try {
-                Log.d("TAG", "onPostExecute: " + results);
+                Toast.makeText(BookingFormActivity.this,"Reserva creada",
+                        Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
                 e.printStackTrace();
+                Toast.makeText(BookingFormActivity.this,"Error al crear la reserva",
+                        Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -213,12 +210,10 @@ public class BookingFormActivity extends AppCompatActivity {
                     reason = reasonSpinner.getSelectedItem().toString();
                     roomType = selectedRadButton.getText().toString();
 
-                    Log.d("TAG", "onClick: " + reason);
-
                     booking = new Booking("0", name, dni, phone, email, date, startHour,
                             endHour, reason, roomType);
 
-                    LongRunningGetIO myInvokeTask = new LongRunningGetIO();
+                    PostAsyncTask myInvokeTask = new PostAsyncTask();
                     myInvokeTask.execute();
                     Intent intent = new Intent(getApplicationContext(), BookingMainActivity.class);
                     startActivity(intent);

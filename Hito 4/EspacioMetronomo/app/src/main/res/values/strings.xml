@@ -45,4 +45,5 @@
     <string name="appwidget_text">EXAMPLE</string>
     <string name="title_activity_location">Location</string>
     <string name="dowload_button">Descargar PDF</string>
+    <string name="ip">192.168.1.64</string>
 </resources>
