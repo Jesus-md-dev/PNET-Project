@@ -63,7 +63,7 @@ public class DatesAdapter extends RecyclerView.Adapter<DatesAdapter.MyViewHolder
 
                 // Toast para las fechas que ya han pasado
                 if (fecha.compareTo(actual) < 0) {
-                    CharSequence text = "El plazo de la reserva ha pasado";
+                    CharSequence text = "El evento ha sido realizado";
                     int duration = Toast.LENGTH_LONG;
 
                     Toast toast = Toast.makeText(context, text, duration);
@@ -75,11 +75,11 @@ public class DatesAdapter extends RecyclerView.Adapter<DatesAdapter.MyViewHolder
                     int dias = (int) ((fecha.getTime().getTime() - actual.getTime().getTime())/86400000);
 
                     if (dias == 0)
-                        Snackbar.make(v, "Hoy es el día de la reserva", Snackbar.LENGTH_LONG).show();
+                        Snackbar.make(v, "Hoy es el día del evento", Snackbar.LENGTH_LONG).show();
                     else if (dias == 1)
-                        Snackbar.make(v, "Falta 1 día para el día de la reserva", Snackbar.LENGTH_LONG).show();
+                        Snackbar.make(v, "Falta 1 día para el evento", Snackbar.LENGTH_LONG).show();
                     else
-                        Snackbar.make(v, "Faltan " + dias + " días para el día de la reserva", Snackbar.LENGTH_LONG).show();
+                        Snackbar.make(v, "Faltan " + dias + " días para el evento", Snackbar.LENGTH_LONG).show();
                 }
 
                 // Notificación en la barra de estado
@@ -87,7 +87,7 @@ public class DatesAdapter extends RecyclerView.Adapter<DatesAdapter.MyViewHolder
                         .setSmallIcon(R.drawable.ic_launcher_background)
                         .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_launcher_background))
                         .setContentTitle("Localización")
-                        .setContentText("Descubre donde se realizará esta actividad");
+                        .setContentText("Descubre donde se realiza esta actividad");
 
                 notification.setVibrate(new long[]{1000, 1000, 1000, 1000, 1000});
 

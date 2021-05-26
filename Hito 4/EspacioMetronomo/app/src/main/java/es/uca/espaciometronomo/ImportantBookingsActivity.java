@@ -33,14 +33,14 @@ public class ImportantBookingsActivity extends AppCompatActivity {
     private ArrayList<Booking> importantBookings = new ArrayList<Booking>();
 
 
-    private class LongRunningGetIO extends AsyncTask<Void, Void, String>
+    private class GetAllAsyncTask extends AsyncTask<Void, Void, String>
     {
         @Override
         protected String doInBackground(Void... params){
             String text = null;
             HttpURLConnection urlConnection = null;
             try {
-                URL urlToRequest = new URL("http://10.0.2.2:3000/bookings");
+                URL urlToRequest = new URL(Endpoint.getBooking());
                 urlConnection = (HttpURLConnection) urlToRequest.openConnection();
                 urlConnection.connect();
                 if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK)
@@ -84,8 +84,6 @@ public class ImportantBookingsActivity extends AppCompatActivity {
                     booking.setReason((int) jsonObject.get("reason"));
                     booking.setRoomType((int) jsonObject.get("roomType"));
 
-                    Log.d("date", "onPostExecute: "+ booking.getDate());
-
                     bookings.add(booking);
                 }
 
@@ -120,7 +118,7 @@ public class ImportantBookingsActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        LongRunningGetIO myInvokeTask = new LongRunningGetIO();
+        GetAllAsyncTask myInvokeTask = new GetAllAsyncTask();
         myInvokeTask.execute();
     }
 
