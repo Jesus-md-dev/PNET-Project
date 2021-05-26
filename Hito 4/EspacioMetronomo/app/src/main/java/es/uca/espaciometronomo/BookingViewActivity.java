@@ -154,11 +154,9 @@ public class BookingViewActivity extends AppCompatActivity {
         Button editButton = findViewById(R.id.editButton);
         Button deleteButton = findViewById(R.id.deleteButton);
 
-
-
         if (booking != null)
         {
-            roomText.setText(booking.getRoomTypeString());
+            roomText.setText(roomText.getText() + " " + booking.getRoomTypeString());
             nameText.setText(booking.getName());
             dniText.setText(booking.getDni());
             phoneText.setText(booking.getPhone());
