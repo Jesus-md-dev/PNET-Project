@@ -6,7 +6,7 @@ let ObjectId = require('mongodb').ObjectID;
 const Smartphones = function () {};
 
 Smartphones.prototype.connectDb = function (callback) {
-    MongoClient.connect("mongodb+srv://<user>:<password>@csm-pnet-2020-2021.example.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    MongoClient.connect(process.env.MONGODB_URI,
         {useNewUrlParser: true, useUnifiedTopology: true},
         function (err, database) {
             if (err) {
