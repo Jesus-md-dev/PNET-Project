@@ -2,6 +2,13 @@ plugins {
     id 'com.android.application'
 }
 
+// La clave de Google Maps se lee de local.properties (MAPS_API_KEY=...), que no se sube a git
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withInputStream { localProperties.load(it) }
+}
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -14,6 +21,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [MAPS_API_KEY: localProperties.getProperty('MAPS_API_KEY', '')]
     }
 
     buildTypes {

@@ -19,6 +19,7 @@ Booking system for a music rehearsal space, built in four milestones for the Int
 
 - Contact details on the web prototype and in the Android app are example values, not real ones.
 - The REST services read the MongoDB connection string from the `MONGODB_URI` environment variable.
+- The Android app reads its Google Maps API key from `MAPS_API_KEY` in `Hito 4/EspacioMetronomo/local.properties`, which is not committed.
 - Photos in `Hito 1/img` (and the Android header) are public domain (CC0) images found through [Openverse](https://openverse.org/), replacing the originals of unknown licence. The icons are by Freepik from Flaticon, as credited in the page footer.
 - Build outputs, submission zips, the design mock-ups and the tutorial PDF were removed from the repository.
 
